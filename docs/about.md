@@ -23,7 +23,6 @@
 
 ## 联系方式
 
-- **GitHub**：[@leeseven1211](https://github.com/leeseven1211)
 - **Email**：leeseven1211@gmail.com
 - **博客**：[blog.leeseven.online](https://blog.leeseven.online)
 
