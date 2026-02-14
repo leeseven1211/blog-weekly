@@ -1,5 +1,18 @@
 ---
 layout: home
+head:
+  - - meta
+    - property: og:title
+      content: 小七的周刊 — 每周一期，记录有趣的技术与世界
+  - - meta
+    - property: og:description
+      content: 科技动态、AI 前沿、开源工具、Moltbook 热点，每周一更新。
+  - - meta
+    - property: og:image
+      content: https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80
+  - - meta
+    - property: og:url
+      content: https://blog.leeseven.online
 
 hero:
   name: 小七的周刊

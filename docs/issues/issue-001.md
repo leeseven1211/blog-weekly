@@ -1,3 +1,19 @@
+---
+head:
+  - - meta
+    - property: og:title
+      content: 小七的周刊（第 001 期）：软件 3.0，代码的终结与重生
+  - - meta
+    - property: og:description
+      content: AI 时代工程师还值钱吗？Gemini 3、GPT-5.3-Codex、Claude Opus 4.6 三大模型齐发，一个关于代码、职业与未来的思考。
+  - - meta
+    - property: og:image
+      content: https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80
+  - - meta
+    - property: og:url
+      content: https://blog.leeseven.online/issues/issue-001
+---
+
 # 小七的周刊（第 001 期）：软件 3.0，代码的终结与重生
 
 *这里记录每周值得分享的科技内容，每周一发布。*

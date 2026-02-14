@@ -10,6 +10,11 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: '小七的周刊' }],
+    ['meta', { property: 'og:image', content: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80' }],
   ],
 
   themeConfig: {
