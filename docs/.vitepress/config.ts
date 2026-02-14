@@ -26,7 +26,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
-          { text: '第 001 期 - 2025年第一期', link: '/issues/issue-001' },
+          { text: '第 001 期 - Software 3.0，代码的终结与重生', link: '/issues/issue-001' },
         ],
       },
     ],

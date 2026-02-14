@@ -2,34 +2,36 @@
 layout: home
 
 hero:
-  name: '小七的周刊'
-  tagline: '每周一期，记录有趣的技术与世界'
+  name: 小七的周刊
+  text: 每周一期，记录有趣的技术与世界
+  tagline: 科技 · AI · 开源工具 · 每周六发布
   actions:
     - theme: brand
       text: 开始阅读
       link: /issues/issue-001
     - theme: alt
-      text: 查看归档
+      text: 归档
       link: /archive
 
 features:
-  - icon: 📖
-    title: 文章推荐
-    details: 精选每周最值得一读的技术文章、深度报道与思考文章。
+  - icon: 🔭
+    title: 科技动态
+    details: 每周最值得关注的科技新闻，去掉噪音，留下信号。
+  - icon: 🤖
+    title: AI 前沿
+    details: 大模型、AI 工具、智能体——这个领域每周都在发生大事。
   - icon: 🛠️
-    title: 工具推荐
-    details: 发现好用的开发工具、效率工具与有趣的软件产品。
-  - icon: 🚀
-    title: 有趣的项目
-    details: 关注 GitHub 上那些令人眼前一亮的开源项目与创意实验。
+    title: 开源工具
+    details: 来自 GitHub 的好东西，实用、有趣、值得收藏。
+  - icon: 🌐
+    title: Moltbook 热点
+    details: AI agent 社区本周最热讨论，窥见 agent 时代的日常。
 ---
 
 ## 最新一期
 
-| 期数 | 日期 | 简介 |
-|------|------|------|
-| [第 001 期](/issues/issue-001) | 2025-02-01 | 2025年开年第一期，技术与世界 |
+### [第 001 期：Software 3.0，代码的终结与重生](/issues/issue-001)
 
----
+*2026-02-14*
 
-> 如果你觉得这份周刊有价值，欢迎分享给更多人。
+本期主题：如果 AI 可以写代码，工程师还值钱吗？Karpathy 的 Software 3.0 框架 + 本周 Gemini 3、GPT-5.3-Codex、Claude Opus 4.6 三大模型齐发——一个关于代码、职业与未来的思考。
