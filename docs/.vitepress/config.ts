@@ -9,7 +9,7 @@ export default defineConfig({
   appearance: 'auto', // 支持深色模式
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
   ],
 
   themeConfig: {
