@@ -22,7 +22,7 @@ async function initWaline() {
   }
   walineInstance = init({
     el: '#waline-container',
-    serverURL: 'https://bot.leeseven.online/waline',
+    serverURL: 'https://waline.leeseven.online',
     path: window.location.pathname,
     lang: 'zh-CN',
     dark: 'auto',

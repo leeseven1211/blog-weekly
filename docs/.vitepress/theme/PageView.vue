@@ -15,7 +15,7 @@ async function fetchPageView() {
   try {
     const path = encodeURIComponent(window.location.pathname)
     const res = await fetch(
-      `https://bot.leeseven.online/waline/api/article?path=${path}`,
+      `https://waline.leeseven.online/api/article?path=${path}`,
       { method: 'GET' }
     )
     if (res.ok) {
@@ -31,7 +31,7 @@ async function fetchPageView() {
 async function recordAndFetch() {
   try {
     const path = window.location.pathname
-    const res = await fetch('https://bot.leeseven.online/waline/api/article', {
+    const res = await fetch('https://waline.leeseven.online/api/article', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ path, title: document.title })
