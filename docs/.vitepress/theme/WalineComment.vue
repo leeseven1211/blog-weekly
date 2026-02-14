@@ -10,20 +10,32 @@
 <script setup>
 import { onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vitepress'
+import { init } from '@waline/client'
+import '@waline/client/waline.css'
+import { canonicalPath } from './path'
 
 const route = useRoute()
 let walineInstance = null
+let lastPathKey = null
+let debounceTimer = null
 
-async function initWaline() {
+function mountWaline() {
   if (typeof window === 'undefined') return
-  const { init } = await import('https://unpkg.com/@waline/client@v3/dist/waline.js')
+
+  const key = canonicalPath(window.location.pathname)
+  if (key === lastPathKey && walineInstance) return
+
+  lastPathKey = key
+
   if (walineInstance) {
     walineInstance.destroy()
+    walineInstance = null
   }
+
   walineInstance = init({
     el: '#waline-container',
     serverURL: 'https://waline.leeseven.online',
-    path: window.location.pathname.replace(/\.html$/, ''),
+    path: key,
     lang: 'zh-CN',
     dark: 'auto',
     reaction: true,
@@ -36,19 +48,29 @@ async function initWaline() {
     placeholder: '留下你的想法，无需登录...',
     wordLimit: 500,
     pageSize: 10,
-    emoji: ['//unpkg.com/@waline/emojis@1.2.0/weibo'],
+    // 本地静态资源（docs/public 会被 VitePress 原样拷贝到站点根目录）
+    emoji: ['/waline-emojis/weibo'],
   })
 }
 
+function scheduleMount() {
+  if (debounceTimer) clearTimeout(debounceTimer)
+  debounceTimer = setTimeout(mountWaline, 120)
+}
+
 onMounted(() => {
-  initWaline()
+  scheduleMount()
 })
 
 watch(() => route.path, () => {
-  initWaline()
+  scheduleMount()
 })
 
 onUnmounted(() => {
+  if (debounceTimer) {
+    clearTimeout(debounceTimer)
+    debounceTimer = null
+  }
   if (walineInstance) {
     walineInstance.destroy()
     walineInstance = null
@@ -57,8 +79,6 @@ onUnmounted(() => {
 </script>
 
 <style>
-@import 'https://unpkg.com/@waline/client@v3/dist/waline.css';
-
 .waline-wrapper {
   margin-top: 48px;
 }

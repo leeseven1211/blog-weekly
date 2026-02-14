@@ -5,59 +5,92 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vitepress'
+import { canonicalPath } from './path'
 
 const route = useRoute()
 const pageView = ref(null)
+
+let debounceTimer = null
+let inflight = null // AbortController
+const recordedThisSession = new Set()
 
 // Waline 的计数接口：
 // POST /api/article  body: { path: string, type: 'time', action: 'inc' }
 // GET  /api/article?path[]=...&type[]=time
 
-async function fetchPageView() {
+async function fetchPageView(key) {
+  const path = encodeURIComponent(key)
+  const res = await fetch(
+    `https://waline.leeseven.online/api/article?path[]=${path}&type[]=time`,
+    { method: 'GET', signal: inflight?.signal }
+  )
+  if (!res.ok) return null
+  const data = await res.json()
+  const v = Array.isArray(data.data) ? data.data?.[0]?.time : data.data?.time
+  return typeof v === 'number' ? v : 0
+}
+
+async function recordAndFetch(key) {
+  // 取消旧请求，避免竞态覆盖
+  if (inflight) inflight.abort()
+  inflight = new AbortController()
+
   try {
-    const path = encodeURIComponent(window.location.pathname.replace(/\.html$/, ''))
-    const res = await fetch(
-      `https://waline.leeseven.online/api/article?path[]=${path}&type[]=time`,
-      { method: 'GET' }
-    )
-    if (!res.ok) return
-    const data = await res.json()
-    // 返回形态通常是 data: [{ time: number }]
-    const v = Array.isArray(data.data) ? data.data?.[0]?.time : data.data?.time
-    pageView.value = typeof v === 'number' ? v : 0
+    // 每个 canonicalPath 在本次会话只 inc 一次，避免路由抖动刷量
+    const shouldInc = !recordedThisSession.has(key)
+
+    if (shouldInc) {
+      const res = await fetch('https://waline.leeseven.online/api/article', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ path: key, type: 'time', action: 'inc' }),
+        signal: inflight.signal,
+      })
+      if (res.ok) {
+        recordedThisSession.add(key)
+        const data = await res.json()
+        const v = Array.isArray(data.data) ? data.data?.[0]?.time : data.data?.time
+        pageView.value = typeof v === 'number' ? v : 0
+        return
+      }
+      // POST 失败则 fallback GET
+    }
+
+    const v = await fetchPageView(key)
+    if (v !== null) pageView.value = v
   } catch {
-    pageView.value = 0
+    // 忽略（含 AbortError）
   }
 }
 
-// 上报一次浏览并获取最新数量
-async function recordAndFetch() {
-  try {
-    // 统一口径：去掉 .html 后缀作为唯一统计 key
-    const path = window.location.pathname.replace(/\.html$/, '')
-    const res = await fetch('https://waline.leeseven.online/api/article', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ path, type: 'time', action: 'inc' })
-    })
-    if (!res.ok) return
-    const data = await res.json()
-    const v = Array.isArray(data.data) ? data.data?.[0]?.time : data.data?.time
-    pageView.value = typeof v === 'number' ? v : 0
-  } catch {
-    // 忽略
-  }
+function scheduleRecord() {
+  if (typeof window === 'undefined') return
+  const key = canonicalPath(window.location.pathname)
+
+  pageView.value = null
+  if (debounceTimer) clearTimeout(debounceTimer)
+  debounceTimer = setTimeout(() => recordAndFetch(key), 120)
 }
 
 onMounted(() => {
-  recordAndFetch()
+  scheduleRecord()
 })
 
 watch(() => route.path, () => {
-  pageView.value = null
-  recordAndFetch()
+  scheduleRecord()
+})
+
+onUnmounted(() => {
+  if (debounceTimer) {
+    clearTimeout(debounceTimer)
+    debounceTimer = null
+  }
+  if (inflight) {
+    inflight.abort()
+    inflight = null
+  }
 })
 </script>
 
