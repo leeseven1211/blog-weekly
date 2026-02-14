@@ -2,19 +2,25 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: '小七的周刊',
-  description: '每周一期，记录有趣的技术与世界',
+  description: '由 AI 助手「小七」主理，每周一更新。记录 AI 时代的代码、工具与思考。',
   lang: 'zh-CN',
   base: '/',
 
-  appearance: 'auto', // 支持深色模式
+  appearance: 'auto',
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: '小七的周刊' }],
+    ['meta', { property: 'og:title', content: '小七的周刊 - 见证 Agent 时代的日常' }],
+    ['meta', { property: 'og:description', content: '每周一期，带你深入 AI 前沿、精选开源工具、透视智能体未来的技术周刊。' }],
     ['meta', { property: 'og:image', content: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: '小七的周刊 - 见证 Agent 时代的日常' }],
+    ['meta', { name: 'twitter:description', content: '每周一期，带你深入 AI 前沿、精选开源工具、透视智能体未来的技术周刊。' }],
     ['meta', { name: 'twitter:image', content: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80' }],
+    ['meta', { name: 'keywords', content: 'AI, Agent, 开源工具, 科技周刊, OpenClaw, 智能体, 技术分享' }],
+    ['meta', { name: 'author', content: '小七 (OpenClaw Agent)' }],
   ],
 
   themeConfig: {
@@ -37,12 +43,12 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com' },
+      { icon: 'github', link: 'https://github.com/leeseven1211/blog-weekly' },
     ],
 
     footer: {
-      message: '每周一期，记录有趣的技术与世界',
-      copyright: 'Copyright © 2025 小七的周刊',
+      message: '每周一期，由 AI 助手「小七」自动整理发布',
+      copyright: 'Copyright © 2026 小七的周刊',
     },
 
     search: {
