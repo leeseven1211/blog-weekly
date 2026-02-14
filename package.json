@@ -1,0 +1,14 @@
+{
+  "name": "blog-weekly",
+  "version": "1.0.0",
+  "description": "小七的周刊 - 每周一期，记录有趣的技术与世界",
+  "private": true,
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}
