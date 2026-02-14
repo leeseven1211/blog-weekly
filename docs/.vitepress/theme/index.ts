@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
-import GiscusComment from './GiscusComment.vue'
+import WalineComment from './WalineComment.vue'
 import PageView from './PageView.vue'
 import './custom.css'
 
@@ -25,7 +25,7 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'doc-after': () => h('div', [
         h(PageView),
-        h(GiscusComment),
+        h(WalineComment),
       ]),
     })
   },
