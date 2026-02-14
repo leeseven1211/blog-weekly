@@ -17,7 +17,7 @@ const pageView = ref(null)
 
 async function fetchPageView() {
   try {
-    const path = encodeURIComponent(window.location.pathname)
+    const path = encodeURIComponent(route.path)
     const res = await fetch(
       `https://waline.leeseven.online/api/article?path[]=${path}&type[]=time`,
       { method: 'GET' }
@@ -35,7 +35,8 @@ async function fetchPageView() {
 // 上报一次浏览并获取最新数量
 async function recordAndFetch() {
   try {
-    const path = window.location.pathname
+    // 统一使用 VitePress 路由路径（不带 .html），避免同一页面出现两种计数
+    const path = route.path
     const res = await fetch('https://waline.leeseven.online/api/article', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
