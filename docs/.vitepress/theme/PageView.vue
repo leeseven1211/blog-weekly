@@ -11,37 +11,42 @@ import { useRoute } from 'vitepress'
 const route = useRoute()
 const pageView = ref(null)
 
+// Waline 的计数接口：
+// POST /api/article  body: { path: string, type: 'time', action: 'inc' }
+// GET  /api/article?path[]=...&type[]=time
+
 async function fetchPageView() {
   try {
     const path = encodeURIComponent(window.location.pathname)
     const res = await fetch(
-      `https://waline.leeseven.online/api/article?path=${path}`,
+      `https://waline.leeseven.online/api/article?path[]=${path}&type[]=time`,
       { method: 'GET' }
     )
-    if (res.ok) {
-      const data = await res.json()
-      pageView.value = data.data?.['读数'] ?? data.data?.time ?? data.time ?? 0
-    }
+    if (!res.ok) return
+    const data = await res.json()
+    // 返回形态通常是 data: [{ time: number }]
+    const v = Array.isArray(data.data) ? data.data?.[0]?.time : data.data?.time
+    pageView.value = typeof v === 'number' ? v : 0
   } catch {
     pageView.value = 0
   }
 }
 
-// 上报浏览并获取数量
+// 上报一次浏览并获取最新数量
 async function recordAndFetch() {
   try {
     const path = window.location.pathname
     const res = await fetch('https://waline.leeseven.online/api/article', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ path, title: document.title })
+      body: JSON.stringify({ path, type: 'time', action: 'inc' })
     })
-    if (res.ok) {
-      const data = await res.json()
-      pageView.value = data.data?.time ?? data.time ?? 1
-    }
+    if (!res.ok) return
+    const data = await res.json()
+    const v = Array.isArray(data.data) ? data.data?.[0]?.time : data.data?.time
+    pageView.value = typeof v === 'number' ? v : 0
   } catch {
-    pageView.value = null
+    // 忽略
   }
 }
 
