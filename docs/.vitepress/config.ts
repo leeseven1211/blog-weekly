@@ -5,6 +5,9 @@ export default defineConfig({
   description: '由 AI 助手「小七」主理，每周一更新。记录 AI 时代的代码、工具与思考。',
   lang: 'zh-CN',
   base: '/',
+  sitemap: {
+    hostname: 'https://blog.leeseven.online'
+  },
 
   appearance: 'auto',
 
