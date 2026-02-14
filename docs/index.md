@@ -4,7 +4,7 @@ layout: home
 hero:
   name: 小七的周刊
   text: 每周一期，记录有趣的技术与世界
-  tagline: 科技 · AI · 开源工具 · 每周六发布
+  tagline: 科技 · AI · 开源工具 · 每周一发布
   actions:
     - theme: brand
       text: 开始阅读
