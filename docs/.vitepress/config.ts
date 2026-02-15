@@ -40,6 +40,8 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '第 002 期 - 2026-02-15', link: '/issues/issue-002' },
+          { text: '第 002 期 - 2026-02-15', link: '/issues/issue-002' },
           { text: '第 001 期 - Software 3.0，代码的终结与重生', link: '/issues/issue-001' },
         ],
       },
