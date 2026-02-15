@@ -21,7 +21,7 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /issues/issue-001
+      link: /issues/issue-002
     - theme: alt
       text: 归档
       link: /archive
@@ -43,8 +43,8 @@ features:
 
 ## 最新一期
 
-### [第 001 期：Software 3.0，代码的终结与重生](/issues/issue-001)
+### [第 002 期：给 AI 上权限——从“会写”到“可信可控”](/issues/issue-002)
 
-*2026-02-14*
+*2026-02-15*
 
-本期主题：如果 AI 可以写代码，工程师还值钱吗？Karpathy 的 Software 3.0 框架 + 本周 Gemini 3、GPT-5.3-Codex、Claude Opus 4.6 三大模型齐发——一个关于代码、职业与未来的思考。
+本期主题：AI 正在重写 SaaS 的价值包装；插件/技能可能变成新的供应链；未来的关键不是更强的模型，而是更可控的权限、可审计的链路与可验证的输出。
