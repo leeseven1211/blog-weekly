@@ -1,19 +1,20 @@
 #!/bin/bash
 # new-issue.sh - 一键创建新一期周刊
 # 用法: ./new-issue.sh [期号]
-# 例如: ./new-issue.sh 002
+# 例如: ./new-issue.sh 003
 
-set -e
+set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ISSUES_DIR="$SCRIPT_DIR/docs/issues"
 CONFIG_FILE="$SCRIPT_DIR/docs/.vitepress/config.ts"
+ARCHIVE_FILE="$SCRIPT_DIR/docs/archive.md"
 
 # 自动推算下一期期号
-if [ -n "$1" ]; then
+if [ -n "${1:-}" ]; then
   ISSUE_NUM=$(printf "%03d" "$1")
 else
-  LAST=$(ls "$ISSUES_DIR"/issue-*.md 2>/dev/null | sort | tail -1)
+  LAST=$(ls "$ISSUES_DIR"/issue-*.md 2>/dev/null | sort | tail -1 || true)
   if [ -z "$LAST" ]; then
     ISSUE_NUM="001"
   else
@@ -24,7 +25,6 @@ fi
 
 ISSUE_FILE="$ISSUES_DIR/issue-$ISSUE_NUM.md"
 TODAY=$(date +%Y-%m-%d)
-YEAR=$(date +%Y)
 
 # 检查是否已存在
 if [ -f "$ISSUE_FILE" ]; then
@@ -84,50 +84,90 @@ EOF
 
 echo "✅ 已创建：$ISSUE_FILE"
 
-# 更新 config.ts 侧边栏
-SIDEBAR_ENTRY="          { text: '第 $ISSUE_NUM 期 - $TODAY', link: '/issues/issue-$ISSUE_NUM' },"
+# 用 Python 统一更新侧边栏和归档（防重复、排序稳定）
+python3 - "$CONFIG_FILE" "$ARCHIVE_FILE" "$ISSUE_NUM" "$TODAY" << 'PYEOF'
+import re
+import sys
+from pathlib import Path
 
-# 在侧边栏 items 数组第一行插入（最新期显示在最上面）
-sed -i "s|          { text: '第 001 期|          { text: '第 $ISSUE_NUM 期 - $TODAY', link: '/issues/issue-$ISSUE_NUM' },\n          { text: '第 001 期|" "$CONFIG_FILE" 2>/dev/null || true
+config_path = Path(sys.argv[1])
+archive_path = Path(sys.argv[2])
+issue_num = sys.argv[3]
+today = sys.argv[4]
 
-# 如果是 001 期之后的，用通用方式插入
-if [ "$ISSUE_NUM" != "001" ]; then
-  # 找到 items: [ 行，在其后插入新条目
-  python3 - "$CONFIG_FILE" "$ISSUE_NUM" "$TODAY" << 'PYEOF'
-import sys, re
+# ------------------------------
+# 更新 config.ts 侧边栏（按期号倒序、去重）
+# ------------------------------
+config = config_path.read_text(encoding='utf-8')
 
-config_file = sys.argv[1]
-issue_num = sys.argv[2]
-today = sys.argv[3]
-
-with open(config_file, 'r') as f:
-    content = f.read()
-
-new_entry = f"          {{ text: '第 {issue_num} 期 - {today}', link: '/issues/issue-{issue_num}' }},\n"
-
-# 在 items: [ 后面插入
-content = re.sub(
-    r'(items:\s*\[\n)',
-    r'\1' + new_entry,
-    content,
-    count=1
+entry_pattern = re.compile(
+    r"\{\s*text:\s*'([^']+)'\s*,\s*link:\s*'/issues/issue-(\d{3})'\s*\}"
 )
 
-with open(config_file, 'w') as f:
-    f.write(content)
+entries = []
+for m in entry_pattern.finditer(config):
+    text, num = m.group(1), m.group(2)
+    entries.append((num, text))
 
-print(f"✅ 已更新侧边栏：第 {issue_num} 期")
+# 补入新一期（如果不存在）
+if not any(num == issue_num for num, _ in entries):
+    entries.append((issue_num, f"第 {issue_num} 期 - {today}"))
+
+# 去重：同一期号只保留一条，优先保留“更有信息量”的 text
+dedup = {}
+for num, text in entries:
+    if num not in dedup:
+        dedup[num] = text
+    else:
+        # 优先保留更长描述（通常包含标题而非仅日期）
+        if len(text) > len(dedup[num]):
+            dedup[num] = text
+
+sorted_entries = sorted(dedup.items(), key=lambda x: int(x[0]), reverse=True)
+new_items_block = "\n".join(
+    [f"          {{ text: '{text}', link: '/issues/issue-{num}' }}," for num, text in sorted_entries]
+)
+
+config_new, changed = re.subn(
+    r"(items:\s*\[\n)([\s\S]*?)(\n\s*\],)",
+    lambda m: m.group(1) + new_items_block + m.group(3),
+    config,
+    count=1,
+)
+
+if changed == 0:
+    raise SystemExit("❌ 未找到 sidebar items 区块，无法更新 config.ts")
+
+config_path.write_text(config_new, encoding='utf-8')
+
+# ------------------------------
+# 更新 archive.md（按期号倒序、去重）
+# ------------------------------
+archive = archive_path.read_text(encoding='utf-8') if archive_path.exists() else "# 归档\n\n"
+
+line_pattern = re.compile(
+    r"- \[第\s*(\d{3})\s*期(?:[^\]]*)\]\(/issues/issue-(\d{3})\)（(\d{4}-\d{2}-\d{2})）"
+)
+
+records = {}
+for m in line_pattern.finditer(archive):
+    n1, n2, date = m.groups()
+    if n1 != n2:
+        continue
+    records[n1] = date
+
+records[issue_num] = today
+
+sorted_records = sorted(records.items(), key=lambda x: int(x[0]), reverse=True)
+
+header = "# 归档\n\n这里是「小七的周刊」所有期数的归档。\n\n## 2026 年\n\n"
+lines = [f"- [第 {num} 期](/issues/issue-{num})（{date}）" for num, date in sorted_records]
+archive_new = header + "\n".join(lines) + "\n"
+archive_path.write_text(archive_new, encoding='utf-8')
+
+print(f"✅ 已更新侧边栏：第 {issue_num} 期（自动去重）")
+print(f"✅ 已更新归档页：第 {issue_num} 期（按期号倒序）")
 PYEOF
-fi
-
-# 更新 archive.md
-ARCHIVE_FILE="$SCRIPT_DIR/docs/archive.md"
-if [ -f "$ARCHIVE_FILE" ]; then
-  # 在文件末尾追加
-  echo "" >> "$ARCHIVE_FILE"
-  echo "- [第 $ISSUE_NUM 期](/issues/issue-$ISSUE_NUM)（$TODAY）" >> "$ARCHIVE_FILE"
-  echo "✅ 已更新归档页"
-fi
 
 echo ""
 echo "🎉 第 $ISSUE_NUM 期创建完毕！"

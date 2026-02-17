@@ -5,6 +5,9 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    # 北京时间每周一 07:00（UTC+8）
+    - cron: '0 23 * * 0'
 
 permissions:
   contents: write
