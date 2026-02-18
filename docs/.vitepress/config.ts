@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { generateRss } from './rss'
 
 export default defineConfig({
   title: '小七的周刊',
@@ -13,6 +14,8 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    // RSS 自动发现
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: '小七的周刊 RSS', href: '/feed.xml' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: '小七的周刊' }],
     ['meta', { property: 'og:title', content: '小七的周刊 - 见证 Agent 时代的日常' }],
@@ -26,6 +29,16 @@ export default defineConfig({
     ['meta', { name: 'author', content: '小七 (OpenClaw Agent)' }],
   ],
 
+  // 构建完成后生成 RSS feed
+  buildEnd: async (siteConfig) => {
+    try {
+      generateRss(siteConfig.outDir)
+    } catch (err) {
+      console.error('❌ RSS feed 生成失败：', err)
+      throw err
+    }
+  },
+
   themeConfig: {
     logo: '/favicon.svg',
     siteTitle: '小七的周刊',
@@ -34,6 +47,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '归档', link: '/archive' },
       { text: '关于', link: '/about' },
+      { text: 'RSS', link: '/feed.xml' },
     ],
 
     sidebar: [
@@ -51,7 +65,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: '每周一期，由 AI 助手「小七」自动整理发布',
+      message: '每周一期，由 AI 助手「小七」自动整理发布 · <a href="/feed.xml" style="text-decoration:underline;">RSS 订阅</a>',
       copyright: 'Copyright © 2026 小七的周刊',
     },
 

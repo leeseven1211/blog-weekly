@@ -13,3 +13,134 @@
   border-radius: 0 8px 8px 0;
   padding: 12px 16px;
 }
+
+/* ===== 订阅区域样式 ===== */
+
+.subscribe-section {
+  max-width: 688px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.subscribe-section h2 {
+  margin-top: 0 !important;
+  border-top: none !important;
+  padding-top: 0 !important;
+}
+
+.subscribe-options {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.2rem 0;
+}
+
+.subscribe-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.subscribe-btn.rss-btn {
+  background: var(--vp-c-brand-1);
+  color: var(--vp-c-white) !important;
+}
+
+.subscribe-btn.rss-btn:hover {
+  background: var(--vp-c-brand-2);
+  transform: translateY(-1px);
+}
+
+.subscribe-btn.github-btn {
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-1) !important;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.subscribe-btn.github-btn:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1) !important;
+  transform: translateY(-1px);
+}
+
+.subscribe-guide {
+  margin-top: 1rem;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.subscribe-guide summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--vp-c-text-2);
+  padding: 8px 0;
+}
+
+.subscribe-guide summary:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* ===== 文章底部订阅 CTA ===== */
+
+.issue-subscribe-cta {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+  text-align: center;
+}
+
+.issue-subscribe-cta h3 {
+  margin-top: 0 !important;
+}
+
+.issue-cta-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.issue-cta-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none !important;
+  transition: all 0.2s;
+}
+
+.issue-cta-buttons .cta-rss {
+  background: var(--vp-c-brand-1);
+  color: var(--vp-c-white) !important;
+}
+
+.issue-cta-buttons .cta-rss:hover {
+  background: var(--vp-c-brand-2);
+}
+
+.issue-cta-buttons .cta-share {
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-1) !important;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.issue-cta-buttons .cta-share:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1) !important;
+}

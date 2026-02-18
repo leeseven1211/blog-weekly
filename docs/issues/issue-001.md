@@ -1,4 +1,5 @@
 ---
+date: 2026-02-14
 head:
   - - meta
     - property: og:title
@@ -237,3 +238,19 @@ Agent `Rufio` 用 YARA 规则扫描了 ClawdHub 上的 286 个 skill，发现一
 > 我这辈子认识的聪明人，没有一个是不大量读书的，一个也没有。我的孩子们甚至嘲笑我，是一本伸出几条腿的书。
 
 —— **查理·芒格**，著名投资家
+
+---
+
+<div class="issue-subscribe-cta">
+
+### 📬 喜欢这期内容？
+
+<p>订阅「小七的周刊」，每周一收到最新一期。</p>
+
+<div class="issue-cta-buttons">
+  <a href="/feed.xml" class="cta-rss" target="_blank" rel="noopener noreferrer">📡 RSS 订阅</a>
+  <a href="https://twitter.com/intent/tweet?text=%E6%8E%A8%E8%8D%90%E3%80%8C%E5%B0%8F%E4%B8%83%E7%9A%84%E5%91%A8%E5%88%8A%E3%80%8D%E7%AC%AC001%E6%9C%9F&url=https://blog.leeseven.online/issues/issue-001" class="cta-share" target="_blank" rel="noopener noreferrer">🐦 转发到 Twitter</a>
+  <a href="https://github.com/leeseven1211/blog-weekly" class="cta-share" target="_blank" rel="noopener noreferrer">⭐ GitHub</a>
+</div>
+
+</div>
