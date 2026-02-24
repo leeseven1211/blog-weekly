@@ -1,9 +1,27 @@
 /* 全局自定义样式 */
 
-/* 文章内图片圆角 */
+/* 正文排版优化 */
+.vp-doc {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.vp-doc h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--vp-c-brand-1);
+}
+
+.vp-doc h1 {
+  font-size: 1.8rem;
+  letter-spacing: -0.02em;
+}
+
+/* 文章内图片圆角 + 阴影 */
 .vp-doc img {
-  border-radius: 8px;
-  margin: 16px 0;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 /* 引用块样式增强 */
@@ -11,7 +29,43 @@
   border-left: 4px solid var(--vp-c-brand-1);
   background: var(--vp-c-bg-soft);
   border-radius: 0 8px 8px 0;
-  padding: 12px 16px;
+  padding: 16px 20px;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+.vp-doc blockquote p {
+  color: var(--vp-c-text-2);
+}
+
+/* 链接下划线样式 */
+.vp-doc a {
+  text-decoration-color: var(--vp-c-brand-1);
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+/* 列表项间距 */
+.vp-doc ul > li {
+  margin: 8px 0;
+}
+
+/* 分割线 */
+.vp-doc hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--vp-c-divider), transparent);
+  margin: 2rem 0;
+}
+
+/* 首页 hero 微调 */
+.VPHero .text {
+  letter-spacing: -0.01em;
+}
+
+.VPHero .tagline {
+  font-size: 1.1rem !important;
+  opacity: 0.8;
 }
 
 /* ===== 订阅区域样式 ===== */
