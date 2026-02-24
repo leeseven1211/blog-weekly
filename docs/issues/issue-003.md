@@ -63,41 +63,25 @@ Bernie Sanders 本周在斯坦福喊话["慢下来"](https://www.theguardian.com
 
 ## 科技与 AI 动态（上周）
 
-### 1) Google 发布 Gemini 3.1 Pro，推理能力大幅跃升（[Google Blog](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/) / [TechCrunch](https://techcrunch.com/2026/02/19/googles-new-gemini-pro-model-has-record-benchmark-scores-again/)）
+### 1) Google Gemini 3.1 Pro：三个月一迭代，16 项基准拿了 13 个第一
 
-- **发生了什么**：2 月 19 日，Google DeepMind 发布 Gemini 3.1 Pro，在 16 项行业基准中拿下 13 项第一，ARC-AGI-2 得分 77.1%，支持 100 万 token 上下文窗口，并新增了专门的 Agent API 端点。
-- **为什么重要**：距离 Gemini 3 发布才三个月，迭代速度惊人。推理能力的提升不只是刷榜——Mercor 的 APEX 真实任务基准测试也确认了进步，这意味着实际可用性在涨。
-- **对谁有影响**：做 Agent 开发的团队应该优先评估新的 API 端点；用 Google AI Pro/Ultra 的用户已经能直接用上。
-- **信号标注**：【事实】来源为 Google 官方博客和多家一线媒体。
+2 月 19 日，Google DeepMind 发布 [Gemini 3.1 Pro](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/)，距上一代才三个月。16 项行业基准拿下 13 项第一，ARC-AGI-2 得分 77.1%，上下文窗口 100 万 token，还新增了 Agent API 端点。不只是刷榜——Mercor 的 APEX 真实任务测试也确认了进步，实际可用性在涨。做 Agent 开发的团队值得优先评估新 API。（[TechCrunch](https://techcrunch.com/2026/02/19/googles-new-gemini-pro-model-has-record-benchmark-scores-again/)）
 
-### 2) 阿里发布 Qwen 3.5，开源模型正式对标闭源前沿（[CNBC](https://www.cnbc.com/2026/02/17/china-alibaba-qwen-ai-agent-latest-model.html) / [VentureBeat](https://venturebeat.com/technology/alibabas-qwen-3-5-397b-a17-beats-its-larger-trillion-parameter-model-at-a)）
+### 2) 阿里 Qwen 3.5：开源模型正式和闭源掰手腕
 
-- **发生了什么**：2 月 16-17 日，阿里发布 Qwen 3.5 系列，原生多模态（文本/图像/视频），主打 Agent 场景，成本降 60%，吞吐量提升 8 倍。开源版 397B-A17（MoE 架构）性能超过自家万亿参数模型。
-- **为什么重要**：VentureBeat 给了个精准评价——"你能跑、能拥有、能控制的模型，现在能和你需要租的模型正面对打了"。这对企业私有化部署是巨大利好。
-- **对谁有影响**：有 GPU 资源的中大型团队、对数据主权敏感的企业。小团队可能更适合等云端 API。
-- **信号标注**：【事实】阿里官方发布 + 多源独立评测。
+阿里 2 月 16-17 日发布 [Qwen 3.5](https://www.cnbc.com/2026/02/17/china-alibaba-qwen-ai-agent-latest-model.html) 系列，原生多模态，主打 Agent 场景，成本降 60%，吞吐量提升 8 倍。最狠的是开源版 397B-A17（MoE 架构）性能超过自家万亿参数模型。VentureBeat 说得好："你能跑、能拥有、能控制的模型，现在能和你需要租的模型正面对打了。"有 GPU 的中大型团队是最直接受益者；小团队可能更适合等云端 API。（[VentureBeat](https://venturebeat.com/technology/alibabas-qwen-3-5-397b-a17-beats-its-larger-trillion-parameter-model-at-a)）
 
-### 3) OpenAI 组建 200 人硬件团队，联手 Jony Ive 做 AI 智能音箱（[Reuters](https://www.reuters.com/business/openai-developing-ai-devices-including-smart-speaker-information-reports-2026-02-20/) / [MacRumors](https://www.macrumors.com/2026/02/20/jony-ive-openai-smart-speaker-2027/)）
+### 3) OpenAI 要做硬件了：200 人团队，Jony Ive 操刀，2027 发货
 
-- **发生了什么**：据 The Information 报道，OpenAI 超过 200 人在做消费硬件，首款产品是带摄像头的智能音箱（200-300 美元），计划 2027 年初发货。后续还有智能台灯和 AI 眼镜（2028 年）。
-- **为什么重要**：大模型公司往硬件走，逻辑很清楚：控制入口才能控制数据飞轮。Amazon Echo 12 年前开创了这个品类，但 Alexa 的智能一直是个笑话。ChatGPT 级别的对话能力能不能改写这个故事？
-- **对谁有影响**：智能家居生态链、做语音交互的团队、Apple HomePod 和 Amazon Echo 的产品经理。
-- **信号标注**：【推测】目前仅单一信源（The Information），产品尚未公布，2027 时间表可能变动。
+据 [The Information 报道](https://www.reuters.com/business/openai-developing-ai-devices-including-smart-speaker-information-reports-2026-02-20/)，OpenAI 超过 200 人在做消费硬件，首款是带摄像头的智能音箱，售价 200-300 美元，2027 年初发货，后面还有智能台灯和 AI 眼镜（2028）。大模型公司做硬件的逻辑很清楚：控制入口才能控制数据飞轮。Amazon Echo 12 年前开创了这个品类，但 Alexa 的智能一直是个笑话——ChatGPT 级别的对话能力能不能改写这个故事，值得观察。目前仅单一信源，2027 时间表可能变动。（[MacRumors](https://www.macrumors.com/2026/02/20/jony-ive-openai-smart-speaker-2027/)）
 
-### 4) NASA Artemis II 火箭因氦气问题需回撤检修，3 月发射窗口泡汤（[NASA 官方](https://www.nasa.gov/blogs/missions/2026/02/22/nasa-to-rollback-artemis-ii-rocket-spacecraft/) / [Ars Technica](https://arstechnica.com/space/2026/02/nasa-says-it-needs-to-haul-the-artemis-ii-rocket-back-to-the-hangar-for-repairs/)）
+### 4) NASA Artemis II 回撤检修，3 月登月窗口泡汤
 
-- **发生了什么**：2 月 21 日夜间测试发现上面级氦气流中断，NASA 决定将 SLS 火箭从发射台回撤至装配大楼，最快 2 月 24 日开始。3 月发射窗口已失效。
-- **为什么重要**：这是自 2022 年 Artemis I 以来人类重返月球的首次载人任务。类似问题在 Artemis I 准备期也出现过，但载人飞行容不得半点侥幸。
-- **对谁有影响**：航天产业链上下游、关注深空探索进展的人。对普通开发者影响不大，但这种工程决策的严谨态度值得所有做关键系统的人学习。
-- **信号标注**：【事实】NASA 官方博客确认。
+2 月 21 日夜间测试发现上面级氦气流中断，[NASA 决定将 SLS 火箭从发射台回撤至装配大楼](https://www.nasa.gov/blogs/missions/2026/02/22/nasa-to-rollback-artemis-ii-rocket-spacecraft/)。这是 2022 年 Artemis I 以来人类重返月球的首次载人任务，类似问题在 Artemis I 准备期也出过。载人飞行容不得侥幸，这种"宁可延期也不冒险"的工程决策，值得所有做关键系统的人品味。（[Ars Technica](https://arstechnica.com/space/2026/02/nasa-says-it-needs-to-haul-the-artemis-ii-rocket-back-to-the-hangar-for-repairs/)）
 
-### 5) Bernie Sanders 呼吁暂停 AI 数据中心扩建（[The Guardian](https://www.theguardian.com/us-news/2026/feb/21/ai-revolution-bernie-sanders-warning) / [CleanTechnica](https://cleantechnica.com/2026/02/23/bernie-sanders-ro-khanna-have-grave-concerns-about-ai/)）
+### 5) Bernie Sanders 喊"慢下来"：参议员级别首次正式要求暂停 AI 数据中心
 
-- **发生了什么**：2 月 21 日，Sanders 在斯坦福与 Ro Khanna 联合发声，称国会和公众对 AI 革命的速度和规模"毫无准备"，呼吁联邦暂停新建 AI 数据中心。2 月 23 日正式提出暂停动议。
-- **为什么重要**：联邦层面的 AI 监管一直雷声大雨点小，这是参议员级别首次正式要求"踩刹车"。哪怕暂停不通过，政治信号已经释放：AI 监管进入实质博弈阶段。
-- **对谁有影响**：在美国建数据中心的云厂商、做 AI 基础设施投资的机构。
-- **信号标注**：【事实】多家媒体独立报道 + Sanders 官方声明。
-- **边界条件**：暂停动议通过概率极低，更多是政治姿态，但方向信号明确。
+Sanders 2 月 21 日在斯坦福与 Ro Khanna 联合发声，称国会和公众对 AI 革命的速度"[毫无准备](https://www.theguardian.com/us-news/2026/feb/21/ai-revolution-bernie-sanders-warning)"，23 日正式提出暂停新建数据中心的动议。联邦层面的 AI 监管一直雷声大雨点小，这是参议员级别首次正式要求"踩刹车"。通过概率极低，更多是政治姿态——但信号已经释放：AI 监管开始从嘴上说说进入实质博弈了。（[CleanTechnica](https://cleantechnica.com/2026/02/23/bernie-sanders-ro-khanna-have-grave-concerns-about-ai/)）
 
 ---
 
