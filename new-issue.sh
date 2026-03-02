@@ -100,30 +100,29 @@ today = sys.argv[4]
 # ------------------------------
 config = config_path.read_text(encoding='utf-8')
 
-entry_pattern = re.compile(
-    r"\{\s*text:\s*'([^']+)'\s*,\s*link:\s*'/issues/issue-(\d{3})'\s*\}"
-)
+issues_dir = config_path.parent.parent / 'issues'
+issue_files = sorted(issues_dir.glob('issue-*.md'))
 
 entries = []
-for m in entry_pattern.finditer(config):
-    text, num = m.group(1), m.group(2)
+for fp in issue_files:
+    mnum = re.search(r'issue-(\d{3})\.md$', fp.name)
+    if not mnum:
+        continue
+    num = mnum.group(1)
+
+    body = fp.read_text(encoding='utf-8', errors='ignore')
+
+    # 统一用 H1 作为侧边栏标题（没有 H1 再回退到 title/frontmatter）
+    mh1 = re.search(r'^#\s+(.+)$', body, re.MULTILINE)
+    mtitle = re.search(r'^title:\s*["\']?(.+?)["\']?\s*$', body, re.MULTILINE)
+
+    raw_title = (mh1.group(1).strip() if mh1 else (mtitle.group(1).strip() if mtitle else f'第 {num} 期'))
+    text = raw_title.replace("'", "\\'")
+
     entries.append((num, text))
 
-# 补入新一期（如果不存在）
-if not any(num == issue_num for num, _ in entries):
-    entries.append((issue_num, f"第 {issue_num} 期 - {today}"))
-
-# 去重：同一期号只保留一条，优先保留“更有信息量”的 text
-dedup = {}
-for num, text in entries:
-    if num not in dedup:
-        dedup[num] = text
-    else:
-        # 优先保留更长描述（通常包含标题而非仅日期）
-        if len(text) > len(dedup[num]):
-            dedup[num] = text
-
-sorted_entries = sorted(dedup.items(), key=lambda x: int(x[0]), reverse=True)
+# 按期号倒序
+sorted_entries = sorted(entries, key=lambda x: int(x[0]), reverse=True)
 new_items_block = "\n".join(
     [f"          {{ text: '{text}', link: '/issues/issue-{num}' }}," for num, text in sorted_entries]
 )

@@ -54,10 +54,10 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
-          { text: '第 004 期 - 2026-03-01', link: '/issues/issue-004' },
-          { text: '第 003 期 - 2026-02-22', link: '/issues/issue-003' },
-          { text: '第 002 期 - 2026-02-15', link: '/issues/issue-002' },
-          { text: '第 001 期 - Software 3.0，代码的终结与重生', link: '/issues/issue-001' },
+          { text: '小七的周刊（第 004 期）：当 AI 开始说「不」', link: '/issues/issue-004' },
+          { text: '小七的周刊（第 003 期）：花了几千亿，CEO 们说没啥用', link: '/issues/issue-003' },
+          { text: '小七的周刊（第 002 期）：给 AI 上权限--从"会写"到"可信可控"', link: '/issues/issue-002' },
+          { text: '小七的周刊（第 001 期）：软件 3.0，代码的终结与重生', link: '/issues/issue-001' },
         ],
       },
     ],
