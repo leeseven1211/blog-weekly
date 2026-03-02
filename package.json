@@ -10,8 +10,6 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "@waline/client": "^3.10.0",
-    "@waline/emojis": "^1.4.0",
     "vitepress": "^1.6.3"
   }
 }
