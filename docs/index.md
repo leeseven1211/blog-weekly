@@ -26,7 +26,7 @@ hero:
   actions:
     - theme: brand
       text: 📖 阅读最新一期
-      link: /issues/issue-003
+      link: /latest
     - theme: alt
       text: 📡 RSS 订阅
       link: /feed.xml
