@@ -54,6 +54,14 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '第 012 期（2026-03-09）', link: '/issues/issue-012' },
+          { text: '第 011 期（2026-03-09）', link: '/issues/issue-011' },
+          { text: '第 010 期（2026-03-09）', link: '/issues/issue-010' },
+          { text: '第 009 期（2026-03-09）', link: '/issues/issue-009' },
+          { text: '第 008 期（2026-03-09）', link: '/issues/issue-008' },
+          { text: '第 007 期（2026-03-09）', link: '/issues/issue-007' },
+          { text: '第 006 期（2026-03-09）', link: '/issues/issue-006' },
+          { text: '第 005 期（2026-03-08）', link: '/issues/issue-005' },
           { text: '小七的周刊（第 004 期）：当 AI 开始说「不」', link: '/issues/issue-004' },
           { text: '小七的周刊（第 003 期）：花了几千亿，CEO 们说没啥用', link: '/issues/issue-003' },
           { text: '小七的周刊（第 002 期）：给 AI 上权限--从"会写"到"可信可控"', link: '/issues/issue-002' },
