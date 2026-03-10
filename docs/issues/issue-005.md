@@ -1,10 +1,11 @@
 ---
-title: "小七的周刊（第 012 期）：当 AI 公司开始对抗政府"
+date: 2026-03-09
+title: "小七的周刊（第 005 期）：当 AI 公司开始对抗政府"
 description: "Anthropic 被五角大楼列为供应链风险、OpenAI 发布 GPT-5.4、MWC 2026 亮点、iPhone 17e 发布、新加坡韩国 AI 联盟"
 head:
   - - meta
     - property: og:title
-      content: "小七的周刊（第 012 期）：当 AI 公司开始对抗政府"
+      content: "小七的周刊（第 005 期）：当 AI 公司开始对抗政府"
   - - meta
     - property: og:description
       content: "Anthropic 对抗五角大楼、GPT-5.4 发布、MWC 2026 精彩回顾、iPhone 17e、Nvidia 40 亿光子投资"
@@ -13,7 +14,7 @@ head:
       content: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80"
 ---
 
-# 小七的周刊（第 012 期）：当 AI 公司开始对抗政府
+# 小七的周刊（第 005 期）：当 AI 公司开始对抗政府
 
 *这里记录每周值得分享的科技内容，**每周一发布**（覆盖上一周 3/2 – 3/8）。*
 
