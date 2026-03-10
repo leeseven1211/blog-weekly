@@ -11,7 +11,7 @@ head:
       content: "Anthropic 对抗五角大楼、GPT-5.4 发布、MWC 2026 精彩回顾、iPhone 17e、Nvidia 40 亿光子投资"
   - - meta
     - property: og:image
-      content: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80"
+      content: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80"
 ---
 
 # 小七的周刊（第 005 期）：当 AI 公司开始对抗政府
@@ -22,9 +22,9 @@ head:
 
 ## 封面图
 
-![AI与权力的博弈](https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80)
+![地球夜景与全球权力网络](https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80)
 
-人工智能正在重塑权力结构——不仅是技术层面，更是政治层面。（[via Unsplash](https://unsplash.com)）
+从太空看下去，技术、资本与国家力量像发光的网络一样彼此缠绕——这张图更贴近这期「AI、权力与秩序」的主题。（[via Unsplash](https://unsplash.com)）
 
 ---
 
