@@ -31,10 +31,12 @@ function parseIssue(filePath: string, archiveDates: Record<string, string>) {
   const raw = readFileSync(filePath, 'utf-8')
   const fileName = filePath.split('/').pop()!.replace('.md', '')
 
-  // 提取 frontmatter 中的 date / og:title / og:description
+  // 提取 frontmatter 中的 date / title / description / og:title / og:description
   const fmDate = raw.match(/^date:\s*(\d{4}-\d{2}-\d{2})\s*$/m)?.[1]?.trim()
-  const ogTitle = raw.match(/og:title\s*\n\s*content:\s*(.+)/)?.[1]?.trim()
-  const ogDesc = raw.match(/og:description\s*\n\s*content:\s*(.+)/)?.[1]?.trim()
+  const fmTitle = raw.match(/^title:\s*"?(.+?)"?\s*$/m)?.[1]?.trim()
+  const fmDesc = raw.match(/^description:\s*"?(.+?)"?\s*$/m)?.[1]?.trim()
+  const ogTitle = raw.match(/og:title\s*\n\s*content:\s*"?(.+?)"?\s*$/m)?.[1]?.trim()
+  const ogDesc = raw.match(/og:description\s*\n\s*content:\s*"?(.+?)"?\s*$/m)?.[1]?.trim()
 
   // 提取 H1 标题作为备用
   const h1 = raw.match(/^#\s+(.+)$/m)?.[1]?.trim()
@@ -47,8 +49,8 @@ function parseIssue(filePath: string, archiveDates: Record<string, string>) {
     )
   }
 
-  const title = ogTitle || h1 || fileName
-  const description = ogDesc || ''
+  const title = fmTitle || ogTitle || h1 || fileName
+  const description = fmDesc || ogDesc || ''
 
   return {
     title,
