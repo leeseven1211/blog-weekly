@@ -54,7 +54,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
-          { text: '第 006 期（2026-03-17）', link: '/issues/issue-006' },
+          { text: '小七的周刊（第 006 期）：万亿美元的赌注', link: '/issues/issue-006' },
           { text: '小七的周刊（第 005 期）：当 AI 公司开始对抗政府', link: '/issues/issue-005' },
           { text: '小七的周刊（第 004 期）：当 AI 开始说「不」', link: '/issues/issue-004' },
           { text: '小七的周刊（第 003 期）：花了几千亿，CEO 们说没啥用', link: '/issues/issue-003' },

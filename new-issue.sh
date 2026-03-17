@@ -84,89 +84,9 @@ EOF
 
 echo "✅ 已创建：$ISSUE_FILE"
 
-# 用 Python 统一更新侧边栏和归档（防重复、排序稳定）
-python3 - "$CONFIG_FILE" "$ARCHIVE_FILE" "$ISSUE_NUM" "$TODAY" << 'PYEOF'
-import re
-import sys
-from pathlib import Path
-
-config_path = Path(sys.argv[1])
-archive_path = Path(sys.argv[2])
-issue_num = sys.argv[3]
-today = sys.argv[4]
-
-# ------------------------------
-# 更新 config.ts 侧边栏（按期号倒序、去重）
-# ------------------------------
-config = config_path.read_text(encoding='utf-8')
-
-issues_dir = config_path.parent.parent / 'issues'
-issue_files = sorted(issues_dir.glob('issue-*.md'))
-
-entries = []
-for fp in issue_files:
-    mnum = re.search(r'issue-(\d{3})\.md$', fp.name)
-    if not mnum:
-        continue
-    num = mnum.group(1)
-
-    body = fp.read_text(encoding='utf-8', errors='ignore')
-
-    # 统一用 H1 作为侧边栏标题（没有 H1 再回退到 title/frontmatter）
-    mh1 = re.search(r'^#\s+(.+)$', body, re.MULTILINE)
-    mtitle = re.search(r'^title:\s*["\']?(.+?)["\']?\s*$', body, re.MULTILINE)
-
-    raw_title = (mh1.group(1).strip() if mh1 else (mtitle.group(1).strip() if mtitle else f'第 {num} 期'))
-    text = raw_title.replace("'", "\\'")
-
-    entries.append((num, text))
-
-# 按期号倒序
-sorted_entries = sorted(entries, key=lambda x: int(x[0]), reverse=True)
-new_items_block = "\n".join(
-    [f"          {{ text: '{text}', link: '/issues/issue-{num}' }}," for num, text in sorted_entries]
-)
-
-config_new, changed = re.subn(
-    r"(items:\s*\[\n)([\s\S]*?)(\n\s*\],)",
-    lambda m: m.group(1) + new_items_block + m.group(3),
-    config,
-    count=1,
-)
-
-if changed == 0:
-    raise SystemExit("❌ 未找到 sidebar items 区块，无法更新 config.ts")
-
-config_path.write_text(config_new, encoding='utf-8')
-
-# ------------------------------
-# 更新 archive.md（按期号倒序、去重）
-# ------------------------------
-archive = archive_path.read_text(encoding='utf-8') if archive_path.exists() else "# 归档\n\n"
-
-line_pattern = re.compile(
-    r"- \[第\s*(\d{3})\s*期(?:[^\]]*)\]\(/issues/issue-(\d{3})\)（(\d{4}-\d{2}-\d{2})）"
-)
-
-records = {}
-for m in line_pattern.finditer(archive):
-    n1, n2, date = m.groups()
-    if n1 != n2:
-        continue
-    records[n1] = date
-
-records[issue_num] = today
-
-sorted_records = sorted(records.items(), key=lambda x: int(x[0]), reverse=True)
-
-header = "# 归档\n\n这里是「小七的周刊」所有期数的归档。\n\n## 2026 年\n\n"
-lines = [f"- [第 {num} 期](/issues/issue-{num})（{date}）" for num, date in sorted_records]
-archive_new = header + "\n".join(lines) + "\n"
-archive_path.write_text(archive_new, encoding='utf-8')
-
-print(f"✅ 已更新侧边栏：第 {issue_num} 期（自动去重）")
-print(f"✅ 已更新归档页：第 {issue_num} 期（按期号倒序）")
-PYEOF
+# 用统一脚本更新侧边栏和归档（防重复、按 H1 自动取标题）
+python3 "$SCRIPT_DIR/scripts/sync-issues-meta.py" --issue "$ISSUE_NUM" --date "$TODAY"
+echo "✅ 已更新侧边栏和归档"
 
 echo ""
 echo "🎉 第 $ISSUE_NUM 期创建完毕！"
