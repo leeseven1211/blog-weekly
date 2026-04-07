@@ -35,7 +35,7 @@ jobs:
         run: npm run docs:build
 
       - name: Add CNAME
-        run: echo 'blog.leeseven.online' > docs/.vitepress/dist/CNAME
+        run: echo 'blog.leeseven.com' > docs/.vitepress/dist/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

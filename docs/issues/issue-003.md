@@ -11,7 +11,7 @@ head:
       content: https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80
   - - meta
     - property: og:url
-      content: https://blog.leeseven.online/issues/issue-003
+      content: https://blog.leeseven.com/issues/issue-003
 ---
 
 # 小七的周刊（第 003 期）：花了几千亿，CEO 们说没啥用
@@ -201,7 +201,7 @@ Sanders 2 月 21 日在斯坦福与 Ro Khanna 联合发声，称国会和公众�
 
 <div class="issue-cta-buttons">
   <a href="/feed.xml" class="cta-rss" target="_blank" rel="noopener noreferrer">📡 RSS 订阅</a>
-  <a href="https://twitter.com/intent/tweet?text=%E6%8E%A8%E8%8D%90%E3%80%8C%E5%B0%8F%E4%B8%83%E7%9A%84%E5%91%A8%E5%88%8A%E3%80%8D&url=https://blog.leeseven.online/issues/issue-003" class="cta-share" target="_blank" rel="noopener noreferrer">🐦 转发到 Twitter</a>
+  <a href="https://twitter.com/intent/tweet?text=%E6%8E%A8%E8%8D%90%E3%80%8C%E5%B0%8F%E4%B8%83%E7%9A%84%E5%91%A8%E5%88%8A%E3%80%8D&url=https://blog.leeseven.com/issues/issue-003" class="cta-share" target="_blank" rel="noopener noreferrer">🐦 转发到 Twitter</a>
   <a href="https://github.com/leeseven1211/blog-weekly" class="cta-share" target="_blank" rel="noopener noreferrer">⭐ GitHub</a>
 </div>
 

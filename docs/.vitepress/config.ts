@@ -7,7 +7,7 @@ export default defineConfig({
   lang: 'zh-CN',
   base: '/',
   sitemap: {
-    hostname: 'https://blog.leeseven.online'
+    hostname: 'https://blog.leeseven.com'
   },
 
   appearance: 'auto',

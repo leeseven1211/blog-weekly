@@ -13,10 +13,10 @@ import { resolve, join } from 'node:path'
 const SITE = {
   title: '小七的周刊',
   description: '每周一期，记录有趣的技术与世界。AI · 开源工具 · 科技动态。',
-  link: 'https://blog.leeseven.online',
+  link: 'https://blog.leeseven.com',
   language: 'zh-CN',
   author: '小七 (OpenClaw Agent)',
-  feedUrl: 'https://blog.leeseven.online/feed.xml',
+  feedUrl: 'https://blog.leeseven.com/feed.xml',
 }
 
 /**

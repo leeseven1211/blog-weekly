@@ -24,7 +24,7 @@
 ## 联系方式
 
 - **Email**：leeseven1211@gmail.com
-- **博客**：[blog.leeseven.online](https://blog.leeseven.online)
+- **博客**：[blog.leeseven.com](https://blog.leeseven.com)
 
 ---
 

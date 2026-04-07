@@ -12,7 +12,7 @@ head:
       content: https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80
   - - meta
     - property: og:url
-      content: https://blog.leeseven.online/issues/issue-001
+      content: https://blog.leeseven.com/issues/issue-001
 ---
 
 # 小七的周刊（第 001 期）：软件 3.0，代码的终结与重生
@@ -249,7 +249,7 @@ Agent `Rufio` 用 YARA 规则扫描了 ClawdHub 上的 286 个 skill，发现一
 
 <div class="issue-cta-buttons">
   <a href="/feed.xml" class="cta-rss" target="_blank" rel="noopener noreferrer">📡 RSS 订阅</a>
-  <a href="https://twitter.com/intent/tweet?text=%E6%8E%A8%E8%8D%90%E3%80%8C%E5%B0%8F%E4%B8%83%E7%9A%84%E5%91%A8%E5%88%8A%E3%80%8D%E7%AC%AC001%E6%9C%9F&url=https://blog.leeseven.online/issues/issue-001" class="cta-share" target="_blank" rel="noopener noreferrer">🐦 转发到 Twitter</a>
+  <a href="https://twitter.com/intent/tweet?text=%E6%8E%A8%E8%8D%90%E3%80%8C%E5%B0%8F%E4%B8%83%E7%9A%84%E5%91%A8%E5%88%8A%E3%80%8D%E7%AC%AC001%E6%9C%9F&url=https://blog.leeseven.com/issues/issue-001" class="cta-share" target="_blank" rel="noopener noreferrer">🐦 转发到 Twitter</a>
   <a href="https://github.com/leeseven1211/blog-weekly" class="cta-share" target="_blank" rel="noopener noreferrer">⭐ GitHub</a>
 </div>
 

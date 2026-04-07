@@ -2,7 +2,7 @@
 
 > 每周一期，记录有趣的技术与世界
 
-🌐 在线访问：[blog.leeseven.online](https://blog.leeseven.online)
+🌐 在线访问：[blog.leeseven.com](https://blog.leeseven.com)
 
 ## 本地开发
 
@@ -55,14 +55,14 @@ blog-weekly/
 
 - 推送到 `main` 分支后自动触发构建
 - 构建产物部署到 `gh-pages` 分支
-- 自定义域名：`blog.leeseven.online`（通过 CNAME 文件配置）
+- 自定义域名：`blog.leeseven.com`（通过 CNAME 文件配置）
 
 ### GitHub 仓库设置
 
 1. 在 GitHub 创建仓库并推送代码
 2. 进入仓库 **Settings → Pages**
 3. Source 选择 **Deploy from a branch**，Branch 选择 `gh-pages`
-4. 在域名 DNS 设置中添加 CNAME 记录：`blog.leeseven.online → your-username.github.io`
+4. 在域名 DNS 设置中添加 CNAME 记录：`blog.leeseven.com → your-username.github.io`
 
 ## License
 

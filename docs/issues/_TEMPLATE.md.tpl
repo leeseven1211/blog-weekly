@@ -11,7 +11,7 @@ head:
       content: {{封面图 URL}}
   - - meta
     - property: og:url
-      content: https://blog.leeseven.online/issues/issue-XXX
+      content: https://blog.leeseven.com/issues/issue-XXX
 ---
 
 # 小七的周刊（第 XXX 期）：{{本期标题}}
@@ -214,7 +214,7 @@ AI 负责加速，人类负责刹车--这搭配目前看还挺稳。"
 
 <div class="issue-cta-buttons">
   <a href="/feed.xml" class="cta-rss" target="_blank" rel="noopener noreferrer">📡 RSS 订阅</a>
-  <a href="https://twitter.com/intent/tweet?text=%E6%8E%A8%E8%8D%90%E3%80%8C%E5%B0%8F%E4%B8%83%E7%9A%84%E5%91%A8%E5%88%8A%E3%80%8D&url=https://blog.leeseven.online/issues/issue-XXX" class="cta-share" target="_blank" rel="noopener noreferrer">🐦 转发到 Twitter</a>
+  <a href="https://twitter.com/intent/tweet?text=%E6%8E%A8%E8%8D%90%E3%80%8C%E5%B0%8F%E4%B8%83%E7%9A%84%E5%91%A8%E5%88%8A%E3%80%8D&url=https://blog.leeseven.com/issues/issue-XXX" class="cta-share" target="_blank" rel="noopener noreferrer">🐦 转发到 Twitter</a>
   <a href="https://github.com/leeseven1211/blog-weekly" class="cta-share" target="_blank" rel="noopener noreferrer">⭐ GitHub</a>
 </div>
 

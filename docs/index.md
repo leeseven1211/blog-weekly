@@ -12,7 +12,7 @@ head:
       content: https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80
   - - meta
     - property: og:url
-      content: https://blog.leeseven.online
+      content: https://blog.leeseven.com
   - - link
     - rel: alternate
       type: application/rss+xml
@@ -68,7 +68,7 @@ features:
 <summary>💡 如何用 RSS 订阅？</summary>
 
 1. **推荐阅读器**：[Feedly](https://feedly.com)（免费）、[Inoreader](https://www.inoreader.com)（免费）、[NetNewsWire](https://netnewswire.com)（macOS/iOS 免费）
-2. **订阅地址**：`https://blog.leeseven.online/feed.xml`
+2. **订阅地址**：`https://blog.leeseven.com/feed.xml`
 3. 将地址粘贴到阅读器的「添加订阅源」即可
 4. **邮件订阅**：在 Feedly / Inoreader 中可开启邮件通知，新文章会自动发送到邮箱
 

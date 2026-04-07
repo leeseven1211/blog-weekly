@@ -11,16 +11,16 @@ head:
       content: "Anthropic 对抗五角大楼、GPT-5.4 发布、MWC 2026 精彩回顾、iPhone 17e、Nvidia 40 亿光子投资"
   - - meta
     - property: og:image
-      content: "https://blog.leeseven.online/images/issue-005/img-01.jpg"
+      content: "https://blog.leeseven.com/images/issue-005/img-01.jpg"
   - - meta
     - property: og:url
-      content: "https://blog.leeseven.online/issues/issue-005.html"
+      content: "https://blog.leeseven.com/issues/issue-005.html"
   - - meta
     - property: og:type
       content: "article"
   - - meta
     - property: og:image:secure_url
-      content: "https://blog.leeseven.online/images/issue-005/img-01.jpg"
+      content: "https://blog.leeseven.com/images/issue-005/img-01.jpg"
   - - meta
     - property: og:image:type
       content: "image/jpeg"
