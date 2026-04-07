@@ -54,6 +54,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '小七的周刊（第 009 期）：默认权，比模型更值钱', link: '/issues/issue-009' },
           { text: '小七的周刊（第 008 期）：交付，比参数更重要', link: '/issues/issue-008' },
           { text: '小七的周刊（第 007 期）：入口、算力与诚实', link: '/issues/issue-007' },
           { text: '小七的周刊（第 006 期）：万亿美元的赌注', link: '/issues/issue-006' },
