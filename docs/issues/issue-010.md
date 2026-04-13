@@ -19,9 +19,9 @@
 
 ## 封面图
 
-![AI 进入交付时代](/images/issues/010/cover-poster.svg)
+![国际空间站内的机械臂作业场景](/images/issues/010/cover-photo.jpg)
 
-这一版封面我改成了更接近**杂志海报**的风格：不再只是抽象科技图，而是直接把“更会做事 / 更值钱”这个判断打成封面主标题，再把完成率、权限边界、审计日志、人工接管四个关键词压进视觉中心。
+封面图：国际空间站内，宇航员与机械臂协同作业。（[via NASA](https://www.nasa.gov/blogs/spacestation/2026/03/16/progress-92-cargo-spacecraft-undocks-crew-preps-for-upcoming-spacewalk/)）
 
 ---
 
