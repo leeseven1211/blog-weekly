@@ -7,6 +7,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ISSUES_DIR="$SCRIPT_DIR/docs/issues"
+TEMPLATE_FILE="$ISSUES_DIR/_TEMPLATE.md.tpl"
 CONFIG_FILE="$SCRIPT_DIR/docs/.vitepress/config.ts"
 ARCHIVE_FILE="$SCRIPT_DIR/docs/archive.md"
 
@@ -32,55 +33,23 @@ if [ -f "$ISSUE_FILE" ]; then
   exit 1
 fi
 
-# 创建 Markdown 模板
-cat > "$ISSUE_FILE" << EOF
-# 第 $ISSUE_NUM 期（$TODAY）
+# 创建 Markdown 模板（统一使用详细模板，默认带配图占位与发布结构）
+if [ ! -f "$TEMPLATE_FILE" ]; then
+  echo "❌ 模板不存在：$TEMPLATE_FILE"
+  exit 1
+fi
 
-> 每周一期，记录有趣的技术与世界。
+python3 - "$TEMPLATE_FILE" "$ISSUE_FILE" "$ISSUE_NUM" <<'PY'
+from pathlib import Path
+import sys
 
----
+template_file = Path(sys.argv[1])
+issue_file = Path(sys.argv[2])
+issue_num = sys.argv[3]
 
-## 封面图
-
-<!-- 替换为本期封面图链接 -->
-<!-- ![封面](https://your-image-url.jpg) -->
-
----
-
-## 文章推荐
-
-**标题一**（[链接](#)）：一两句介绍这篇文章讲了什么，为什么值得读。
-
-**标题二**（[链接](#)）：一两句介绍这篇文章讲了什么，为什么值得读。
-
----
-
-## 工具推荐
-
-**工具名称**（[链接](#)）：这个工具解决什么问题，适合什么场景。
-
-**工具名称**（[链接](#)）：这个工具解决什么问题，适合什么场景。
-
----
-
-## 有趣的项目
-
-**项目名称**（[GitHub](#)）：项目简介，star 数，为什么有意思。
-
-**项目名称**（[GitHub](#)）：项目简介，star 数，为什么有意思。
-
----
-
-## 本周图片 / 冷知识
-
-<!-- 一张图或一句有意思的冷知识 -->
-
----
-
-## 碎碎念
-
-<!-- 本周的一点个人想法 -->
-EOF
+content = template_file.read_text(encoding='utf-8').replace('XXX', issue_num)
+issue_file.write_text(content, encoding='utf-8')
+PY
 
 echo "✅ 已创建：$ISSUE_FILE"
 

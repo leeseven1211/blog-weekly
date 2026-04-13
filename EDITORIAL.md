@@ -236,6 +236,8 @@
 
 - [ ] Frontmatter 与 OG 信息完整
 - [ ] 图片链接可访问，版权来源明确
+- [ ] 已运行 `npm run docs:check-latest`，最新一期缺图检查通过
+- [ ] 本期配图已按统一路径整理：优先放 `docs/public/images/issues/期号/`
 - [ ] 本地预览通过（无明显渲染错误）
 - [ ] 本地预览中已逐栏滚读一遍，确认无缺图 / 破图 / 空块 / 错位
 - [ ] 外链图片已实际核验；对不稳定第三方图（如 GitHub opengraph、随机外链图床）优先本地化到 `docs/public/`

@@ -22,10 +22,10 @@ npm run docs:preview
 
 ## 发布新一期
 
-1. 在 `docs/issues/` 目录下新建 `issue-XXX.md`
-2. 在 `docs/.vitepress/config.ts` 的 `sidebar` 中添加新一期的链接
-3. 更新 `docs/index.md` 的最新一期表格
-4. 更新 `docs/archive.md` 的归档列表
+1. 运行 `./new-issue.sh` 创建新一期（会自动套用详细模板并同步侧边栏/归档）
+2. 编辑最新一期内容，确保 **封面图 / 科技与 AI 动态 / 开源工具 / 本周一图** 都有配图
+3. 运行 `npm run docs:check-latest` 做缺图检查
+4. 运行 `npm run docs:build` 完成本地构建验证
 5. 提交推送到 `main` 分支，GitHub Actions 将自动部署
 
 ## 项目结构

@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "docs:sync": "python3 scripts/sync-issues-meta.py",
+    "docs:check-latest": "python3 scripts/check-issue-images.py --latest",
     "docs:dev": "npm run docs:sync && vitepress dev docs",
-    "docs:build": "npm run docs:sync && vitepress build docs",
+    "docs:build": "npm run docs:sync && npm run docs:check-latest && vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
