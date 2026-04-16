@@ -45,6 +45,7 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
+      { text: '专题', link: '/articles/' },
       { text: '归档', link: '/archive' },
       { text: '关于', link: '/about' },
       { text: 'RSS', link: '/feed.xml' },
