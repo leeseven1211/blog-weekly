@@ -20,8 +20,26 @@ head:
     - property: og:image
       content: https://blog.leeseven.com/images/articles/claude-opus-4-7/cover.jpg
   - - meta
+    - property: og:image:secure_url
+      content: https://blog.leeseven.com/images/articles/claude-opus-4-7/cover.jpg
+  - - meta
+    - property: og:image:type
+      content: image/jpeg
+  - - meta
+    - property: og:image:width
+      content: "1200"
+  - - meta
+    - property: og:image:height
+      content: "675"
+  - - meta
+    - property: og:image:alt
+      content: Claude Opus 4.7 文章分享封面
+  - - meta
     - property: og:url
-      content: https://blog.leeseven.com/articles/claude-opus-4-7
+      content: https://blog.leeseven.com/articles/claude-opus-4-7.html
+  - - meta
+    - property: article:published_time
+      content: 2026-04-16T00:00:00+08:00
   - - meta
     - name: twitter:card
       content: summary_large_image
@@ -34,6 +52,9 @@ head:
   - - meta
     - name: twitter:image
       content: https://blog.leeseven.com/images/articles/claude-opus-4-7/cover.jpg
+  - - meta
+    - name: twitter:image:alt
+      content: Claude Opus 4.7 文章分享封面
 ---
 
 # Anthropic 发布 Claude Opus 4.7：更强的不只是代码，更是交付感
