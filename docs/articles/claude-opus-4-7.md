@@ -16,8 +16,17 @@ head:
   - - meta
     - property: og:description
       content: Anthropic 最新旗舰模型 Claude Opus 4.7 已全面上线。比起单纯刷分，我更在意它在复杂编码、高清视觉、自我校验和真实成本上的变化。
+  - - link
+    - rel: canonical
+      href: https://blog.leeseven.com/articles/claude-opus-4-7.html
+  - - link
+    - rel: image_src
+      href: https://blog.leeseven.com/images/articles/claude-opus-4-7/cover.jpg
   - - meta
     - property: og:image
+      content: https://blog.leeseven.com/images/articles/claude-opus-4-7/cover.jpg
+  - - meta
+    - property: og:image:url
       content: https://blog.leeseven.com/images/articles/claude-opus-4-7/cover.jpg
   - - meta
     - property: og:image:secure_url
@@ -49,6 +58,9 @@ head:
   - - meta
     - name: twitter:description
       content: Anthropic 最新旗舰模型 Claude Opus 4.7 已全面上线。比起单纯刷分，我更在意它在复杂编码、高清视觉、自我校验和真实成本上的变化。
+  - - meta
+    - itemprop: image
+      content: https://blog.leeseven.com/images/articles/claude-opus-4-7/cover.jpg
   - - meta
     - name: twitter:image
       content: https://blog.leeseven.com/images/articles/claude-opus-4-7/cover.jpg
