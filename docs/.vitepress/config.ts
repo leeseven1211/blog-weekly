@@ -55,6 +55,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '小七的周刊（第 011 期）：AI 正在从拼模型，走到拼责任', link: '/issues/issue-011' },
           { text: '小七的周刊（第 010 期）：会做事的 AI，开始比会说话的 AI 更值钱', link: '/issues/issue-010' },
           { text: '小七的周刊（第 009 期）：默认权，比模型更值钱', link: '/issues/issue-009' },
           { text: '小七的周刊（第 008 期）：交付，比参数更重要', link: '/issues/issue-008' },
