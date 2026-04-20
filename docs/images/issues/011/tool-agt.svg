@@ -1,1 +1,47 @@
-<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675' viewBox='0 0 1200 675'><rect width='1200' height='675' fill='#0a1220'/><rect x='90' y='85' width='1020' height='505' rx='28' fill='#101d33' stroke='#6cb6ff' stroke-width='4'/><text x='120' y='165' fill='#dceeff' font-size='54' font-family='Arial, PingFang SC, sans-serif'>AGT</text><text x='120' y='220' fill='#8fc1ff' font-size='28' font-family='Arial, PingFang SC, sans-serif'>运行时治理，不是提示词护栏</text><rect x='120' y='290' width='960' height='70' rx='16' fill='#152847'/><rect x='120' y='390' width='420' height='120' rx='18' fill='#1a3357'/><rect x='580' y='390' width='500' height='120' rx='18' fill='#21406d'/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f3f5f7"/>
+  <rect x="48" y="46" width="1104" height="583" rx="28" fill="#fcfdff" stroke="#d7dde4" stroke-width="2"/>
+
+  <rect x="84" y="84" width="132" height="38" rx="19" fill="#e7eef8"/>
+  <text x="150" y="109" text-anchor="middle" fill="#355b8c" font-size="19" font-family="Arial, PingFang SC, sans-serif">开源工具</text>
+  <text x="1036" y="109" text-anchor="end" fill="#727a85" font-size="20" font-family="Arial, PingFang SC, sans-serif">像产品，不像海报</text>
+
+  <rect x="84" y="146" width="700" height="410" rx="22" fill="#ffffff" stroke="#d8e0ea" stroke-width="2"/>
+  <rect x="84" y="146" width="700" height="62" rx="22" fill="#f7f9fc"/>
+  <circle cx="116" cy="177" r="7" fill="#9fb6d3"/>
+  <circle cx="140" cy="177" r="7" fill="#bfd0e5"/>
+  <circle cx="164" cy="177" r="7" fill="#d9e4f2"/>
+  <text x="198" y="184" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">microsoft / agent-governance-toolkit</text>
+
+  <rect x="110" y="236" width="184" height="286" rx="18" fill="#f7f9fc" stroke="#dbe3ec" stroke-width="2"/>
+  <text x="136" y="278" fill="#5f6f81" font-size="22" font-family="Arial, PingFang SC, sans-serif">repo</text>
+  <text x="136" y="326" fill="#1f2328" font-size="24" font-family="Arial, PingFang SC, sans-serif">examples/</text>
+  <text x="136" y="366" fill="#1f2328" font-size="24" font-family="Arial, PingFang SC, sans-serif">policies/</text>
+  <text x="136" y="406" fill="#1f2328" font-size="24" font-family="Arial, PingFang SC, sans-serif">audit/</text>
+  <text x="136" y="446" fill="#1f2328" font-size="24" font-family="Arial, PingFang SC, sans-serif">docs/</text>
+
+  <rect x="326" y="236" width="430" height="286" rx="18" fill="#0f1724"/>
+  <text x="354" y="286" fill="#8cd0ff" font-size="24" font-family="Courier New, monospace">policy:</text>
+  <text x="354" y="330" fill="#dce6f2" font-size="22" font-family="Courier New, monospace">  allow: repo.read</text>
+  <text x="354" y="368" fill="#dce6f2" font-size="22" font-family="Courier New, monospace">  require_approval: prod.write</text>
+  <text x="354" y="406" fill="#dce6f2" font-size="22" font-family="Courier New, monospace">  log: enabled</text>
+  <text x="354" y="462" fill="#8cd0ff" font-size="19" font-family="Courier New, monospace"># runtime &gt; prompt-only guardrail</text>
+
+  <rect x="822" y="146" width="294" height="410" rx="22" fill="#ffffff" stroke="#d8e0ea" stroke-width="2"/>
+  <text x="850" y="204" fill="#6a7480" font-size="20" font-family="Arial, PingFang SC, sans-serif">一句话定位</text>
+  <text x="850" y="244" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">给 agent 补一层</text>
+  <text x="850" y="280" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">运行时治理</text>
+
+  <rect x="850" y="308" width="236" height="82" rx="18" fill="#eef4fb"/>
+  <text x="874" y="344" fill="#355b8c" font-size="20" font-family="Arial, PingFang SC, sans-serif">适合谁</text>
+  <text x="874" y="374" fill="#1f2328" font-size="21" font-family="Arial, PingFang SC, sans-serif">已接真实系统，需要审计</text>
+
+  <rect x="850" y="412" width="236" height="122" rx="18" fill="#f6f8fb"/>
+  <text x="874" y="448" fill="#6a7480" font-size="20" font-family="Arial, PingFang SC, sans-serif">你真正记住的亮点</text>
+  <text x="874" y="482" fill="#1f2328" font-size="22" font-family="Arial, PingFang SC, sans-serif">权限边界</text>
+  <text x="874" y="510" fill="#1f2328" font-size="22" font-family="Arial, PingFang SC, sans-serif">审计记录</text>
+  <text x="874" y="538" fill="#1f2328" font-size="22" font-family="Arial, PingFang SC, sans-serif">执行隔离</text>
+
+  <rect x="84" y="574" width="350" height="30" rx="15" fill="#e7eef8"/>
+  <text x="259" y="596" text-anchor="middle" fill="#355b8c" font-size="20" font-family="Arial, PingFang SC, sans-serif">这是工具卡，不是观点海报</text>
+</svg>
