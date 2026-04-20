@@ -1,1 +1,53 @@
-<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675' viewBox='0 0 1200 675'><rect width='1200' height='675' fill='#0f1020'/><rect x='90' y='85' width='1020' height='505' rx='28' fill='#181a32' stroke='#f2cc60' stroke-width='4'/><text x='120' y='165' fill='#fff5d1' font-size='54' font-family='Arial, PingFang SC, sans-serif'>Langfuse</text><text x='120' y='225' fill='#fde68a' font-size='28' font-family='Arial, PingFang SC, sans-serif'>LLM 观测、评测、追踪一站式</text><rect x='120' y='285' width='960' height='220' rx='18' fill='#22274a'/><polyline points='180,455 300,390 430,410 580,330 760,360 920,250' fill='none' stroke='#f2cc60' stroke-width='10'/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f5f6f8"/>
+  <rect x="48" y="46" width="1104" height="583" rx="28" fill="#fcfdff" stroke="#d8dde5" stroke-width="2"/>
+
+  <rect x="84" y="84" width="132" height="38" rx="19" fill="#edf0f7"/>
+  <text x="150" y="109" text-anchor="middle" fill="#4d648b" font-size="19" font-family="Arial, PingFang SC, sans-serif">开源工具</text>
+  <text x="1036" y="109" text-anchor="end" fill="#757f8a" font-size="20" font-family="Arial, PingFang SC, sans-serif">先看 trace，再猜哪里坏了</text>
+
+  <rect x="84" y="146" width="700" height="410" rx="22" fill="#ffffff" stroke="#dbe2ea" stroke-width="2"/>
+  <rect x="84" y="146" width="700" height="62" rx="22" fill="#f7f9fc"/>
+  <circle cx="116" cy="177" r="7" fill="#9fb6d3"/>
+  <circle cx="140" cy="177" r="7" fill="#bfd0e5"/>
+  <circle cx="164" cy="177" r="7" fill="#d9e4f2"/>
+  <text x="198" y="184" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">langfuse / langfuse</text>
+
+  <rect x="110" y="236" width="146" height="286" rx="18" fill="#f7f9fc" stroke="#dbe2ea" stroke-width="2"/>
+  <text x="136" y="278" fill="#607186" font-size="21" font-family="Arial, PingFang SC, sans-serif">左侧导航</text>
+  <text x="136" y="324" fill="#1f2328" font-size="23" font-family="Arial, PingFang SC, sans-serif">traces</text>
+  <text x="136" y="360" fill="#1f2328" font-size="23" font-family="Arial, PingFang SC, sans-serif">evals</text>
+  <text x="136" y="396" fill="#1f2328" font-size="23" font-family="Arial, PingFang SC, sans-serif">prompts</text>
+  <text x="136" y="432" fill="#1f2328" font-size="23" font-family="Arial, PingFang SC, sans-serif">datasets</text>
+
+  <rect x="286" y="236" width="468" height="126" rx="18" fill="#f9fbfe" stroke="#d9e3f1" stroke-width="2"/>
+  <text x="314" y="274" fill="#607186" font-size="20" font-family="Arial, PingFang SC, sans-serif">最近一次请求链路</text>
+  <rect x="314" y="296" width="108" height="32" rx="16" fill="#e8effa"/>
+  <rect x="450" y="296" width="108" height="32" rx="16" fill="#eef4fb"/>
+  <rect x="586" y="296" width="136" height="32" rx="16" fill="#f4f7fb"/>
+  <text x="368" y="318" text-anchor="middle" fill="#355b8c" font-size="18" font-family="Arial, PingFang SC, sans-serif">prompt</text>
+  <text x="504" y="318" text-anchor="middle" fill="#355b8c" font-size="18" font-family="Arial, PingFang SC, sans-serif">retrieval</text>
+  <text x="654" y="318" text-anchor="middle" fill="#355b8c" font-size="18" font-family="Arial, PingFang SC, sans-serif">tool call</text>
+  <path d="M422 312 L446 312" stroke="#8ba7c6" stroke-width="3" stroke-linecap="round"/>
+  <path d="M558 312 L582 312" stroke="#8ba7c6" stroke-width="3" stroke-linecap="round"/>
+
+  <rect x="286" y="384" width="468" height="138" rx="18" fill="#0f1724"/>
+  <polyline points="320,482 392,442 466,454 548,410 624,426 714,356" fill="none" stroke="#f4c56b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="316" y="426" fill="#8fc1ff" font-size="21" font-family="Courier New, monospace">trace duration / error trend</text>
+  <text x="316" y="510" fill="#b9d8ff" font-size="20" font-family="Courier New, monospace">root cause usually lives in the chain</text>
+
+  <rect x="822" y="146" width="294" height="410" rx="22" fill="#ffffff" stroke="#d8e0ea" stroke-width="2"/>
+  <text x="850" y="204" fill="#6a7480" font-size="20" font-family="Arial, PingFang SC, sans-serif">一句话定位</text>
+  <text x="850" y="244" fill="#1f2328" font-size="29" font-weight="700" font-family="Arial, PingFang SC, sans-serif">把 LLM 应用的</text>
+  <text x="850" y="280" fill="#1f2328" font-size="29" font-weight="700" font-family="Arial, PingFang SC, sans-serif">观测和评测拉到台前</text>
+
+  <rect x="850" y="308" width="236" height="82" rx="18" fill="#eef4fb"/>
+  <text x="874" y="344" fill="#355b8c" font-size="20" font-family="Arial, PingFang SC, sans-serif">适合谁</text>
+  <text x="874" y="374" fill="#1f2328" font-size="21" font-family="Arial, PingFang SC, sans-serif">多模型应用，要排查链路问题</text>
+
+  <rect x="850" y="412" width="236" height="122" rx="18" fill="#f6f8fb"/>
+  <text x="874" y="448" fill="#6a7480" font-size="20" font-family="Arial, PingFang SC, sans-serif">你真正记住的亮点</text>
+  <text x="874" y="482" fill="#1f2328" font-size="22" font-family="Arial, PingFang SC, sans-serif">trace</text>
+  <text x="874" y="510" fill="#1f2328" font-size="22" font-family="Arial, PingFang SC, sans-serif">评测</text>
+  <text x="874" y="538" fill="#1f2328" font-size="22" font-family="Arial, PingFang SC, sans-serif">提示版本管理</text>
+</svg>

@@ -1,1 +1,38 @@
-<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675' viewBox='0 0 1200 675'><rect width='1200' height='675' fill='#09101a'/><rect x='110' y='90' width='980' height='500' rx='28' fill='#121b2b' stroke='#94a3b8' stroke-width='4'/><line x1='600' y1='130' x2='600' y2='560' stroke='#475569' stroke-width='4'/><line x1='150' y1='340' x2='1050' y2='340' stroke='#475569' stroke-width='4'/><text x='230' y='200' fill='#e2e8f0' font-size='38' font-family='Arial, PingFang SC, sans-serif'>会说</text><text x='760' y='200' fill='#e2e8f0' font-size='38' font-family='Arial, PingFang SC, sans-serif'>会做</text><text x='180' y='525' fill='#e2e8f0' font-size='38' font-family='Arial, PingFang SC, sans-serif'>难审计</text><text x='760' y='525' fill='#e2e8f0' font-size='38' font-family='Arial, PingFang SC, sans-serif'>可审计</text><circle cx='850' cy='250' r='52' fill='#60a5fa'/><circle cx='800' cy='440' r='52' fill='#f59e0b'/><circle cx='410' cy='250' r='52' fill='#ef4444'/><text x='678' y='620' fill='#e2e8f0' font-size='28' font-family='Arial, PingFang SC, sans-serif'>右上角，通常才是下一阶段真正能卖钱的 AI</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f5f4f1"/>
+  <rect x="48" y="46" width="1104" height="583" rx="28" fill="#fffdfa" stroke="#ddd9d1" stroke-width="2"/>
+
+  <rect x="84" y="84" width="132" height="38" rx="19" fill="#ece8de"/>
+  <text x="150" y="109" text-anchor="middle" fill="#6c6251" font-size="19" font-family="Arial, PingFang SC, sans-serif">本周一图</text>
+  <text x="1036" y="109" text-anchor="end" fill="#78726a" font-size="20" font-family="Arial, PingFang SC, sans-serif">用一个框架，把噪音先滤掉</text>
+
+  <text x="84" y="184" fill="#1f2328" font-size="50" font-weight="700" font-family="Arial, PingFang SC, sans-serif">判断一个 AI 系统值不值得接进工作流</text>
+  <text x="84" y="228" fill="#667085" font-size="26" font-family="Arial, PingFang SC, sans-serif">先别问它炫不炫，先看它处在这个象限图的哪一格。</text>
+
+  <rect x="150" y="274" width="900" height="250" rx="22" fill="#faf8f4" stroke="#e5ddd1" stroke-width="2"/>
+  <line x1="600" y1="292" x2="600" y2="506" stroke="#d5cdc2" stroke-width="3"/>
+  <line x1="168" y1="399" x2="1032" y2="399" stroke="#d5cdc2" stroke-width="3"/>
+
+  <text x="830" y="260" fill="#6c6251" font-size="22" font-family="Arial, PingFang SC, sans-serif">更会做事 →</text>
+  <text x="148" y="300" fill="#6c6251" font-size="22" font-family="Arial, PingFang SC, sans-serif">更可审计 ↑</text>
+
+  <rect x="192" y="306" width="340" height="72" rx="18" fill="#f8eee8"/>
+  <rect x="668" y="306" width="340" height="72" rx="18" fill="#eef6ee" stroke="#c9dfc9" stroke-width="2"/>
+  <rect x="192" y="420" width="340" height="72" rx="18" fill="#f7f3ee"/>
+  <rect x="668" y="420" width="340" height="72" rx="18" fill="#fbefe7"/>
+
+  <text x="222" y="336" fill="#8b6456" font-size="20" font-family="Arial, PingFang SC, sans-serif">左上</text>
+  <text x="222" y="368" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">会说，会演示</text>
+
+  <text x="698" y="336" fill="#4f7a54" font-size="20" font-family="Arial, PingFang SC, sans-serif">右上</text>
+  <text x="698" y="368" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">会做，也能审计</text>
+
+  <text x="222" y="450" fill="#7b756b" font-size="20" font-family="Arial, PingFang SC, sans-serif">左下</text>
+  <text x="222" y="482" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">辅助工具</text>
+
+  <text x="698" y="450" fill="#9a6a4c" font-size="20" font-family="Arial, PingFang SC, sans-serif">右下</text>
+  <text x="698" y="482" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">高风险自动化</text>
+
+  <rect x="84" y="562" width="430" height="30" rx="15" fill="#ece8de"/>
+  <text x="299" y="583" text-anchor="middle" fill="#6c6251" font-size="20" font-family="Arial, PingFang SC, sans-serif">一句话结论：下一阶段真正值钱的，通常在右上角</text>
+</svg>

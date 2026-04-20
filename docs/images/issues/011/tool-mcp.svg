@@ -1,1 +1,58 @@
-<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675' viewBox='0 0 1200 675'><rect width='1200' height='675' fill='#0a1713'/><rect x='90' y='85' width='1020' height='505' rx='28' fill='#102720' stroke='#34d399' stroke-width='4'/><text x='120' y='165' fill='#d8fff1' font-size='54' font-family='Arial, PingFang SC, sans-serif'>Model Context Protocol</text><text x='120' y='225' fill='#86efac' font-size='28' font-family='Arial, PingFang SC, sans-serif'>把工具接入从定制开发变成标准接口</text><circle cx='280' cy='360' r='78' fill='#14532d'/><circle cx='600' cy='360' r='78' fill='#166534'/><circle cx='920' cy='360' r='78' fill='#15803d'/><line x1='358' y1='360' x2='522' y2='360' stroke='#34d399' stroke-width='10'/><line x1='678' y1='360' x2='842' y2='360' stroke='#34d399' stroke-width='10'/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f4f6f4"/>
+  <rect x="48" y="46" width="1104" height="583" rx="28" fill="#fbfefd" stroke="#d5ddd8" stroke-width="2"/>
+
+  <rect x="84" y="84" width="132" height="38" rx="19" fill="#e6efe8"/>
+  <text x="150" y="109" text-anchor="middle" fill="#3e6d56" font-size="19" font-family="Arial, PingFang SC, sans-serif">开源工具</text>
+  <text x="1036" y="109" text-anchor="end" fill="#74807a" font-size="20" font-family="Arial, PingFang SC, sans-serif">标准接口，比一次性接线更值钱</text>
+
+  <rect x="84" y="146" width="700" height="410" rx="22" fill="#ffffff" stroke="#d9e3dc" stroke-width="2"/>
+  <rect x="84" y="146" width="700" height="62" rx="22" fill="#f7fbf8"/>
+  <circle cx="116" cy="177" r="7" fill="#9dc7ae"/>
+  <circle cx="140" cy="177" r="7" fill="#bfddc7"/>
+  <circle cx="164" cy="177" r="7" fill="#d8ebdd"/>
+  <text x="198" y="184" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">modelcontextprotocol / specification</text>
+
+  <text x="116" y="260" fill="#60766a" font-size="20" font-family="Arial, PingFang SC, sans-serif">一张图看懂为什么 MCP 会形成后劲</text>
+  <rect x="116" y="296" width="160" height="170" rx="18" fill="#eef7f0" stroke="#cfe2d4" stroke-width="2"/>
+  <rect x="354" y="296" width="180" height="170" rx="18" fill="#f4fbf6" stroke="#cde1d4" stroke-width="2"/>
+  <rect x="612" y="256" width="120" height="250" rx="20" fill="#0f1724"/>
+
+  <text x="146" y="336" fill="#3f6d57" font-size="20" font-family="Arial, PingFang SC, sans-serif">不同模型</text>
+  <text x="146" y="380" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">Claude</text>
+  <text x="146" y="414" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">GPT</text>
+  <text x="146" y="448" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">Gemini</text>
+
+  <text x="382" y="336" fill="#4a7a62" font-size="20" font-family="Arial, PingFang SC, sans-serif">统一协议层</text>
+  <text x="382" y="380" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">MCP server</text>
+  <text x="382" y="414" fill="#5d6c66" font-size="22" font-family="Arial, PingFang SC, sans-serif">tool schema</text>
+  <text x="382" y="446" fill="#5d6c66" font-size="22" font-family="Arial, PingFang SC, sans-serif">auth / transport</text>
+
+  <text x="640" y="314" fill="#8cd0ff" font-size="22" font-family="Courier New, monospace">tool call</text>
+  <text x="640" y="362" fill="#dce6f2" font-size="21" font-family="Courier New, monospace">db</text>
+  <text x="640" y="396" fill="#dce6f2" font-size="21" font-family="Courier New, monospace">search</text>
+  <text x="640" y="430" fill="#dce6f2" font-size="21" font-family="Courier New, monospace">files</text>
+  <text x="640" y="464" fill="#dce6f2" font-size="21" font-family="Courier New, monospace">browser</text>
+
+  <path d="M276 380 L330 380" stroke="#83b18f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M330 380 L318 372" stroke="#83b18f" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M330 380 L318 388" stroke="#83b18f" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M534 380 L588 380" stroke="#83b18f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M588 380 L576 372" stroke="#83b18f" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M588 380 L576 388" stroke="#83b18f" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <rect x="822" y="146" width="294" height="410" rx="22" fill="#ffffff" stroke="#d8e0ea" stroke-width="2"/>
+  <text x="850" y="204" fill="#6a7480" font-size="20" font-family="Arial, PingFang SC, sans-serif">一句话定位</text>
+  <text x="850" y="244" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">把模型接工具的</text>
+  <text x="850" y="280" fill="#1f2328" font-size="28" font-weight="700" font-family="Arial, PingFang SC, sans-serif">方式做成标准接口</text>
+
+  <rect x="850" y="308" width="236" height="82" rx="18" fill="#eef7f0"/>
+  <text x="874" y="344" fill="#3e6d56" font-size="20" font-family="Arial, PingFang SC, sans-serif">适合谁</text>
+  <text x="874" y="374" fill="#1f2328" font-size="21" font-family="Arial, PingFang SC, sans-serif">多模型、多工具、要复用的团队</text>
+
+  <rect x="850" y="412" width="236" height="122" rx="18" fill="#f7faf8"/>
+  <text x="874" y="448" fill="#6a7480" font-size="20" font-family="Arial, PingFang SC, sans-serif">你真正记住的亮点</text>
+  <text x="874" y="482" fill="#1f2328" font-size="22" font-family="Arial, PingFang SC, sans-serif">复用</text>
+  <text x="874" y="510" fill="#1f2328" font-size="22" font-family="Arial, PingFang SC, sans-serif">可移植</text>
+  <text x="874" y="538" fill="#1f2328" font-size="22" font-family="Arial, PingFang SC, sans-serif">更容易治理</text>
+</svg>

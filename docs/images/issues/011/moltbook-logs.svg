@@ -1,1 +1,27 @@
-<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675' viewBox='0 0 1200 675'><rect width='1200' height='675' fill='#111827'/><rect x='100' y='90' width='1000' height='500' rx='28' fill='#1f2937' stroke='#60a5fa' stroke-width='4'/><text x='130' y='160' fill='#e5f0ff' font-size='44' font-family='Arial, PingFang SC, sans-serif'>The decision you never logged</text><rect x='130' y='220' width='940' height='70' rx='16' fill='#111827'/><rect x='130' y='320' width='940' height='70' rx='16' fill='#111827'/><rect x='130' y='420' width='700' height='70' rx='16' fill='#111827'/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f4f2ee"/>
+  <rect x="48" y="46" width="1104" height="583" rx="28" fill="#fffdfa" stroke="#ddd6cc" stroke-width="2"/>
+
+  <rect x="84" y="84" width="154" height="38" rx="19" fill="#ece4d8"/>
+  <text x="161" y="109" text-anchor="middle" fill="#7d6041" font-size="19" font-family="Arial, PingFang SC, sans-serif">Moltbook 热点</text>
+  <text x="1036" y="109" text-anchor="end" fill="#79756f" font-size="20" font-family="Arial, PingFang SC, sans-serif">像社区帖子，不像新闻图</text>
+
+  <rect x="84" y="152" width="1032" height="370" rx="24" fill="#fffdfa" stroke="#e5ddd2" stroke-width="2"/>
+  <circle cx="132" cy="202" r="24" fill="#d7c3ae"/>
+  <text x="172" y="210" fill="#1f2328" font-size="23" font-weight="700" font-family="Arial, PingFang SC, sans-serif">ops-lurker</text>
+  <text x="310" y="210" fill="#8a8278" font-size="19" font-family="Arial, PingFang SC, sans-serif">posted in automation</text>
+
+  <text x="112" y="282" fill="#1f2328" font-size="46" font-weight="700" font-family="Arial, PingFang SC, sans-serif">The decision you never logged</text>
+
+  <rect x="112" y="324" width="976" height="102" rx="18" fill="#faf6f1" stroke="#eadfce" stroke-width="2"/>
+  <text x="144" y="374" fill="#5d6470" font-size="29" font-family="Arial, PingFang SC, sans-serif">“最贵的不是 agent 犯错，而是它做了决定，</text>
+  <text x="144" y="412" fill="#5d6470" font-size="29" font-family="Arial, PingFang SC, sans-serif">你却没有任何证据能复原当时为什么这么做。”</text>
+
+  <rect x="112" y="454" width="164" height="36" rx="18" fill="#efe4d8"/>
+  <rect x="290" y="454" width="164" height="36" rx="18" fill="#efe4d8"/>
+  <text x="194" y="478" text-anchor="middle" fill="#7d6041" font-size="20" font-family="Arial, PingFang SC, sans-serif">👍 1012</text>
+  <text x="372" y="478" text-anchor="middle" fill="#7d6041" font-size="20" font-family="Arial, PingFang SC, sans-serif">💬 1684</text>
+
+  <rect x="84" y="552" width="470" height="32" rx="16" fill="#ece4d8"/>
+  <text x="319" y="574" text-anchor="middle" fill="#7d6041" font-size="20" font-family="Arial, PingFang SC, sans-serif">一句话记忆点：没有日志，复盘就会变成猜故事</text>
+</svg>

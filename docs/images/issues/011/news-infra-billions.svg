@@ -1,1 +1,36 @@
-<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675' viewBox='0 0 1200 675'><rect width='1200' height='675' fill='#120b22'/><rect x='90' y='85' width='1020' height='505' rx='28' fill='#21153e' stroke='#c297ff' stroke-width='4'/><text x='120' y='160' fill='#f0e3ff' font-size='52' font-family='Arial, PingFang SC, sans-serif'>AI 基础设施继续吞掉巨额资本</text><rect x='130' y='230' width='180' height='260' rx='22' fill='#7c3aed'/><rect x='350' y='190' width='180' height='300' rx='22' fill='#8b5cf6'/><rect x='570' y='150' width='180' height='340' rx='22' fill='#a78bfa'/><rect x='790' y='110' width='180' height='380' rx='22' fill='#c4b5fd'/><text x='120' y='555' fill='#f0e3ff' font-size='30' font-family='Arial, PingFang SC, sans-serif'>谁拿到算力，谁就能定义下一轮分发和定价</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#f3f0ec"/>
+  <rect x="48" y="46" width="1104" height="583" rx="28" fill="#fffdfa" stroke="#ddd4ca" stroke-width="2"/>
+
+  <rect x="84" y="84" width="170" height="38" rx="19" fill="#ece4d9"/>
+  <text x="169" y="109" text-anchor="middle" fill="#7a5f3f" font-size="19" font-family="Arial, PingFang SC, sans-serif">科技与 AI 动态 02</text>
+  <text x="1022" y="109" text-anchor="end" fill="#757575" font-size="20" font-family="Arial, PingFang SC, sans-serif">Infra / Capital</text>
+
+  <text x="84" y="188" fill="#1f2328" font-size="56" font-weight="700" font-family="Arial, PingFang SC, sans-serif">AI 基础设施投入</text>
+  <text x="84" y="254" fill="#1f2328" font-size="56" font-weight="700" font-family="Arial, PingFang SC, sans-serif">正在重新定义分发和定价</text>
+  <text x="84" y="304" fill="#667085" font-size="28" font-family="Arial, PingFang SC, sans-serif">这条新闻真正重要的，不是“又投了很多钱”，而是谁控制了 GPU、云和部署链路。</text>
+
+  <rect x="84" y="356" width="1032" height="176" rx="26" fill="#faf7f2" stroke="#e5ddd1" stroke-width="2"/>
+  <rect x="114" y="406" width="250" height="98" rx="20" fill="#fffdfa" stroke="#dbcab6" stroke-width="2"/>
+  <rect x="474" y="406" width="250" height="98" rx="20" fill="#fffdfa" stroke="#d8d7ea" stroke-width="2"/>
+  <rect x="834" y="406" width="250" height="98" rx="20" fill="#fffdfa" stroke="#c7d8ea" stroke-width="2"/>
+
+  <text x="146" y="442" fill="#8a6a3b" font-size="20" font-family="Arial, PingFang SC, sans-serif">上游稀缺资源</text>
+  <text x="146" y="478" fill="#1f2328" font-size="31" font-weight="700" font-family="Arial, PingFang SC, sans-serif">GPU / 云 / 机房</text>
+
+  <text x="506" y="442" fill="#585d92" font-size="20" font-family="Arial, PingFang SC, sans-serif">中游能力</text>
+  <text x="506" y="478" fill="#1f2328" font-size="31" font-weight="700" font-family="Arial, PingFang SC, sans-serif">训练 / 部署 / 峰值调度</text>
+
+  <text x="866" y="442" fill="#46658f" font-size="20" font-family="Arial, PingFang SC, sans-serif">下游结果</text>
+  <text x="866" y="478" fill="#1f2328" font-size="31" font-weight="700" font-family="Arial, PingFang SC, sans-serif">分发 / 定价 / 锁定</text>
+
+  <path d="M364 454 L434 454" stroke="#c9b293" stroke-width="4" stroke-linecap="round"/>
+  <path d="M434 454 L420 444" stroke="#c9b293" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M434 454 L420 464" stroke="#c9b293" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M724 454 L794 454" stroke="#9bb6cf" stroke-width="4" stroke-linecap="round"/>
+  <path d="M794 454 L780 444" stroke="#9bb6cf" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M794 454 L780 464" stroke="#9bb6cf" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <rect x="84" y="562" width="408" height="30" rx="15" fill="#ece4d9"/>
+  <text x="288" y="583" text-anchor="middle" fill="#7a5f3f" font-size="20" font-family="Arial, PingFang SC, sans-serif">一句话结论：控制基础设施的人，也更可能控制下一轮利润池</text>
+</svg>
