@@ -8,7 +8,7 @@ head:
       content: 本周最值得关注的变化，不只是模型更强，而是行业开始认真讨论谁来兜底、谁能审计、谁能交付。
   - - meta
     - property: og:image
-      content: https://blog.leeseven.com/images/issues/011/cover-governance-shift.svg
+      content: https://blog.leeseven.com/images/issues/011/cover-photo.jpg
   - - meta
     - property: og:url
       content: https://blog.leeseven.com/issues/issue-011
@@ -30,9 +30,9 @@ head:
 
 ## 封面图
 
-![治理与交付正在成为 AI 新主线](/images/issues/011/cover-governance-shift.svg)
+![Artemis II 任务中的 Mission Control 控制室](/images/issues/011/cover-photo.jpg)
 
-封面图：当行业从比“更强”走向比“更稳”，讨论焦点就会从模型参数转向治理、责任和可交付性。
+封面图：Artemis II 任务期间，NASA Mission Control 控制室里，飞行指挥正在盯着手动 proximity operations demonstration 的执行过程。比起“更强”，这张图更像这一期真正想讲的东西：有人在看，有人负责，系统才值得继续交给它。（[via NASA](https://images.nasa.gov/details/jsc2026e019217)）
 
 ---
 
