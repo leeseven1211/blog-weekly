@@ -5,3 +5,4 @@ docs/.vitepress/cache/
 *.log
 __pycache__/
 *.pyc
+tmp/
