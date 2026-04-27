@@ -8,7 +8,7 @@ head:
       content: 本周最重要的变化，不只是模型更强，而是 AI 正式进入共享流程、预算和权限体系，规则开始跟着补上。
   - - meta
     - property: og:image
-      content: https://blog.leeseven.com/images/issues/012/cover-boundary-falkirk-wheel-v3.jpg
+      content: https://blog.leeseven.com/images/issues/012/cover-boundary-harbin-grand-theatre-v4.jpg
   - - meta
     - property: og:url
       content: https://blog.leeseven.com/issues/issue-012
@@ -30,9 +30,9 @@ head:
 
 ## 封面图
 
-![苏格兰 Falkirk Wheel 旋转船闸](/images/issues/012/cover-boundary-falkirk-wheel-v3.jpg)
+![哈尔滨大剧院](/images/issues/012/cover-boundary-harbin-grand-theatre-v4.jpg)
 
-封面图：苏格兰 Falkirk Wheel 旋转船闸。它把两段水路的高差转换成一次可控交接，很像这一期想说的“边界感”：AI 可以进入流程，但必须有轨道、锁点和人工可接管的机制。
+封面图：哈尔滨大剧院。流线型建筑像一套被清晰包裹的复杂系统：外形很自由，但边界、入口和承重结构都明确，对应这一期想说的“AI 进入流程后，规则和接管点必须看得见”。
 
 ---
 

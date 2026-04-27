@@ -2,7 +2,7 @@
 
 本轮按“真实来源图 / 官方图 / repo 实图”修正，不使用 AI 自绘概念图。图片仅做下载、本地化、截图、裁切、比例规范化与轻微压缩。
 
-- `cover-boundary-falkirk-wheel-v3.jpg`：Wikimedia Commons 苏格兰 Falkirk Wheel 旋转船闸（CC BY 2.5，Sean Mack），用于本期“边界感 / 可控交接 / 接管点”封面隐喻： https://commons.wikimedia.org/wiki/File:FalkirkWheelSide_2004_SeanMcClean.jpg
+- `cover-boundary-harbin-grand-theatre-v4.jpg`：Wikimedia Commons 哈尔滨大剧院（CC BY-SA 4.0，EditQ），用于本期“自由外形 + 清晰边界 / 入口 / 承重结构”的封面隐喻： https://commons.wikimedia.org/wiki/File:Harbin_Grand_Theatre_2.jpg
 - `news-gpt55-v2.png`：OpenAI GPT-5.5 官方文章内产品/示例图： https://images.ctfassets.net/kftzwdyauwt9/1WiRj8XUEoqruFEKNQJPRr/4063977e99833d7129b6a238b4d3d876/Bartosz_Visual.png
 - `news-workspace-agents-v2.png`：OpenAI workspace agents 官方 Agent Library 截图： https://images.ctfassets.net/kftzwdyauwt9/4GPZ1CsqRxbAOZOA7sXosi/c7cf2a341363c09763813997aa79f0cb/OAI_Blog_Agents_Library_Image5_workspace_agents.png
 - `news-anthropic-amazon-v2.png`：AWS Trainium 官方硬件/机柜图： https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/product-categories/ai-ml/machine-learning/approved/images/b31d368b-060a-4c35-b0c0-183d69e17bcf.856a871a1df1a458fd77fe1fce639627c64f19e0.jpeg
