@@ -8,7 +8,7 @@ head:
       content: 本周最重要的变化，不只是模型更强，而是 AI 正式进入共享流程、预算和权限体系，规则开始跟着补上。
   - - meta
     - property: og:image
-      content: https://blog.leeseven.com/images/issues/012/cover-workflow-v2.png
+      content: https://blog.leeseven.com/images/issues/012/cover-boundary-huangshan.png
   - - meta
     - property: og:url
       content: https://blog.leeseven.com/issues/issue-012
@@ -30,9 +30,9 @@ head:
 
 ## 封面图
 
-![AI 工作流从个人助手走向组织流程](/images/issues/012/cover-workflow-v2.png)
+![黄山西海大峡谷绝壁栈道](/images/issues/012/cover-boundary-huangshan.png)
 
-封面图：OpenAI workspace agents 在 Slack 中交接任务的官方示例截图。它比抽象概念图更接近这一期真正想讨论的问题：AI 进入组织流程后，任务、权限、确认和接管会怎样落在真实协作界面里。
+封面图：黄山西海大峡谷绝壁栈道。它对应这一期的关键词“边界感”：越靠近真实流程，越需要护栏、路径和可回头的接管点。
 
 ---
 
