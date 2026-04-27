@@ -1,0 +1,38 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900' viewBox='0 0 1600 900'>
+  <defs>
+    <linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#052E2B'/>
+      <stop offset='100%' stop-color='#0F766E'/>
+    </linearGradient>
+    <radialGradient id='glow' cx='70%' cy='20%' r='70%'>
+      <stop offset='0%' stop-color='rgba(255,255,255,0.25)'/>
+      <stop offset='100%' stop-color='rgba(255,255,255,0)'/>
+    </radialGradient>
+    <filter id='shadow' x='-20%' y='-20%' width='140%' height='140%'>
+      <feDropShadow dx='0' dy='20' stdDeviation='24' flood-color='rgba(0,0,0,0.35)'/>
+    </filter>
+  </defs>
+  <rect width='1600' height='900' fill='url(#bg)'/>
+  <rect width='1600' height='900' fill='url(#glow)'/>
+  <g opacity='0.08'>
+    <path d='M0 120 H1600 M0 300 H1600 M0 480 H1600 M0 660 H1600 M0 840 H1600' stroke='white'/>
+    <path d='M160 0 V900 M420 0 V900 M680 0 V900 M940 0 V900 M1200 0 V900 M1460 0 V900' stroke='white'/>
+  </g>
+  <rect x='80' y='68' rx='20' ry='20' width='180' height='44' fill='rgba(255,255,255,0.10)' stroke='rgba(255,255,255,0.18)'/><text x='170' y='97' text-anchor='middle' font-size='20' fill='#99F6E4' font-weight='700'>工具深挖 02</text><text x='80' y='190' font-size='66' fill='white' font-weight='800'>Google Workspace CLI</text><text x='80' y='276' font-size='28' fill='#C8D7EA'>把 Gmail、Calendar、Drive、Docs 拉回同一条脚本链路。</text>
+  
+    <g filter='url(#shadow)'>
+      <rect x='860' y='200' width='150' height='110' rx='26' fill='#EF4444'/><text x='935' y='266' text-anchor='middle' font-size='28' fill='white' font-weight='700'>Gmail</text>
+      <rect x='1030' y='200' width='150' height='110' rx='26' fill='#2563EB'/><text x='1105' y='266' text-anchor='middle' font-size='28' fill='white' font-weight='700'>Drive</text>
+      <rect x='1200' y='200' width='150' height='110' rx='26' fill='#10B981'/><text x='1275' y='266' text-anchor='middle' font-size='28' fill='white' font-weight='700'>Docs</text>
+      <rect x='945' y='338' width='320' height='150' rx='30' fill='rgba(15,23,42,0.72)' stroke='rgba(255,255,255,0.18)'/>
+      <text x='980' y='392' font-size='30' fill='#A5F3FC'>$ gw calendar list</text>
+      <text x='980' y='432' font-size='30' fill='#FDE68A'>$ gw gmail send</text>
+      <text x='980' y='472' font-size='30' fill='#D1FAE5'>$ gw drive sync</text>
+      <path d='M935 310 V338' stroke='rgba(255,255,255,0.75)' stroke-width='8'/>
+      <path d='M1105 310 V338' stroke='rgba(255,255,255,0.75)' stroke-width='8'/>
+      <path d='M1275 310 V338' stroke='rgba(255,255,255,0.75)' stroke-width='8'/>
+    </g>
+    
+  <rect x='80' y='760' rx='24' ry='24' width='174' height='52' fill='rgba(255,255,255,0.09)' stroke='rgba(255,255,255,0.18)'/><text x='167.0' y='793' text-anchor='middle' font-size='24' fill='#E6EEF8'>Gmail</text><rect x='272' y='760' rx='24' ry='24' width='258' height='52' fill='rgba(255,255,255,0.09)' stroke='rgba(255,255,255,0.18)'/><text x='401.0' y='793' text-anchor='middle' font-size='24' fill='#E6EEF8'>Calendar</text><rect x='548' y='760' rx='24' ry='24' width='174' height='52' fill='rgba(255,255,255,0.09)' stroke='rgba(255,255,255,0.18)'/><text x='635.0' y='793' text-anchor='middle' font-size='24' fill='#E6EEF8'>Drive</text><rect x='740' y='760' rx='24' ry='24' width='146' height='52' fill='rgba(255,255,255,0.09)' stroke='rgba(255,255,255,0.18)'/><text x='813.0' y='793' text-anchor='middle' font-size='24' fill='#E6EEF8'>Docs</text>
+  <text x='80' y='852' font-size='22' fill='rgba(230,238,248,0.72)'>小七制图 · blog.leeseven.com</text>
+</svg>

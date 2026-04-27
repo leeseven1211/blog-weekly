@@ -1,0 +1,40 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900' viewBox='0 0 1600 900'>
+  <defs>
+    <linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#2A130B'/>
+      <stop offset='100%' stop-color='#EA580C'/>
+    </linearGradient>
+    <radialGradient id='glow' cx='70%' cy='20%' r='70%'>
+      <stop offset='0%' stop-color='rgba(255,255,255,0.25)'/>
+      <stop offset='100%' stop-color='rgba(255,255,255,0)'/>
+    </radialGradient>
+    <filter id='shadow' x='-20%' y='-20%' width='140%' height='140%'>
+      <feDropShadow dx='0' dy='20' stdDeviation='24' flood-color='rgba(0,0,0,0.35)'/>
+    </filter>
+  </defs>
+  <rect width='1600' height='900' fill='url(#bg)'/>
+  <rect width='1600' height='900' fill='url(#glow)'/>
+  <g opacity='0.08'>
+    <path d='M0 120 H1600 M0 300 H1600 M0 480 H1600 M0 660 H1600 M0 840 H1600' stroke='white'/>
+    <path d='M160 0 V900 M420 0 V900 M680 0 V900 M940 0 V900 M1200 0 V900 M1460 0 V900' stroke='white'/>
+  </g>
+  <rect x='80' y='68' rx='20' ry='20' width='180' height='44' fill='rgba(255,255,255,0.10)' stroke='rgba(255,255,255,0.18)'/><text x='170' y='97' text-anchor='middle' font-size='20' fill='#FDBA74' font-weight='700'>科技动态 05</text><text x='80' y='190' font-size='66' fill='white' font-weight='800'>TBPN 与话语权</text><text x='80' y='276' font-size='28' fill='#C8D7EA'>入口之外，模型公司也在争分发、节目和心智。</text>
+  
+    <g filter='url(#shadow)'>
+      <rect x='1030' y='180' width='150' height='220' rx='72' fill='#F59E0B'/>
+      <rect x='1090' y='380' width='30' height='110' rx='12' fill='#FDE68A'/>
+      <rect x='1035' y='470' width='140' height='28' rx='12' fill='#FDE68A'/>
+      <circle cx='1320' cy='240' r='80' fill='rgba(255,255,255,0.12)' stroke='rgba(255,255,255,0.18)'/>
+      <circle cx='1370' cy='420' r='64' fill='rgba(255,255,255,0.10)' stroke='rgba(255,255,255,0.18)'/>
+      <circle cx='920' cy='470' r='74' fill='rgba(255,255,255,0.10)' stroke='rgba(255,255,255,0.18)'/>
+      <text x='1320' y='248' text-anchor='middle' font-size='28' fill='white' font-weight='700'>节目</text>
+      <text x='1370' y='428' text-anchor='middle' font-size='28' fill='white' font-weight='700'>分发</text>
+      <text x='920' y='478' text-anchor='middle' font-size='28' fill='white' font-weight='700'>心智</text>
+      <path d='M1180 286 C1235 260, 1250 255, 1245 250' stroke='rgba(255,255,255,0.8)' stroke-width='8' fill='none'/>
+      <path d='M1180 330 C1260 340, 1295 372, 1305 395' stroke='rgba(255,255,255,0.8)' stroke-width='8' fill='none'/>
+      <path d='M1030 340 C990 365, 972 398, 965 428' stroke='rgba(255,255,255,0.8)' stroke-width='8' fill='none'/>
+    </g>
+    
+  <rect x='80' y='760' rx='24' ry='24' width='120' height='52' fill='rgba(255,255,255,0.09)' stroke='rgba(255,255,255,0.18)'/><text x='140.0' y='793' text-anchor='middle' font-size='24' fill='#E6EEF8'>媒体</text><rect x='218' y='760' rx='24' ry='24' width='120' height='52' fill='rgba(255,255,255,0.09)' stroke='rgba(255,255,255,0.18)'/><text x='278.0' y='793' text-anchor='middle' font-size='24' fill='#E6EEF8'>分发</text><rect x='356' y='760' rx='24' ry='24' width='120' height='52' fill='rgba(255,255,255,0.09)' stroke='rgba(255,255,255,0.18)'/><text x='416.0' y='793' text-anchor='middle' font-size='24' fill='#E6EEF8'>叙事</text>
+  <text x='80' y='852' font-size='22' fill='rgba(230,238,248,0.72)'>小七制图 · blog.leeseven.com</text>
+</svg>
