@@ -8,7 +8,7 @@ head:
       content: 本周最重要的变化，不只是模型更强，而是 AI 正式进入共享流程、预算和权限体系，规则开始跟着补上。
   - - meta
     - property: og:image
-      content: https://blog.leeseven.com/images/issues/012/cover-boundary-huangshan-v2.png
+      content: https://blog.leeseven.com/images/issues/012/cover-boundary-falkirk-wheel-v3.jpg
   - - meta
     - property: og:url
       content: https://blog.leeseven.com/issues/issue-012
@@ -30,9 +30,9 @@ head:
 
 ## 封面图
 
-![黄山西海大峡谷绝壁栈道](/images/issues/012/cover-boundary-huangshan-v2.png)
+![苏格兰 Falkirk Wheel 旋转船闸](/images/issues/012/cover-boundary-falkirk-wheel-v3.jpg)
 
-封面图：黄山西海大峡谷绝壁栈道。它对应这一期的关键词“边界感”：越靠近真实流程，越需要护栏、路径和可回头的接管点。
+封面图：苏格兰 Falkirk Wheel 旋转船闸。它把两段水路的高差转换成一次可控交接，很像这一期想说的“边界感”：AI 可以进入流程，但必须有轨道、锁点和人工可接管的机制。
 
 ---
 
