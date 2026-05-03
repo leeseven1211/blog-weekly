@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="100%" stop-color="#1f3b73"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)" rx="36"/>
+  <g opacity="0.18" stroke="#8fb7ff" stroke-width="2">
+    <path d="M120 760 L420 420 L680 650 L980 280 L1400 580" fill="none"/>
+    <path d="M140 700 L360 540 L620 620 L920 360 L1320 470" fill="none"/>
+  </g>
+  <text x="110" y="180" fill="#8fb7ff" font-size="42" font-family="Arial, PingFang SC, Microsoft YaHei">OpenAI 基础设施</text>
+  <text x="110" y="320" fill="#ffffff" font-size="88" font-weight="700" font-family="Arial, PingFang SC, Microsoft YaHei">Stargate 已超过 10GW</text>
+  <text x="110" y="415" fill="#d7e4ff" font-size="44" font-family="Arial, PingFang SC, Microsoft YaHei">官方称最近 90 天新增算力容量超过 3GW</text>
+  <rect x="110" y="520" width="310" height="140" rx="24" fill="#13274a" stroke="#4d7fff"/>
+  <text x="150" y="585" fill="#8fb7ff" font-size="34" font-family="Arial, PingFang SC, Microsoft YaHei">关键数字</text>
+  <text x="150" y="640" fill="#ffffff" font-size="54" font-weight="700" font-family="Arial, PingFang SC, Microsoft YaHei">10GW+</text>
+  <rect x="470" y="520" width="330" height="140" rx="24" fill="#13274a" stroke="#4d7fff"/>
+  <text x="510" y="585" fill="#8fb7ff" font-size="34" font-family="Arial, PingFang SC, Microsoft YaHei">最近增量</text>
+  <text x="510" y="640" fill="#ffffff" font-size="54" font-weight="700" font-family="Arial, PingFang SC, Microsoft YaHei">+3GW / 90天</text>
+  <text x="110" y="780" fill="#d7e4ff" font-size="36" font-family="Arial, PingFang SC, Microsoft YaHei">信号：模型竞争正在穿过土地、电力、数据中心和长期资本。</text>
+</svg>

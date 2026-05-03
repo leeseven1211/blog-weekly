@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#071d24"/><stop offset="100%" stop-color="#0d6b83"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="url(#bg)" rx="36"/>
+  <text x="110" y="170" fill="#90ecff" font-size="42" font-family="Arial, PingFang SC, Microsoft YaHei">浏览器调试 / MCP</text>
+  <text x="110" y="320" fill="#ffffff" font-size="84" font-weight="700" font-family="Arial, PingFang SC, Microsoft YaHei">Chrome DevTools MCP</text>
+  <text x="110" y="415" fill="#d8fbff" font-size="44" font-family="Arial, PingFang SC, Microsoft YaHei">把截图、网络请求、控制台、性能 trace 直接交给 coding agent</text>
+  <g transform="translate(110,520)">
+    <rect width="260" height="120" rx="22" fill="#0c3140" stroke="#68d8f7"/>
+    <text x="36" y="73" fill="#ffffff" font-size="40" font-family="Arial, PingFang SC, Microsoft YaHei">可靠自动化</text>
+  </g>
+  <g transform="translate(400,520)">
+    <rect width="260" height="120" rx="22" fill="#0c3140" stroke="#68d8f7"/>
+    <text x="36" y="73" fill="#ffffff" font-size="40" font-family="Arial, PingFang SC, Microsoft YaHei">深度调试</text>
+  </g>
+  <g transform="translate(690,520)">
+    <rect width="260" height="120" rx="22" fill="#0c3140" stroke="#68d8f7"/>
+    <text x="36" y="73" fill="#ffffff" font-size="40" font-family="Arial, PingFang SC, Microsoft YaHei">性能分析</text>
+  </g>
+</svg>

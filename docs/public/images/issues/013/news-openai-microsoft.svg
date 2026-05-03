@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#081a1a"/><stop offset="100%" stop-color="#174d46"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="url(#bg)" rx="36"/>
+  <circle cx="340" cy="290" r="110" fill="#2d7ff9" opacity="0.9"/>
+  <circle cx="520" cy="290" r="110" fill="#7ed957" opacity="0.88"/>
+  <path d="M660 290 H1120" stroke="#c7ffe4" stroke-width="10" stroke-dasharray="22 18"/>
+  <text x="110" y="160" fill="#8ce9c6" font-size="42" font-family="Arial, PingFang SC, Microsoft YaHei">Reuters / 合作关系</text>
+  <text x="110" y="490" fill="#ffffff" font-size="82" font-weight="700" font-family="Arial, PingFang SC, Microsoft YaHei">OpenAI 与微软开始松动独家绑定</text>
+  <text x="110" y="580" fill="#d4fff2" font-size="44" font-family="Arial, PingFang SC, Microsoft YaHei">改写后的协议，让 OpenAI 更容易同时谈云、芯片与设备伙伴</text>
+  <rect x="110" y="660" width="540" height="110" rx="22" fill="#10352f" stroke="#5fe0b6"/>
+  <text x="150" y="728" fill="#ffffff" font-size="40" font-family="Arial, PingFang SC, Microsoft YaHei">从“产品结盟”走向“供应链多点下注”</text>
+</svg>
