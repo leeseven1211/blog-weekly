@@ -56,7 +56,7 @@ OpenAI 这一周继续讲 Stargate，官方口径是到 2029 年前要拿下的 
 
 ### 1. [OpenAI：Stargate 已提前跨过 10GW 目标](https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age/)
 
-![OpenAI Stargate 算力扩张卡片](/images/issues/013/news-stargate.svg)
+![OpenAI Stargate 官方原文摘录卡](/images/issues/013/news-stargate-v2.png)
 
 OpenAI 在 4 月 29 日的官方文章里说，原本计划到 2029 年前拿下的 10GW 美国 AI 基础设施目标，如今已经提前完成，而且最近 90 天新增容量超过 3GW。它还把“土地、电力、施工、社区协作、用水方式”这些词，直接写进了对外叙事里。
 
@@ -64,7 +64,7 @@ OpenAI 在 4 月 29 日的官方文章里说，原本计划到 2029 年前拿下
 
 ### 2. [微软与 OpenAI 调整协议，独家关系继续松动](https://www.reuters.com/legal/litigation/microsoft-end-exclusive-license-openais-technology-2026-04-27/)
 
-![微软与 OpenAI 协议松动卡片](/images/issues/013/news-openai-microsoft.svg)
+![微软与 OpenAI 协议松动来源摘录卡](/images/issues/013/news-openai-microsoft-v2.png)
 
 Reuters 报道，微软与 OpenAI 调整了合作条款，让 OpenAI 在云和基础设施层面有更大空间接触 Amazon、Google 等其他伙伴。结合它最近和 Oracle、芯片厂商、设备制造端的动作看，这更像是一次供应链层面的重新布线。
 
@@ -72,7 +72,7 @@ Reuters 报道，微软与 OpenAI 调整了合作条款，让 OpenAI 在云和�
 
 ### 3. [DeepSeek V4 带动华为 Ascend 需求升温](https://www.reuters.com/world/china/big-chinese-tech-firms-scramble-secure-huawei-ai-chips-after-deepseek-v4-launch-2026-04-29/)
 
-![DeepSeek V4 与华为 Ascend 卡片](/images/issues/013/news-deepseek-huawei.svg)
+![DeepSeek V4 与华为 Ascend 来源摘录卡](/images/issues/013/news-deepseek-huawei-v2.png)
 
 Reuters 4 月 29 日报道，DeepSeek V4 发布后，华为 Ascend 950 的需求明显上升，多家中国互联网公司开始争取相关芯片资源。更早一篇 Reuters 报道还提到，DeepSeek 把 V4 描述为更适合 agent 工作负载，并强调了与华为芯片的适配。
 
@@ -80,7 +80,7 @@ Reuters 4 月 29 日报道，DeepSeek V4 发布后，华为 Ascend 950 的需求
 
 ### 4. [Google Cloud 被视作全栈 AI 受益者，大厂 AI 开支继续膨胀](https://www.reuters.com/business/retail-consumer/google-cloud-pulls-ahead-big-techs-ai-bet-swells-700-billion-2026-04-30/)
 
-![Google Cloud 全栈 AI 卡片](/images/issues/013/news-google-cloud.svg)
+![Google Cloud 全栈 AI 来源摘录卡](/images/issues/013/news-google-cloud-v2.png)
 
 Reuters 在财报周的综述里提到，市场开始把 Google Cloud 看成这一轮 AI 投资中的全栈受益者，原因不只是模型，而是它把芯片、数据中心、模型和开发者工具一起打包进了同一个故事里。报道里还提到，几家大厂 2026 年 AI 资本开支总额已经冲向 7000 亿美元量级。
 
@@ -108,7 +108,7 @@ Reuters 在财报周的综述里提到，市场开始把 Google Cloud 看成这�
 
 ### 1. [Microsoft Agent Framework](https://github.com/microsoft/agent-framework)
 
-![Microsoft Agent Framework](/images/issues/013/tool-agent-framework.svg)
+![Microsoft Agent Framework GitHub 仓库截图](/images/issues/013/tool-agent-framework-v2.png)
 
 这是微软新推的一套多语言 agent 框架，核心卖点很明确：同时支持 Python 和 .NET，既能做单 agent，也能做图式编排的多 agent 工作流，还带 checkpoint、human-in-the-loop 这类更偏工程化的能力。
 
@@ -116,7 +116,7 @@ Reuters 在财报周的综述里提到，市场开始把 Google Cloud 看成这�
 
 ### 2. [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp)
 
-![Chrome DevTools MCP](/images/issues/013/tool-chrome-devtools-mcp.svg)
+![Chrome DevTools MCP GitHub 仓库截图](/images/issues/013/tool-chrome-devtools-mcp-v2.png)
 
 这个项目把 Chrome DevTools 直接变成 agent 可调用的能力接口：能看网络请求、读控制台、截图、跑性能 trace，也能配合自动化动作一起用。对做 coding agent、网页测试、前端排障的人来说，它很像给模型补上了一套更靠谱的浏览器眼睛。
 
@@ -124,7 +124,7 @@ Reuters 在财报周的综述里提到，市场开始把 Google Cloud 看成这�
 
 ### 3. [FutureAGI](https://github.com/future-agi/future-agi)
 
-![FutureAGI](/images/issues/013/tool-futureagi.svg)
+![FutureAGI GitHub 仓库截图](/images/issues/013/tool-futureagi-v2.png)
 
 FutureAGI 想做的事很大：把 eval、tracing、simulation、guardrails、gateway 收进同一个反馈闭环里，让 agent 不是“上线以后再看运气”，而是能边跑边积累改进信号。
 
@@ -132,7 +132,7 @@ FutureAGI 想做的事很大：把 eval、tracing、simulation、guardrails、ga
 
 ### 4. [browser-use](https://github.com/browser-use/browser-use)
 
-![browser-use](/images/issues/013/tool-browser-use.svg)
+![browser-use GitHub 仓库截图](/images/issues/013/tool-browser-use-v2.png)
 
 browser-use 的定位很朴素：让网站更容易被 agent 读懂和操作。它的好处在于上手快，任务过程也相对可视，特别适合做网页任务的小规模试点，比如自动收集信息、填写后台、跨页面整理内容。
 
@@ -164,7 +164,7 @@ browser-use 的定位很朴素：让网站更容易被 agent 读懂和操作。�
 
 ## 本周一图
 
-![AI 供给链五层栈](/images/issues/013/weekly-stack.svg)
+![AI 供给链五层栈](/images/issues/013/weekly-stack-v2.png)
 
 这张图想表达一个很简单的判断：AI 竞争已经很难只停留在模型层。越往下看，你会越清楚为什么电力、芯片和数据中心会反过来决定上面的产品形态；越往上看，你也会明白为什么默认入口、共享工作流和企业信任会变成真正的护城河。以后再看一家 AI 公司，不妨先问一句：它到底只占了一层，还是已经开始往下吃栈、往上抢入口？
 
