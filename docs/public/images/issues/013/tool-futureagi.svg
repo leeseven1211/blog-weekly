@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#24120a"/><stop offset="100%" stop-color="#a44a12"/></linearGradient></defs>
-  <rect width="1600" height="900" fill="url(#bg)" rx="36"/>
-  <text x="110" y="170" fill="#ffd0a6" font-size="42" font-family="Arial, PingFang SC, Microsoft YaHei">评测 / 观测 / 守护</text>
-  <text x="110" y="320" fill="#ffffff" font-size="88" font-weight="700" font-family="Arial, PingFang SC, Microsoft YaHei">FutureAGI</text>
-  <text x="110" y="415" fill="#fff0df" font-size="44" font-family="Arial, PingFang SC, Microsoft YaHei">把 eval、trace、simulation、guardrails 和 gateway 合到同一个反馈闭环里</text>
-  <path d="M180 600 C320 520 420 520 560 600 S800 680 940 600 S1180 520 1320 600" fill="none" stroke="#ffd0a6" stroke-width="12"/>
-  <text x="110" y="760" fill="#fff0df" font-size="36" font-family="Arial, PingFang SC, Microsoft YaHei">适合：不想把五六个 AI 运维工具硬缝在一起的团队。</text>
-</svg>

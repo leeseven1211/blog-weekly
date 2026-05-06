@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#130a24"/><stop offset="100%" stop-color="#4b2a8d"/></linearGradient></defs>
-  <rect width="1600" height="900" fill="url(#bg)" rx="36"/>
-  <text x="110" y="170" fill="#bca9ff" font-size="42" font-family="Arial, PingFang SC, Microsoft YaHei">开源工具 / 框架</text>
-  <text x="110" y="320" fill="#ffffff" font-size="88" font-weight="700" font-family="Arial, PingFang SC, Microsoft YaHei">Microsoft Agent Framework</text>
-  <text x="110" y="415" fill="#ebe4ff" font-size="44" font-family="Arial, PingFang SC, Microsoft YaHei">Python + .NET，多 agent 工作流，图式编排，支持 checkpoint 与 human-in-the-loop</text>
-  <rect x="110" y="520" width="460" height="120" rx="22" fill="#241449" stroke="#a88dff"/>
-  <text x="150" y="592" fill="#ffffff" font-size="40" font-family="Arial, PingFang SC, Microsoft YaHei">适合：已经准备把 agent 当工程系统来做的团队</text>
-</svg>

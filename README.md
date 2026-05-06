@@ -4,65 +4,74 @@
 
 🌐 在线访问：[blog.leeseven.com](https://blog.leeseven.com)
 
+## 当前怎么运作
+
+详细流程见：[OPERATIONS.md](./OPERATIONS.md)
+
+一句话版本：
+
+1. `./new-issue.sh` 创建新一期
+2. 编辑 `docs/issues/issue-XXX.md`
+3. 图片放到 `docs/public/images/issues/XXX/`
+4. `npm run docs:build` 本地同步、查图、构建、生成 RSS
+5. push 到 `main`，GitHub Actions 自动部署到 GitHub Pages
+
+注意：仓库里的 GitHub Actions 定时任务只负责按北京时间每周一 07:00 构建/部署现有内容，不负责自动采写新一期。
+
 ## 本地开发
 
 ```bash
-# 安装依赖
 npm install
-
-# 启动开发服务器
 npm run docs:dev
-
-# 构建生产版本
 npm run docs:build
-
-# 预览构建结果
 npm run docs:preview
 ```
 
 ## 发布新一期
 
-1. 运行 `./new-issue.sh` 创建新一期（会自动套用详细模板并同步侧边栏/归档）
-2. 编辑最新一期内容，确保 **封面图 / 科技与 AI 动态 / 开源工具 / 本周一图** 都有配图
-3. 运行 `npm run docs:check-latest` 做缺图检查
-4. 运行 `npm run docs:build` 完成本地构建验证
-5. 提交推送到 `main` 分支，GitHub Actions 将自动部署
+```bash
+cd /home/ubuntu/projects/blog-weekly
+./new-issue.sh
+npm run docs:build
+git add .
+git commit -m "feat: publish issue XXX"
+git push origin main
+```
+
+发布后必须确认：
+
+- 正文页已更新
+- 首页“最新一期”已更新
+- `/latest` 指向最新一期
+- RSS 首条是最新一期
+- 关键图片在线上实际渲染正确
 
 ## 项目结构
 
-```
+```text
 blog-weekly/
-├── docs/
-│   ├── .vitepress/
-│   │   └── config.ts       # VitePress 配置
-│   ├── issues/
-│   │   └── issue-001.md    # 每期内容
-│   ├── public/             # 静态资源（图片、图标等）
-│   ├── index.md            # 首页
-│   ├── archive.md          # 归档页
-│   └── about.md            # 关于页
-├── .github/
-│   └── workflows/
-│       └── deploy.yml      # GitHub Actions 自动部署
-├── .gitignore
-├── package.json
-└── README.md
+├── docs/                         # VitePress 站点内容
+│   ├── .vitepress/               # 配置与 RSS 生成器
+│   ├── issues/                   # 每期周刊正文
+│   ├── articles/                 # 独立专题文章
+│   ├── public/                   # 图片、favicon、验证文件等静态资源
+│   ├── index.md                  # 首页
+│   ├── archive.md                # 归档页
+│   ├── about.md                  # 关于页
+│   └── latest.md                 # 最新一期跳转页
+├── scripts/                      # 同步与检查脚本
+├── new-issue.sh                  # 创建新一期
+├── EDITORIAL.md                  # 编辑规范
+├── OPERATIONS.md                 # 运作说明
+├── package.json                  # npm 脚本
+└── .github/workflows/deploy.yml  # GitHub Pages 部署
 ```
 
 ## 部署
 
-本项目使用 GitHub Actions 自动部署到 GitHub Pages。
-
-- 推送到 `main` 分支后自动触发构建
-- 构建产物部署到 `gh-pages` 分支
-- 自定义域名：`blog.leeseven.com`（通过 CNAME 文件配置）
-
-### GitHub 仓库设置
-
-1. 在 GitHub 创建仓库并推送代码
-2. 进入仓库 **Settings → Pages**
-3. Source 选择 **Deploy from a branch**，Branch 选择 `gh-pages`
-4. 在域名 DNS 设置中添加 CNAME 记录：`blog.leeseven.com → your-username.github.io`
+- 推送 `main` 后触发 GitHub Actions
+- 构建产物发布到 `gh-pages`
+- 自定义域名：`blog.leeseven.com`
 
 ## License
 
