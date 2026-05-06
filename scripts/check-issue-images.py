@@ -75,6 +75,15 @@ def is_generic_stock_url(url: str) -> bool:
     return host in {"images.unsplash.com", "source.unsplash.com"}
 
 
+
+def validate_optional_image_section(text: str, section_title: str) -> list[str]:
+    section = extract_section(text, section_title)
+    if section is None:
+        return []
+    if has_image(section):
+        return []
+    return [f"{section_title} 出现时必须配图"]
+
 def validate_single_image_section(text: str, section_title: str) -> list[str]:
     section = extract_section(text, section_title)
     if section is None:
@@ -203,6 +212,7 @@ def main() -> int:
     errors.extend(validate_repeat_blocks(text, "科技与 AI 动态", news_patterns))
     errors.extend(validate_repeat_blocks(text, "开源工具", tool_patterns))
     errors.extend(validate_single_image_section(text, "本周一图"))
+    errors.extend(validate_optional_image_section(text, "意外推荐（非科技）"))
     errors.extend(validate_no_generic_stock(text, "科技与 AI 动态", news_patterns))
     errors.extend(validate_no_generic_stock(text, "开源工具", tool_patterns))
     errors.extend(validate_issue_stock_budget(text, max_allowed=1))
@@ -215,7 +225,7 @@ def main() -> int:
         return 1
 
     print(f"✅ 配图检查通过：{issue_file}")
-    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具 / 本周一图 均有配图，封面主题至少 3 图，科技动态/工具区未使用通用 stock 图，且同一期没有重复图片。")
+    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具 / 本周一图均有配图；意外推荐出现时也有配图；封面主题至少 3 图；科技动态/工具区未使用通用 stock 图；同一期没有重复图片。")
     return 0
 
 
