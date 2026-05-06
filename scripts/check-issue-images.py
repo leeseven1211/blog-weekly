@@ -14,8 +14,6 @@ from pathlib import Path
 from typing import Iterable
 from urllib.parse import urlparse
 
-from PIL import Image
-
 
 ROOT = Path(__file__).resolve().parents[1]
 ISSUES_DIR = ROOT / "docs" / "issues"
@@ -197,6 +195,45 @@ def validate_no_duplicate_images(text: str) -> list[str]:
 
 
 
+
+def read_image_size(image_path: Path) -> tuple[int, int]:
+    data = image_path.read_bytes()
+
+    # PNG: 8-byte signature + IHDR width/height.
+    if data.startswith(b"\x89PNG\r\n\x1a\n") and len(data) >= 24:
+        width = int.from_bytes(data[16:20], "big")
+        height = int.from_bytes(data[20:24], "big")
+        return width, height
+
+    # JPEG: scan SOF markers.
+    if data.startswith(b"\xff\xd8"):
+        i = 2
+        while i < len(data) - 9:
+            if data[i] != 0xFF:
+                i += 1
+                continue
+            while i < len(data) and data[i] == 0xFF:
+                i += 1
+            if i >= len(data):
+                break
+            marker = data[i]
+            i += 1
+            if marker in {0xD8, 0xD9, 0x01} or 0xD0 <= marker <= 0xD7:
+                continue
+            if i + 2 > len(data):
+                break
+            segment_length = int.from_bytes(data[i:i + 2], "big")
+            if segment_length < 2 or i + segment_length > len(data):
+                break
+            if marker in {0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF}:
+                if segment_length >= 7:
+                    height = int.from_bytes(data[i + 3:i + 5], "big")
+                    width = int.from_bytes(data[i + 5:i + 7], "big")
+                    return width, height
+            i += segment_length
+
+    raise ValueError("unsupported or unreadable image format")
+
 def validate_local_image_dimensions(issue_file: Path, text: str, min_width: int = 500, min_height: int = 250) -> list[str]:
     errors: list[str] = []
 
@@ -210,8 +247,7 @@ def validate_local_image_dimensions(issue_file: Path, text: str, min_width: int 
             continue
 
         try:
-            with Image.open(image_path) as im:
-                width, height = im.size
+            width, height = read_image_size(image_path)
         except Exception as exc:
             errors.append(f"无法读取图片尺寸：{url} ({exc})")
             continue
