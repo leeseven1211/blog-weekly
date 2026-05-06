@@ -134,6 +134,32 @@ def validate_no_generic_stock(
 
 
 
+
+def extract_section_by_heading_prefix(text: str, heading_prefix: str) -> tuple[str, str] | None:
+    pattern = re.compile(rf"^##\s+({re.escape(heading_prefix)}[^\n]*)$", re.MULTILINE)
+    match = pattern.search(text)
+    if not match:
+        return None
+
+    title = match.group(1).strip()
+    start = match.end()
+    next_match = re.search(r"^##\s+", text[start:], re.MULTILINE)
+    end = start + next_match.start() if next_match else len(text)
+    return title, text[start:end].strip()
+
+
+def validate_section_prefix_min_images(text: str, heading_prefix: str, min_count: int) -> list[str]:
+    result = extract_section_by_heading_prefix(text, heading_prefix)
+    if result is None:
+        return [f"缺少章节：{heading_prefix}"]
+
+    section_title, section = result
+    urls = extract_image_urls(section)
+    if len(urls) >= min_count:
+        return []
+
+    return [f"{section_title} 至少需要 {min_count} 张与文字匹配的配图，当前只有 {len(urls)} 张"]
+
 def validate_no_duplicate_images(text: str) -> list[str]:
     urls = extract_image_urls(text)
     seen: dict[str, int] = {}
@@ -170,6 +196,7 @@ def main() -> int:
 
     errors: list[str] = []
     errors.extend(validate_single_image_section(text, "封面图"))
+    errors.extend(validate_section_prefix_min_images(text, "封面主题", min_count=3))
     news_patterns = [re.compile(r"^\*\*\d+\.\s"), re.compile(r"^###\s*\d+[\).]\s")]
     tool_patterns = [re.compile(r"^\*\*\["), re.compile(r"^###\s*\d+[\).]\s")]
 
@@ -188,7 +215,7 @@ def main() -> int:
         return 1
 
     print(f"✅ 配图检查通过：{issue_file}")
-    print("已确认：封面图 / 科技与 AI 动态 / 开源工具 / 本周一图 均有配图，科技动态/工具区未使用通用 stock 图，且同一期没有重复图片。")
+    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具 / 本周一图 均有配图，封面主题至少 3 图，科技动态/工具区未使用通用 stock 图，且同一期没有重复图片。")
     return 0
 
 
