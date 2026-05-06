@@ -10,6 +10,27 @@ head:
     - property: og:image
       content: https://blog.leeseven.com/images/issues/013/cover-ai-infra-editorial-v5.jpg
   - - meta
+    - property: og:image:secure_url
+      content: https://blog.leeseven.com/images/issues/013/cover-ai-infra-editorial-v5.jpg
+  - - meta
+    - property: og:image:type
+      content: image/jpeg
+  - - meta
+    - property: og:image:width
+      content: '2048'
+  - - meta
+    - property: og:image:height
+      content: '1152'
+  - - meta
+    - property: og:image:alt
+      content: 第 013 期封面图：太阳能板、电网与数据中心建设现场
+  - - meta
+    - name: twitter:image
+      content: https://blog.leeseven.com/images/issues/013/cover-ai-infra-editorial-v5.jpg
+  - - meta
+    - itemprop: image
+      content: https://blog.leeseven.com/images/issues/013/cover-ai-infra-editorial-v5.jpg
+  - - meta
     - property: og:url
       content: https://blog.leeseven.com/issues/issue-013
 ---

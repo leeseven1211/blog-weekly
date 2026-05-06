@@ -8,7 +8,28 @@ head:
       content: {{一句话导语：本期最重要变化 + 对读者价值}}
   - - meta
     - property: og:image
-      content: {{封面图 URL}}
+      content: {{封面图绝对 URL}}
+  - - meta
+    - property: og:image:secure_url
+      content: {{封面图绝对 URL}}
+  - - meta
+    - property: og:image:type
+      content: image/jpeg
+  - - meta
+    - property: og:image:width
+      content: '{{封面图宽度，例如 1200 或 2048}}'
+  - - meta
+    - property: og:image:height
+      content: '{{封面图高度，例如 630 或 1152}}'
+  - - meta
+    - property: og:image:alt
+      content: {{封面图 alt，说明期数和画面}}
+  - - meta
+    - name: twitter:image
+      content: {{封面图绝对 URL}}
+  - - meta
+    - itemprop: image
+      content: {{封面图绝对 URL}}
   - - meta
     - property: og:url
       content: https://blog.leeseven.com/issues/issue-XXX

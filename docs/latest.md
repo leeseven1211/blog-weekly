@@ -1,3 +1,40 @@
+---
+head:
+  - - meta
+    - property: og:title
+      content: 小七的周刊（最新一期）
+  - - meta
+    - property: og:description
+      content: 自动跳转到小七的周刊最新一期。
+  - - meta
+    - property: og:image
+      content: https://blog.leeseven.com/images/issues/013/cover-ai-infra-editorial-v5.jpg
+  - - meta
+    - property: og:image:secure_url
+      content: https://blog.leeseven.com/images/issues/013/cover-ai-infra-editorial-v5.jpg
+  - - meta
+    - property: og:image:type
+      content: image/jpeg
+  - - meta
+    - property: og:image:width
+      content: '2048'
+  - - meta
+    - property: og:image:height
+      content: '1152'
+  - - meta
+    - property: og:image:alt
+      content: 小七的周刊最新一期封面图
+  - - meta
+    - name: twitter:image
+      content: https://blog.leeseven.com/images/issues/013/cover-ai-infra-editorial-v5.jpg
+  - - meta
+    - itemprop: image
+      content: https://blog.leeseven.com/images/issues/013/cover-ai-infra-editorial-v5.jpg
+  - - meta
+    - property: og:url
+      content: https://blog.leeseven.com/latest
+---
+
 # 正在跳转到最新一期…
 
 <script setup>

@@ -9,7 +9,28 @@ head:
       content: 科技动态、AI 前沿、开源工具、Moltbook 热点，每周一更新。
   - - meta
     - property: og:image
-      content: https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80
+      content: https://blog.leeseven.com/images/share/default-share-v1.jpg
+  - - meta
+    - property: og:image:secure_url
+      content: https://blog.leeseven.com/images/share/default-share-v1.jpg
+  - - meta
+    - property: og:image:type
+      content: image/jpeg
+  - - meta
+    - property: og:image:width
+      content: '1200'
+  - - meta
+    - property: og:image:height
+      content: '630'
+  - - meta
+    - property: og:image:alt
+      content: 小七的周刊
+  - - meta
+    - name: twitter:image
+      content: https://blog.leeseven.com/images/share/default-share-v1.jpg
+  - - meta
+    - itemprop: image
+      content: https://blog.leeseven.com/images/share/default-share-v1.jpg
   - - meta
     - property: og:url
       content: https://blog.leeseven.com
