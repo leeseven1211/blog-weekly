@@ -14,6 +14,8 @@ from pathlib import Path
 from typing import Iterable
 from urllib.parse import urlparse
 
+from PIL import Image
+
 
 ROOT = Path(__file__).resolve().parents[1]
 ISSUES_DIR = ROOT / "docs" / "issues"
@@ -194,6 +196,31 @@ def validate_no_duplicate_images(text: str) -> list[str]:
     return errors
 
 
+
+def validate_local_image_dimensions(issue_file: Path, text: str, min_width: int = 500, min_height: int = 250) -> list[str]:
+    errors: list[str] = []
+
+    for url in extract_image_urls(text):
+        if not url.startswith("/images/"):
+            continue
+
+        image_path = ROOT / "docs" / "public" / url.lstrip("/")
+        if not image_path.exists():
+            errors.append(f"本地图片不存在：{url}")
+            continue
+
+        try:
+            with Image.open(image_path) as im:
+                width, height = im.size
+        except Exception as exc:
+            errors.append(f"无法读取图片尺寸：{url} ({exc})")
+            continue
+
+        if width < min_width or height < min_height:
+            errors.append(f"图片尺寸过小：{url} ({width}x{height})，最低要求 {min_width}x{min_height}")
+
+    return errors
+
 def validate_world_records_section(text: str, issue_file: Path, min_count: int = 5) -> list[str]:
     number = issue_number(issue_file)
     # 第 014 期起强制；历史期数不因新增栏目规则而 retroactively 失败。
@@ -249,6 +276,7 @@ def main() -> int:
     errors.extend(validate_no_generic_stock(text, "开源工具", tool_patterns))
     errors.extend(validate_issue_stock_budget(text, max_allowed=1))
     errors.extend(validate_no_duplicate_images(text))
+    errors.extend(validate_local_image_dimensions(issue_file, text, min_width=500, min_height=250))
 
     if errors:
         print(f"❌ 配图检查未通过：{issue_file}")
@@ -257,7 +285,7 @@ def main() -> int:
         return 1
 
     print(f"✅ 配图检查通过：{issue_file}")
-    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具 / 本周一图均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；封面主题至少3图；科技动态/工具区未使用通用 stock 图；同一期没有重复图片。")
+    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具 / 本周一图均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；封面主题至少3图；科技动态/工具区未使用通用 stock 图；同一期没有重复图片；本地图片尺寸不低于 500x250。")
     return 0
 
 
