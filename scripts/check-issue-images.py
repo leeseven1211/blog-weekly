@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """检查周刊最新一期的配图完整性。
 
-目标：在发布前直接拦住“封面/本周一图/科技与 AI 动态/开源工具”缺图的情况。
+目标：在发布前直接拦住“封面/封面主题/本周一图/科技与 AI 动态/开源工具/世界之最”缺图的情况。
 默认检查 docs/issues 下最新一期，也支持 --file 指定文件。
 """
 
@@ -24,6 +24,13 @@ def latest_issue_file() -> Path:
     if not candidates:
         raise FileNotFoundError(f"未找到 issue 文件：{ISSUES_DIR}")
     return candidates[-1]
+
+
+def issue_number(issue_file: Path) -> int | None:
+    match = re.search(r"issue-(\d+)", issue_file.name)
+    if not match:
+        return None
+    return int(match.group(1))
 
 
 def extract_section(text: str, title: str) -> str | None:
@@ -186,6 +193,30 @@ def validate_no_duplicate_images(text: str) -> list[str]:
     errors.extend([f"- {url}（出现 {seen[url]} 次）" for url in duplicates])
     return errors
 
+
+def validate_world_records_section(text: str, issue_file: Path, min_count: int = 5) -> list[str]:
+    number = issue_number(issue_file)
+    # 第 014 期起强制；历史期数不因新增栏目规则而 retroactively 失败。
+    if number is not None and number < 14:
+        return []
+
+    section = extract_section(text, "世界之最")
+    if section is None:
+        return ["第 014 期起必须包含栏目：世界之最"]
+
+    item_patterns = [re.compile(r"^###\s*\d+[\).、.]?\s"), re.compile(r"^\*\*\d+[\).、.]?\s")]
+    blocks = split_blocks(section, item_patterns)
+    if len(blocks) < min_count:
+        return [f"世界之最至少需要 {min_count} 个条目，当前只有 {len(blocks)} 个"]
+
+    missing = [summarize_title(block) for block in blocks if not has_image(block)]
+    if not missing:
+        return []
+
+    errors = [f"世界之最有 {len(missing)}/{len(blocks)} 条缺图："]
+    errors.extend([f"- {title}" for title in missing])
+    return errors
+
 def validate_issue_stock_budget(text: str, max_allowed: int = 1) -> list[str]:
     urls = extract_image_urls(text)
     generic_count = sum(1 for url in urls if is_generic_stock_url(url))
@@ -212,6 +243,7 @@ def main() -> int:
     errors.extend(validate_repeat_blocks(text, "科技与 AI 动态", news_patterns))
     errors.extend(validate_repeat_blocks(text, "开源工具", tool_patterns))
     errors.extend(validate_single_image_section(text, "本周一图"))
+    errors.extend(validate_world_records_section(text, issue_file, min_count=5))
     errors.extend(validate_optional_image_section(text, "意外推荐（非科技）"))
     errors.extend(validate_no_generic_stock(text, "科技与 AI 动态", news_patterns))
     errors.extend(validate_no_generic_stock(text, "开源工具", tool_patterns))
@@ -225,7 +257,7 @@ def main() -> int:
         return 1
 
     print(f"✅ 配图检查通过：{issue_file}")
-    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具 / 本周一图均有配图；意外推荐出现时也有配图；封面主题至少 3 图；科技动态/工具区未使用通用 stock 图；同一期没有重复图片。")
+    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具 / 本周一图均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；封面主题至少3图；科技动态/工具区未使用通用 stock 图；同一期没有重复图片。")
     return 0
 
 
