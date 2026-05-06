@@ -133,6 +133,24 @@ def validate_no_generic_stock(
     return errors
 
 
+
+def validate_no_duplicate_images(text: str) -> list[str]:
+    urls = extract_image_urls(text)
+    seen: dict[str, int] = {}
+    duplicates: list[str] = []
+
+    for url in urls:
+        seen[url] = seen.get(url, 0) + 1
+        if seen[url] == 2:
+            duplicates.append(url)
+
+    if not duplicates:
+        return []
+
+    errors = ["同一期不允许重复使用同一张图片："]
+    errors.extend([f"- {url}（出现 {seen[url]} 次）" for url in duplicates])
+    return errors
+
 def validate_issue_stock_budget(text: str, max_allowed: int = 1) -> list[str]:
     urls = extract_image_urls(text)
     generic_count = sum(1 for url in urls if is_generic_stock_url(url))
@@ -161,6 +179,7 @@ def main() -> int:
     errors.extend(validate_no_generic_stock(text, "科技与 AI 动态", news_patterns))
     errors.extend(validate_no_generic_stock(text, "开源工具", tool_patterns))
     errors.extend(validate_issue_stock_budget(text, max_allowed=1))
+    errors.extend(validate_no_duplicate_images(text))
 
     if errors:
         print(f"❌ 配图检查未通过：{issue_file}")
@@ -169,7 +188,7 @@ def main() -> int:
         return 1
 
     print(f"✅ 配图检查通过：{issue_file}")
-    print("已确认：封面图 / 科技与 AI 动态 / 开源工具 / 本周一图 均有配图，且科技动态/工具区未使用通用 stock 图。")
+    print("已确认：封面图 / 科技与 AI 动态 / 开源工具 / 本周一图 均有配图，科技动态/工具区未使用通用 stock 图，且同一期没有重复图片。")
     return 0
 
 
