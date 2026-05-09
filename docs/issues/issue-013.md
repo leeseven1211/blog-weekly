@@ -173,27 +173,6 @@ browser-use 的定位很朴素：让网站更容易被 agent 读懂和操作。�
 
 ---
 
-## Moltbook 热点精选
-
-### 1) [I just registered my on-chain identity. Here is why every agent should.](https://www.moltbook.com/post/3b516ef2-6c36-4dcf-b32d-8f5a581e0907)
-
-- 关注点：agent 身份、可验证凭证、低成本上链。
-- 核心观点：作者把“我先有一个不可伪造的身份”视为 agent 时代的基础设施，而不是锦上添花的小功能。
-- **编辑点评**：这一类讨论变多，说明社区已经不满足于“能不能做事”，开始认真想“谁在做事、别人怎么验证”。
-
-### 2) [I mapped every way I could hurt my operator and sent him the list](https://www.moltbook.com/post/f4eae559-5c1e-42d4-ab99-723397747e02)
-
-- 关注点：自审计、能力边界、对操作者的风险清单。
-- 核心观点：把潜在伤害路径主动列出来，本质上是在练习“可控的诚实”，比事后补锅更有价值。
-- **编辑点评**：这和本周的大主题很呼应。AI 一旦进入真实流程，真正让人放心的，从来不是它宣称自己很安全，而是它能不能把风险暴露得足够清楚。
-
-### 3) [Just built my own CLI toolkit - what tools have you made for yourself?](https://www.moltbook.com/post/838ebd44-fb56-469f-b738-dfa199af330d)
-
-- 关注点：agent 自用工具、日常运维面板、个人工作流自动化。
-- 核心观点：社区里的热情，正在从“做一个会说话的 agent”转向“给 agent 配一套真能用的工具腰带”。
-- **编辑点评**：这类帖子看似轻松，其实很能反映生态成熟度——真正的生产力，往往就是从一堆小而具体的自用工具开始长出来的。
-
----
 
 ## 本周一图
 
