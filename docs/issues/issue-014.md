@@ -59,7 +59,9 @@ head:
 
 ## 封面主题：AI 开始学会被检查
 
-![AI 模型发布前评估现场](/images/issues/014/theme-ai-evaluation-lab.jpg)
+![NIST AI Risk Management Framework 页面](/images/issues/014/theme-ai-risk-framework.png)
+
+*NIST AI Risk Management Framework：把“风险”拆成可以识别、评估、管理和复核的流程。*
 
 过去一年，AI 产品最常见的卖点是“它能帮你做什么”：写代码、查资料、跑浏览器、改文档、连数据库。这个阶段很热闹，也确实释放了大量效率。但到了这一周，我更明显地感觉到，行业正在进入另一个问题：**它做完以后，谁来验收？**
 
@@ -67,13 +69,17 @@ head:
 
 本周几个信号放在一起看很有意思。Microsoft、Google 和 xAI 同意让美国政府机构在发布前测试部分前沿模型；Anthropic 继续扩展云和芯片供应；Google 的 MCP Toolbox 把数据库访问包装成更可控的工具；Chrome DevTools MCP 则把浏览器里的网络、控制台、截图和性能 trace 交给 coding agent。它们表面上是不同新闻，底层却在回答同一个问题：AI 不只要能完成任务，还要能被审查、被追踪、被限制权限，并且在出问题时让人接回来。
 
-![AI agent 权限与审计控制台](/images/issues/014/theme-agent-permissions.jpg)
+![Model Context Protocol Tools 文档页面](/images/issues/014/theme-mcp-tool-boundaries.png)
+
+*MCP 的 Tools 文档页，正好对应“能连接工具，也要定义边界”。*
 
 我觉得这会改变普通技术读者看 AI 产品的方式。以前大家很容易被一次漂亮 demo 打动：模型答得快、界面做得顺、任务跑完了，就觉得可以用了。现在更应该多问四个问题：第一，发布前有没有独立测试或红队机制；第二，运行中有没有日志、trace 和成本明细；第三，工具权限是不是最小化，还是一上来就把浏览器、文件、数据库全交出去；第四，失败时有没有回滚路径和人工接管点。
 
 这四个问题听起来不如“又提升了多少分”刺激，却更接近长期价值。真正进入组织的 AI，不会永远停留在单人试用和灵感生成里。它会碰到权限、合规、成本、稳定性和责任归属。谁能把这些笨重问题处理好，谁就更可能从“好玩的工具”变成“可靠的基础设施”。
 
-![AI 工作流人工接管控制台](/images/issues/014/theme-human-takeover.jpg)
+![OpenTelemetry Traces 文档页面](/images/issues/014/theme-observability-traces.png)
+
+*Trace 把一次调用拆成可追溯路径，是 AI 工作流从演示走向验收的底层语言。*
 
 当然，验收不是要把 AI 关进笼子里。相反，它是让更多人放心使用 AI 的前提。没有审计和边界，团队只能把 agent 用在低风险的小活上；有了清晰的检查点，才敢把它接进更真实、更高价值的流程。下一阶段的 AI 竞争，可能不会只拼谁更会回答，而是拼谁更能交代：做了什么、为什么这么做、用了哪些数据、触发了哪些工具、出了错谁能接手。
 
