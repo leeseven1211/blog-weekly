@@ -249,6 +249,28 @@ def validate_issue_assets_are_referenced(issue_file: Path, text: str) -> list[st
     return errors
 
 
+def heading_position(text: str, heading_options: Iterable[str]) -> int | None:
+    positions: list[int] = []
+    for title in heading_options:
+        match = re.search(rf"^##\s+{re.escape(title)}\s*$", text, re.MULTILINE)
+        if match:
+            positions.append(match.start())
+    return min(positions) if positions else None
+
+
+def validate_section_order(text: str) -> list[str]:
+    """Keep the public reading order aligned with the editorial spec."""
+    news = heading_position(text, ["科技与 AI 动态", "科技与 AI 动态（上周）"])
+    world = heading_position(text, ["世界之最"])
+    tools = heading_position(text, ["开源工具", "工具深挖", "工具深挖（4-5 个）"])
+
+    if news is None or world is None or tools is None:
+        return []
+    if news < world < tools:
+        return []
+    return ["栏目顺序错误：世界之最必须放在「科技与 AI 动态」后、「开源工具/工具深挖」前"]
+
+
 def read_image_size(image_path: Path) -> tuple[int, int]:
     data = image_path.read_bytes()
 
@@ -368,6 +390,7 @@ def main() -> int:
     errors.extend(validate_no_duplicate_images(text))
     errors.extend(validate_issue_scoped_local_images(issue_file, text))
     errors.extend(validate_issue_assets_are_referenced(issue_file, text))
+    errors.extend(validate_section_order(text))
     errors.extend(validate_local_image_dimensions(issue_file, text, min_width=500, min_height=250))
 
     if errors:
@@ -377,7 +400,7 @@ def main() -> int:
         return 1
 
     print(f"✅ 配图检查通过：{issue_file}")
-    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具 / 本周一图均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；封面主题至少3图；无 Moltbook 独立栏目；新一期未复用旧期栏目图、未引用 SVG 模板图、无未接入的新期图片；科技动态/工具区未使用通用 stock 图；同一期没有重复图片；本地图片尺寸不低于 500x250。")
+    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具 / 本周一图均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；封面主题至少3图；无 Moltbook 独立栏目；新一期未复用旧期栏目图、未引用 SVG 模板图、无未接入的新期图片；世界之最位于科技动态后、工具区前；科技动态/工具区未使用通用 stock 图；同一期没有重复图片；本地图片尺寸不低于 500x250。")
     return 0
 
 
