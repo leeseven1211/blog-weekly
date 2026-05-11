@@ -194,6 +194,59 @@ def validate_no_duplicate_images(text: str) -> list[str]:
     return errors
 
 
+def validate_banned_sections(text: str) -> list[str]:
+    """Block sections that have been retired from the public weekly format."""
+    banned_patterns = [
+        (re.compile(r"^##\s+.*Moltbook.*$", re.MULTILINE), "Moltbook 独立栏目已停用；相关内容只能自然融入正文，不允许单独成栏"),
+    ]
+    return [message for pattern, message in banned_patterns if pattern.search(text)]
+
+
+def validate_issue_scoped_local_images(issue_file: Path, text: str) -> list[str]:
+    """For new issues, prevent silently reusing old issue images as placeholders."""
+    number = issue_number(issue_file)
+    if number is None:
+        return []
+
+    current_prefix = f"/images/issues/{number:03d}/"
+    errors: list[str] = []
+    for url in extract_image_urls(text):
+        if not url.startswith("/images/issues/"):
+            continue
+        if not url.startswith(current_prefix):
+            errors.append(f"新一期不得复用旧期栏目图片：{url}（应使用 {current_prefix} 下的图片）")
+        if url.lower().endswith(".svg"):
+            errors.append(f"新一期正文图片不得使用 SVG 模板图：{url}，请改用真实素材截图/照片或必要的 PNG 解释图")
+    return errors
+
+
+def validate_issue_assets_are_referenced(issue_file: Path, text: str) -> list[str]:
+    """Catch cases where new assets are generated but not wired into the issue."""
+    number = issue_number(issue_file)
+    if number is None:
+        return []
+
+    issue_image_dir = ROOT / "docs" / "public" / "images" / "issues" / f"{number:03d}"
+    if not issue_image_dir.exists():
+        return []
+
+    referenced = {
+        (ROOT / "docs" / "public" / url.lstrip("/")).resolve()
+        for url in extract_image_urls(text)
+        if url.startswith(f"/images/issues/{number:03d}/")
+    }
+    image_files = {
+        path.resolve()
+        for path in issue_image_dir.iterdir()
+        if path.is_file() and path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg"}
+    }
+    unreferenced = sorted(path for path in image_files if path not in referenced)
+    if not unreferenced:
+        return []
+
+    errors = ["本期图片目录存在未被正文引用的图片，可能是生成/组装链路断开："]
+    errors.extend([f"- {path.relative_to(ROOT / 'docs' / 'public')}" for path in unreferenced])
+    return errors
 
 
 def read_image_size(image_path: Path) -> tuple[int, int]:
@@ -308,10 +361,13 @@ def main() -> int:
     errors.extend(validate_single_image_section(text, "本周一图"))
     errors.extend(validate_world_records_section(text, issue_file, min_count=5))
     errors.extend(validate_optional_image_section(text, "意外推荐（非科技）"))
+    errors.extend(validate_banned_sections(text))
     errors.extend(validate_no_generic_stock(text, "科技与 AI 动态", news_patterns))
     errors.extend(validate_no_generic_stock(text, "开源工具", tool_patterns))
     errors.extend(validate_issue_stock_budget(text, max_allowed=1))
     errors.extend(validate_no_duplicate_images(text))
+    errors.extend(validate_issue_scoped_local_images(issue_file, text))
+    errors.extend(validate_issue_assets_are_referenced(issue_file, text))
     errors.extend(validate_local_image_dimensions(issue_file, text, min_width=500, min_height=250))
 
     if errors:
@@ -321,7 +377,7 @@ def main() -> int:
         return 1
 
     print(f"✅ 配图检查通过：{issue_file}")
-    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具 / 本周一图均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；封面主题至少3图；科技动态/工具区未使用通用 stock 图；同一期没有重复图片；本地图片尺寸不低于 500x250。")
+    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具 / 本周一图均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；封面主题至少3图；无 Moltbook 独立栏目；新一期未复用旧期栏目图、未引用 SVG 模板图、无未接入的新期图片；科技动态/工具区未使用通用 stock 图；同一期没有重复图片；本地图片尺寸不低于 500x250。")
     return 0
 
 

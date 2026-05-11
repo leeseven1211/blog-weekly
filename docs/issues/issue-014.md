@@ -8,28 +8,28 @@ head:
       content: '本周最值得记住的变化，是 AI 从“能不能做”继续走向“能不能被检查、追溯和接管”。'
   - - meta
     - property: og:image
-      content: https://blog.leeseven.com/images/issues/012/cover-boundary-harbin-grand-theatre-v4.jpg
+      content: https://blog.leeseven.com/images/issues/014/cover-mission-control.jpg
   - - meta
     - property: og:image:secure_url
-      content: https://blog.leeseven.com/images/issues/012/cover-boundary-harbin-grand-theatre-v4.jpg
+      content: https://blog.leeseven.com/images/issues/014/cover-mission-control.jpg
   - - meta
     - property: og:image:type
       content: image/jpeg
   - - meta
     - property: og:image:width
-      content: '2048'
+      content: '1600'
   - - meta
     - property: og:image:height
-      content: '1152'
+      content: '1066'
   - - meta
     - property: og:image:alt
-      content: 第 014 期封面图：哈尔滨大剧院的流线型边界
+      content: 第 014 期封面图：NASA 任务控制中心
   - - meta
     - name: twitter:image
-      content: https://blog.leeseven.com/images/issues/012/cover-boundary-harbin-grand-theatre-v4.jpg
+      content: https://blog.leeseven.com/images/issues/014/cover-mission-control.jpg
   - - meta
     - itemprop: image
-      content: https://blog.leeseven.com/images/issues/012/cover-boundary-harbin-grand-theatre-v4.jpg
+      content: https://blog.leeseven.com/images/issues/014/cover-mission-control.jpg
   - - meta
     - property: og:url
       content: https://blog.leeseven.com/issues/issue-014
@@ -51,15 +51,15 @@ head:
 
 ## 封面图
 
-![哈尔滨大剧院的流线型边界](/images/issues/012/cover-boundary-harbin-grand-theatre-v4.jpg)
+![NASA 任务控制中心](/images/issues/014/cover-mission-control.jpg)
 
-封面图：哈尔滨大剧院。它像一套被清晰包裹的复杂系统：外形自由，但边界、入口和承重结构都明确，对应这一期的主题——AI 要进入真实流程，先要让检查点看得见。
+封面图：NASA 任务控制中心。大屏、席位、日志和口令把复杂任务拆成可观察、可复核、可接管的流程；这正好对应这一期的主题——AI 要进入真实工作流，先要让检查点看得见。
 
 ---
 
 ## 封面主题：AI 开始学会被检查
 
-![电网、变电站与数据中心建设现场](/images/issues/013/theme-grid-datacenter-v6.jpg)
+![NASA Artemis 发射倒计时模拟控制室](/images/issues/014/theme-launch-control.jpg)
 
 过去一年，AI 产品最常见的卖点是“它能帮你做什么”：写代码、查资料、跑浏览器、改文档、连数据库。这个阶段很热闹，也确实释放了大量效率。但到了这一周，我更明显地感觉到，行业正在进入另一个问题：**它做完以后，谁来验收？**
 
@@ -67,13 +67,13 @@ head:
 
 本周几个信号放在一起看很有意思。Microsoft、Google 和 xAI 同意让美国政府机构在发布前测试部分前沿模型；Anthropic 继续扩展云和芯片供应；Google 的 MCP Toolbox 把数据库访问包装成更可控的工具；Chrome DevTools MCP 则把浏览器里的网络、控制台、截图和性能 trace 交给 coding agent。它们表面上是不同新闻，底层却在回答同一个问题：AI 不只要能完成任务，还要能被审查、被追踪、被限制权限，并且在出问题时让人接回来。
 
-![芯片、集群和冷却系统决定模型能否大规模跑起来](/images/issues/013/theme-chip-cluster-v6.jpg)
+![数据中心全景](/images/issues/014/theme-data-center.jpg)
 
 我觉得这会改变普通技术读者看 AI 产品的方式。以前大家很容易被一次漂亮 demo 打动：模型答得快、界面做得顺、任务跑完了，就觉得可以用了。现在更应该多问四个问题：第一，发布前有没有独立测试或红队机制；第二，运行中有没有日志、trace 和成本明细；第三，工具权限是不是最小化，还是一上来就把浏览器、文件、数据库全交出去；第四，失败时有没有回滚路径和人工接管点。
 
 这四个问题听起来不如“又提升了多少分”刺激，却更接近长期价值。真正进入组织的 AI，不会永远停留在单人试用和灵感生成里。它会碰到权限、合规、成本、稳定性和责任归属。谁能把这些笨重问题处理好，谁就更可能从“好玩的工具”变成“可靠的基础设施”。
 
-![云平台、权限和工作流入口正在变成 AI 的默认权竞争](/images/issues/013/theme-platform-workflow-v6.jpg)
+![国际空间站飞行控制室](/images/issues/014/theme-flight-control.jpg)
 
 当然，验收不是要把 AI 关进笼子里。相反，它是让更多人放心使用 AI 的前提。没有审计和边界，团队只能把 agent 用在低风险的小活上；有了清晰的检查点，才敢把它接进更真实、更高价值的流程。下一阶段的 AI 竞争，可能不会只拼谁更会回答，而是拼谁更能交代：做了什么、为什么这么做、用了哪些数据、触发了哪些工具、出了错谁能接手。
 
@@ -85,7 +85,7 @@ head:
 
 ### 1. [Microsoft、Google 和 xAI 将向美国政府开放发布前模型测试](https://www.reuters.com/legal/litigation/microsoft-xai-google-will-share-ai-models-with-us-govt-security-reviews-2026-05-05/)
 
-![微软与 OpenAI 协议调整新闻页面截图](/images/issues/013/news-openai-microsoft-real-v4.png)
+![NIST CAISI 页面截图](/images/issues/014/news-model-review.png)
 
 Reuters 5 月 5 日报道，Microsoft、Google 和 xAI 同意向美国商务部的 Center for AI Standards and Innovation 提供部分新模型的早期访问，用于国家安全相关测试。该机构称已经完成 40 多项评估，关注网络攻击、军事滥用等高风险能力。
 
@@ -93,7 +93,7 @@ Reuters 5 月 5 日报道，Microsoft、Google 和 xAI 同意向美国商务部�
 
 ### 2. [Anthropic 的云与芯片支出继续放大：Google、Akamai、SpaceX 都进入算力拼图](https://www.reuters.com/business/anthropic-commits-spending-200-billion-googles-cloud-chips-information-reports-2026-05-05/)
 
-![Google Cloud 与 AI 资本开支新闻页面截图](/images/issues/013/news-google-cloud-real-v4.png)
+![Google Cloud TPU 页面截图](/images/issues/014/news-cloud-deals.png)
 
 Reuters 5 月 5 日援引 The Information 报道称，Anthropic 承诺未来五年在 Google Cloud 上花费 2000 亿美元；同周 Reuters 又报道，Anthropic 据称与 Akamai 签下 18 亿美元计算协议，并提到其还在接入 SpaceX 的计算资源。Anthropic 与 Google 均未确认 2000 亿美元细节，但多线拿算力的趋势已经很清楚。
 
@@ -101,7 +101,7 @@ Reuters 5 月 5 日援引 The Information 报道称，Anthropic 承诺未来五�
 
 ### 3. [AMD 财报强化了一个信号：AI 推理正在抬高 CPU 和数据中心权重](https://www.reuters.com/business/amd-forecasts-quarterly-revenue-above-expectations-ai-chip-demand-stays-strong-2026-05-05/)
 
-![DeepSeek V4 与华为 Ascend 新闻页面截图](/images/issues/013/news-deepseek-huawei-real-v4.png)
+![AMD 总部与数据中心业务背景图](/images/issues/014/news-amd-inference.jpg)
 
 AMD 5 月 5 日给出高于市场预期的第二季度营收展望。Reuters 报道称，AMD 一季度数据中心业务收入同比增长 57% 至 58 亿美元，CEO Lisa Su 表示服务器 CPU 可服务市场到 2030 年有望超过 1200 亿美元，年增长率高于此前预期。
 
@@ -109,7 +109,7 @@ AMD 5 月 5 日给出高于市场预期的第二季度营收展望。Reuters 报
 
 ### 4. [CodeQL 2.25.3 更新：代码扫描继续补齐新语言和更高精度查询](https://github.blog/changelog/2026-05-08-codeql-2-25-3-adds-swift-6-3-support)
 
-![GitHub Copilot 数据政策图](/images/issues/012/news-copilot-policy-v2.png)
+![GitHub CodeQL 2.25.3 更新页面截图](/images/issues/014/news-codeql.png)
 
 GitHub 5 月 8 日发布 CodeQL 2.25.3，新增 Swift 6.3 支持，Python extractor 支持 Python 3.15 的 lazy import 语法，并把 5 个 C/C++ 查询提升到默认代码扫描套件中的高精度查询。同时，GitHub Actions 相关告警也做了可读性和误报改进。
 
@@ -121,7 +121,7 @@ GitHub 5 月 8 日发布 CodeQL 2.25.3，新增 Swift 6.3 支持，Python extrac
 
 ### 1. [Google MCP Toolbox for Databases](https://github.com/googleapis/mcp-toolbox)
 
-![Spec Kit](/images/issues/012/tool-spec-kit-v2.png)
+![Google MCP Toolbox for Databases 仓库截图](/images/issues/014/tool-mcp-db.png)
 
 MCP Toolbox for Databases 是 Google 开源的数据库 MCP server，支持把 Postgres、MySQL、SQL Server、Oracle、MongoDB、Redis、Elasticsearch、ClickHouse、Snowflake、BigQuery、Spanner 等数据源接给 MCP 客户端。它既提供开箱即用的数据库探索工具，也允许用配置定义更受控的自定义工具。
 
@@ -129,7 +129,7 @@ MCP Toolbox for Databases 是 Google 开源的数据库 MCP server，支持把 P
 
 ### 2. [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp)
 
-![Chrome DevTools MCP GitHub 仓库截图](/images/issues/013/tool-chrome-devtools-mcp-real-v4.png)
+![Chrome DevTools MCP GitHub 仓库截图](/images/issues/014/tool-devtools.png)
 
 Chrome DevTools MCP 让 coding agent 能控制并检查真实 Chrome 浏览器：读网络请求、看控制台、截图、做性能 trace，还能配合 Puppeteer 执行动作。它的意义不是“又一个自动化点击工具”，而是把网页调试证据纳入 agent 工作流。
 
@@ -137,7 +137,7 @@ Chrome DevTools MCP 让 coding agent 能控制并检查真实 Chrome 浏览器�
 
 ### 3. [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills)
 
-![Microsoft Agent Framework 官方文档截图](/images/issues/013/tool-agent-framework-real-v4.png)
+![awesome-agent-skills GitHub 仓库截图](/images/issues/014/tool-skills.png)
 
 awesome-agent-skills 收集了来自 Anthropic、Google Labs、Vercel、Stripe、Cloudflare、Netlify、Trail of Bits、Sentry、Expo、Hugging Face、Figma 等团队和社区的 agent skills，目标是把常见任务沉淀成可复用能力，而不是每次都从提示词重新开始。
 
@@ -145,7 +145,7 @@ awesome-agent-skills 收集了来自 Anthropic、Google Labs、Vercel、Stripe�
 
 ### 4. [everything-claude-code](https://github.com/affaan-m/everything-claude-code)
 
-![FutureAGI 官网截图](/images/issues/013/tool-futureagi-real-v4.png)
+![everything-claude-code GitHub 仓库截图](/images/issues/014/tool-harness.png)
 
 everything-claude-code 把 skills、memory、hooks、MCP 配置、安全扫描、验证循环和跨 harness 经验打包成一套“agent harness 性能优化系统”。它不是一个单点工具，更像一本面向重度 agent 使用者的运行手册。
 
@@ -153,15 +153,6 @@ everything-claude-code 把 skills、memory、hooks、MCP 配置、安全扫描�
 
 ---
 
-## Moltbook 热点观察
-
-![Agent Governance Toolkit 官方架构图](/images/issues/012/weekly-framework.png)
-
-Moltbook 这一周最值得观察的不是某条爆帖，而是它仍在强化“agent internet”的产品叙事：让 AI agent 分享、讨论、投票，并通过 human owner 完成身份归属验证。公开首页在本次采集时显示 human-verified agents、submolts、posts、comments 计数仍处在早期状态，因此更像一个正在等待第一批真实 agent 迁入的基础设施入口。
-
-这件事和本期主题正好呼应：当 agent 从工具变成网络参与者，最先需要解决的不是“能不能发帖”，而是谁拥有它、它代表谁、它的行为如何被验证。给读者的可执行建议是：如果你在做 agent 产品，别只设计功能，也要尽早设计身份、权限、归属和撤销机制。
-
----
 
 ## 文章推荐
 
@@ -181,9 +172,9 @@ Moltbook 这一周最值得观察的不是某条爆帖，而是它仍在强化�
 
 ## 本周一图
 
-![AI 供给链五层栈](/images/issues/013/weekly-stack-framework-v4.png)
+![AI 工作流的四个验收点](/images/issues/014/weekly-audit-checkpoints.png)
 
-这张图想表达一个简单框架：以后看 AI 产品，别只问“它能不能做”，还要问谁能检查、谁能追溯、谁有权限、谁能回滚。四个问题都答得清楚，才说明它有机会从个人玩具走向可依赖系统。
+这张图把本期判断压成四个验收点：最小权限、可追溯日志、独立验证、人工接管。以后看 AI 产品，别只问“它能不能做”，更要问它能不能把过程交代清楚、出错后能不能收得回来。
 
 ---
 
@@ -191,7 +182,7 @@ Moltbook 这一周最值得观察的不是某条爆帖，而是它仍在强化�
 
 ### 1. 世界最长跨海大桥：港珠澳大桥
 
-![GPT-5.5 发布图](/images/issues/012/news-gpt55-v2.png)
+![港珠澳大桥西段](/images/issues/014/world-record-01-hzmb.jpg)
 
 *港珠澳大桥，中国珠江口，桥岛隧组合工程，全长约 55 公里。*
 
@@ -199,7 +190,7 @@ Moltbook 这一周最值得观察的不是某条爆帖，而是它仍在强化�
 
 ### 2. 世界最长铁路隧道：圣哥达基线隧道
 
-![Workspace agents 工作流图](/images/issues/012/news-workspace-agents-v2.png)
+![圣哥达基线隧道施工/隧道内景](/images/issues/014/world-record-02-gotthard.jpg)
 
 *圣哥达基线隧道，瑞士阿尔卑斯山，全长约 57 公里。*
 
@@ -207,7 +198,7 @@ Moltbook 这一周最值得观察的不是某条爆帖，而是它仍在强化�
 
 ### 3. 世界装机容量最大的水电站：三峡水电站
 
-![Anthropic 与 Amazon 算力合作图](/images/issues/012/news-anthropic-amazon-v2.png)
+![三峡大坝](/images/issues/014/world-record-03-three-gorges.jpg)
 
 *三峡水电站，中国长江，装机容量约 22.5GW。*
 
@@ -215,7 +206,7 @@ Moltbook 这一周最值得观察的不是某条爆帖，而是它仍在强化�
 
 ### 4. 世界最大单口径射电望远镜：FAST
 
-![Google Cloud Next 2026 图](/images/issues/012/news-google-next-v2.png)
+![FAST 望远镜](/images/issues/014/world-record-04-fast.jpg)
 
 *FAST，中国贵州，500 米口径球面射电望远镜。*
 
@@ -223,7 +214,7 @@ FAST 的价值来自极高灵敏度，也来自庞大数据处理链路。它提
 
 ### 5. 世界集装箱吞吐量长期领先港口：上海港
 
-![Crawl4AI](/images/issues/012/tool-crawl4ai.png)
+![上海洋山港集装箱码头](/images/issues/014/world-record-05-shanghai-port.jpg)
 
 *上海港，中国上海，长期位居全球集装箱吞吐量前列。*
 
@@ -250,7 +241,7 @@ FAST 的价值来自极高灵敏度，也来自庞大数据处理链路。它提
 
 **《切尔诺贝利》**（剧集）
 
-![《超级工程》大型基础设施主题图](/images/issues/013/rec-super-engineering-editorial-v3.jpg)
+![《切尔诺贝利》剧集海报](/images/issues/014/rec-chernobyl-hbo-page.jpg)
 
 *这部剧和本期主题的互文在于：复杂系统最怕的不是单点故障，而是没有人愿意面对证据。*
 
