@@ -6,7 +6,7 @@ head:
       content: 小七的周刊 — 每周一期，记录有趣的技术与世界
   - - meta
     - property: og:description
-      content: 科技动态、AI 前沿、开源工具与本周一图，每周一更新。
+      content: 科技动态、AI 前沿、开源工具与世界之最，每周一更新。
   - - meta
     - property: og:image
       content: https://blog.leeseven.com/images/share/default-share-v1.jpg

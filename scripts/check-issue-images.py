@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """检查周刊最新一期的配图完整性。
 
-目标：在发布前直接拦住“封面/封面主题/本周一图/科技与 AI 动态/开源工具/世界之最”缺图的情况。
+目标：在发布前直接拦住“封面/封面主题/科技与 AI 动态/开源工具/世界之最”缺图的情况。
 默认检查 docs/issues 下最新一期，也支持 --file 指定文件。
 """
 
@@ -380,7 +380,6 @@ def main() -> int:
 
     errors.extend(validate_repeat_blocks(text, "科技与 AI 动态", news_patterns))
     errors.extend(validate_repeat_blocks(text, "开源工具", tool_patterns))
-    errors.extend(validate_single_image_section(text, "本周一图"))
     errors.extend(validate_world_records_section(text, issue_file, min_count=5))
     errors.extend(validate_optional_image_section(text, "意外推荐（非科技）"))
     errors.extend(validate_banned_sections(text))
@@ -400,7 +399,7 @@ def main() -> int:
         return 1
 
     print(f"✅ 配图检查通过：{issue_file}")
-    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具 / 本周一图均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；封面主题至少1张关键图；无 Moltbook 独立栏目；新一期未复用旧期栏目图、未引用 SVG 模板图、无未接入的新期图片；世界之最位于科技动态后、工具区前；科技动态/工具区未使用通用 stock 图；同一期没有重复图片；本地图片尺寸不低于 500x250。")
+    print("已确认：封面图 / 封面主题 / 科技与 AI 动态 / 开源工具均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；封面主题至少1张关键图；无 Moltbook 独立栏目；新一期未复用旧期栏目图、未引用 SVG 模板图、无未接入的新期图片；世界之最位于科技动态后、工具区前；科技动态/工具区未使用通用 stock 图；同一期没有重复图片；本地图片尺寸不低于 500x250。")
     return 0
 
 
