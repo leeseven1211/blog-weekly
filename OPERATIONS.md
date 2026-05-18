@@ -84,6 +84,8 @@ docs/public/images/issues/XXX/
 
 ### 3.3 本地验证
 
+基础构建检查：
+
 ```bash
 npm run docs:build
 ```
@@ -95,10 +97,30 @@ npm run docs:build
 3. `vitepress build docs`：构建站点
 4. VitePress `buildEnd` 钩子调用 `docs/.vitepress/rss.ts` 生成 RSS
 
+发布前最终门禁必须使用：
+
+```bash
+npm run docs:publish-check
+```
+
+它会在 `docs:build` 之外额外检查：
+
+1. `npm run docs:check-image-urls`：确认本地/远程图片资源实际能加载，避免破图上线。
+2. `scripts/check-publish-review.py`：确认已在 OpenClaw 工作区留下发布前视觉评审记录。
+
+视觉评审记录默认放在：
+
+```text
+/home/ubuntu/.openclaw/workspace/notes/blog-weekly/publish-reviews/issue-XXX.md
+```
+
+记录中必须明确包含：`publish: approved`、`visual-review: pass`、`image-display: pass`、`image-semantics: pass`、`image-duplicates: pass`、`image-quality: pass`，并附至少 3 张本地预览截图路径。缺任何一项都不能发布。
+
 如果只想检查图片：
 
 ```bash
 npm run docs:check-latest
+npm run docs:check-image-urls
 ```
 
 如果只想同步首页/归档/侧边栏：
@@ -107,7 +129,34 @@ npm run docs:check-latest
 npm run docs:sync
 ```
 
+### 3.3.1 发布前视觉审核硬门槛
+
+发布前必须先启动本地预览，从读者视角截图并评审，不能只看 markdown 或 `docs:build` 结果：
+
+```bash
+npm run docs:build
+npm run docs:preview -- --host 127.0.0.1 --port 4173
+```
+
+然后用浏览器打开 `http://127.0.0.1:4173/issues/issue-XXX.html`，至少保存顶部/中段/底部 3 张截图；长文建议按栏目补充截图。评审必须逐栏确认：
+
+- 图片是否真实显示，没有破图、空白、加载失败、跨域占位或缓存旧图；
+- 图片是否贴合正文语义，不把无关网页、OG 卡片、泛风景、纯 Logo 当新闻/工具证据；
+- 图片是否清晰、有编辑感，没有明显 AI 乱码、错别字、错误 logo、虚构 UI、低清硬放大；
+- 同一期没有重复图片，封面图没有在正文原样复用；
+- 整页滑读节奏像正式周刊，而不是素材堆叠。
+
+任一项不通过，最终摘要必须写“失败”，不得 commit / push。
+
 ### 3.4 发布
+
+发布前最后一步必须先跑：
+
+```bash
+npm run docs:publish-check
+```
+
+只有通过后才能：
 
 ```bash
 git status
