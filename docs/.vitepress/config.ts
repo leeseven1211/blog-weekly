@@ -64,6 +64,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '小七的周刊（第 015 期）：AI 进入远程接管时代', link: '/issues/issue-015' },
           { text: '小七的周刊（第 014 期）：AI 开始学会被检查', link: '/issues/issue-014' },
           { text: '小七的周刊（第 013 期）：AI 不只是更会回答了，它开始改写芯片、云和默认入口', link: '/issues/issue-013' },
           { text: '小七的周刊（第 012 期）：AI 开始交付结果，组织才开始认真谈规则', link: '/issues/issue-012' },
