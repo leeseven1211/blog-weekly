@@ -77,6 +77,10 @@ def extract_image_urls(markdown: str) -> list[str]:
     return re.findall(r"!\[[^\]]*\]\(([^)\s]+)", markdown)
 
 
+def extract_images(markdown: str) -> list[tuple[str, str]]:
+    return re.findall(r"!\[([^\]]*)\]\(([^)\s]+)", markdown)
+
+
 def is_generic_stock_url(url: str) -> bool:
     host = urlparse(url).netloc.lower()
     return host in {"images.unsplash.com", "source.unsplash.com"}
@@ -355,6 +359,29 @@ def validate_world_records_section(text: str, issue_file: Path, min_count: int =
     errors.extend([f"- {title}" for title in missing])
     return errors
 
+
+def validate_no_page_screenshot_labels(text: str) -> list[str]:
+    """Catch page-screenshot labels in sections that must use real photos."""
+    forbidden = re.compile(r"(截图|页面|资料页|网页)")
+    errors: list[str] = []
+
+    cover = extract_section(text, "封面图")
+    if cover:
+        offenders = [alt for alt, _url in extract_images(cover) if forbidden.search(alt)]
+        if offenders:
+            errors.append("封面图不得使用网页/资料页截图，请换成真实照片或高质量编辑图：")
+            errors.extend([f"- {alt}" for alt in offenders])
+
+    world = extract_section(text, "世界之最")
+    if world:
+        offenders = [alt for alt, _url in extract_images(world) if forbidden.search(alt)]
+        if offenders:
+            errors.append("世界之最不得使用百科/资料页截图，请换成每个对象的真实照片或官方图：")
+            errors.extend([f"- {alt}" for alt in offenders])
+
+    return errors
+
+
 def validate_issue_stock_budget(text: str, max_allowed: int = 1) -> list[str]:
     urls = extract_image_urls(text)
     generic_count = sum(1 for url in urls if is_generic_stock_url(url))
@@ -390,6 +417,7 @@ def main() -> int:
     errors.extend(validate_issue_assets_are_referenced(issue_file, text))
     errors.extend(validate_section_order(text))
     errors.extend(validate_local_image_dimensions(issue_file, text, min_width=500, min_height=250))
+    errors.extend(validate_no_page_screenshot_labels(text))
 
     if errors:
         print(f"❌ 配图检查未通过：{issue_file}")
@@ -398,7 +426,7 @@ def main() -> int:
         return 1
 
     print(f"✅ 配图检查通过：{issue_file}")
-    print("已确认：封面图 / 科技与 AI 动态 / 开源工具均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；无 Moltbook 独立栏目；新一期未复用旧期栏目图、未引用 SVG 模板图、无未接入的新期图片；世界之最位于科技动态后、工具区前；科技动态/工具区未使用通用 stock 图；同一期没有重复图片；本地图片尺寸不低于 500x250。")
+    print("已确认：封面图 / 科技与 AI 动态 / 开源工具均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；无 Moltbook 独立栏目；新一期未复用旧期栏目图、未引用 SVG 模板图、无未接入的新期图片；世界之最位于科技动态后、工具区前；科技动态/工具区未使用通用 stock 图；同一期没有重复图片；本地图片尺寸不低于 500x250；封面图/世界之最未用文字标注为网页或资料页截图。")
     return 0
 
 
