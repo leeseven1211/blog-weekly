@@ -382,6 +382,77 @@ def validate_no_page_screenshot_labels(text: str) -> list[str]:
     return errors
 
 
+def extract_world_record_headings(text: str) -> list[str]:
+    section = extract_section(text, "世界之最")
+    if section is None:
+        return []
+
+    item_patterns = [re.compile(r"^###\s*\d+[\).、.]?\s"), re.compile(r"^\*\*\d+[\).、.]?\s")]
+    blocks = split_blocks(section, item_patterns)
+    return [summarize_title(block) for block in blocks]
+
+
+def normalize_world_record_heading(heading: str) -> str:
+    title = re.sub(r"^###\s*\d+[\).、.]?\s*", "", heading).strip()
+    if "：" in title:
+        title = title.split("：", 1)[1]
+    elif ":" in title:
+        title = title.split(":", 1)[1]
+
+    title = re.sub(r"[\s\[\]【】()（）,，、:：;；/／\-—_·.。]+", "", title).lower()
+    generic_terms = [
+        "世界", "全球", "之一", "长期领先", "知名", "大型", "超大型",
+        "工程", "项目", "系统", "结构", "建筑", "设施", "装置",
+        "大桥", "特大桥", "桥梁", "桥", "隧道", "水电站", "大坝", "电站",
+        "港口", "港", "码头", "工厂", "车辆", "钻孔", "望远镜", "射电",
+    ]
+    for term in generic_terms:
+        title = title.replace(term, "")
+    return title
+
+
+def validate_world_records_are_new(issue_file: Path, text: str) -> list[str]:
+    current_number = issue_number(issue_file)
+    if current_number is None:
+        return []
+
+    current: dict[str, str] = {}
+    for heading in extract_world_record_headings(text):
+        normalized = normalize_world_record_heading(heading)
+        if len(normalized) >= 2:
+            current[normalized] = heading
+
+    if not current:
+        return []
+
+    previous: dict[str, tuple[str, str]] = {}
+    for candidate in sorted(ISSUES_DIR.glob("issue-*.md")):
+        candidate_number = issue_number(candidate)
+        if candidate_number is None or candidate_number >= current_number:
+            continue
+        candidate_text = candidate.read_text(encoding="utf-8")
+        for heading in extract_world_record_headings(candidate_text):
+            normalized = normalize_world_record_heading(heading)
+            if len(normalized) >= 2:
+                previous.setdefault(normalized, (candidate.name, heading))
+
+    duplicates = [
+        (heading, prev_file, prev_heading)
+        for key, heading in current.items()
+        if key in previous
+        for prev_file, prev_heading in [previous[key]]
+    ]
+    if not duplicates:
+        return []
+
+    errors = ["世界之最不能重复往期对象，请换成未发过的新选题："]
+    errors.extend([
+        f"- {heading}（已在 {prev_file}: {prev_heading} 出现）"
+        for heading, prev_file, prev_heading in duplicates
+    ])
+    return errors
+
+
 def validate_issue_stock_budget(text: str, max_allowed: int = 1) -> list[str]:
     urls = extract_image_urls(text)
     generic_count = sum(1 for url in urls if is_generic_stock_url(url))
@@ -418,6 +489,7 @@ def main() -> int:
     errors.extend(validate_section_order(text))
     errors.extend(validate_local_image_dimensions(issue_file, text, min_width=500, min_height=250))
     errors.extend(validate_no_page_screenshot_labels(text))
+    errors.extend(validate_world_records_are_new(issue_file, text))
 
     if errors:
         print(f"❌ 配图检查未通过：{issue_file}")
@@ -426,7 +498,7 @@ def main() -> int:
         return 1
 
     print(f"✅ 配图检查通过：{issue_file}")
-    print("已确认：封面图 / 科技与 AI 动态 / 开源工具均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；无 Moltbook 独立栏目；新一期未复用旧期栏目图、未引用 SVG 模板图、无未接入的新期图片；世界之最位于科技动态后、工具区前；科技动态/工具区未使用通用 stock 图；同一期没有重复图片；本地图片尺寸不低于 500x250；封面图/世界之最未用文字标注为网页或资料页截图。")
+    print("已确认：封面图 / 科技与 AI 动态 / 开源工具均有配图；第014期起世界之最至少5条且逐条配图；意外推荐出现时也有配图；无 Moltbook 独立栏目；新一期未复用旧期栏目图、未引用 SVG 模板图、无未接入的新期图片；世界之最位于科技动态后、工具区前；科技动态/工具区未使用通用 stock 图；同一期没有重复图片；本地图片尺寸不低于 500x250；封面图/世界之最未用文字标注为网页或资料页截图；世界之最对象未重复往期。")
     return 0
 
 

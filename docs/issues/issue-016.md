@@ -8,10 +8,10 @@ head:
       content: '本周最值得记住的变化，是 AI agent 从模型发布会走向企业数据、私有环境、供应链闸门和真实业务系统。'
   - - meta
     - property: og:image
-      content: https://blog.leeseven.com/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.jpg
+      content: https://blog.leeseven.com/images/issues/016/cover-alma-array.jpg
   - - meta
     - property: og:image:secure_url
-      content: https://blog.leeseven.com/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.jpg
+      content: https://blog.leeseven.com/images/issues/016/cover-alma-array.jpg
   - - meta
     - property: og:image:type
       content: image/jpeg
@@ -20,16 +20,16 @@ head:
       content: '3840'
   - - meta
     - property: og:image:height
-      content: '2498'
+      content: '2560'
   - - meta
     - property: og:image:alt
-      content: 第 016 期封面图：港珠澳大桥连接海面、隧道和人工岛
+      content: 第 016 期封面图：ALMA 射电望远镜阵列分布在阿塔卡马高原
   - - meta
     - name: twitter:image
-      content: https://blog.leeseven.com/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.jpg
+      content: https://blog.leeseven.com/images/issues/016/cover-alma-array.jpg
   - - meta
     - itemprop: image
-      content: https://blog.leeseven.com/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.jpg
+      content: https://blog.leeseven.com/images/issues/016/cover-alma-array.jpg
   - - meta
     - property: og:url
       content: https://blog.leeseven.com/issues/issue-016
@@ -51,9 +51,9 @@ head:
 
 ## 封面图
 
-![港珠澳大桥连接海面、隧道和人工岛](/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.jpg)
+![ALMA 射电望远镜阵列分布在阿塔卡马高原](/images/issues/016/cover-alma-array.jpg)
 
-封面图：港珠澳大桥把桥梁、海底隧道和人工岛接在一起。它很适合本期主题：AI 不再只是一个单点模型，而是在云、私有数据、工具链、审批和真实业务之间搭桥。
+封面图：智利阿塔卡马高原上的 ALMA 射电望远镜阵列。几十台天线分布协作，像本期主题：AI 不再只是一个单点模型，而是数据、工具、权限和流程共同组成的系统。
 
 ---
 
@@ -119,45 +119,45 @@ Reuters 5 月 21 日援引 The Information 报道称，Anthropic 正与 Microsof
 
 ## 世界之最
 
-### 1. 世界最大单口径射电望远镜：FAST
+### 1. 世界最大粒子加速器：大型强子对撞机
 
-![FAST 射电望远镜实景照片](/images/issues/016/world-fast-telescope.jpg)
+![大型强子对撞机探测器内部照片](/images/issues/016/world-large-hadron-collider.jpg)
 
-*FAST，位于贵州平塘，口径 500 米，常被称为“中国天眼”。*
+*大型强子对撞机，位于 CERN，地下环形隧道周长约 27 公里。*
 
-FAST 的“最”不是把一个盘子做大这么简单，而是把山谷地形、主动反射面、馈源舱控制和长期观测维护组合起来。本期讲企业 AI 也类似：看起来是一个模型入口，真正难的是背后一整套系统协同。
+LHC 的“最”不是单台机器有多大，而是数千人、探测器、低温系统、数据管线和国际协作共同运转。企业 AI 也会越来越像这种大科学装置：真正的能力来自长期可维护的系统。
 
-### 2. 世界最高建筑：哈利法塔
+### 2. 世界最高桥：北盘江第一桥
 
-![哈利法塔实景照片](/images/issues/016/world-burj-khalifa.jpg)
+![北盘江第一桥跨越峡谷](/images/issues/016/world-duge-bridge.jpg)
 
-*哈利法塔，迪拜，高度约 828 米。*
+*北盘江第一桥，又称都格北盘江大桥，桥面到谷底高度约 565 米。*
 
-高楼的极限不只在“往上堆”，还在风、材料、电梯、消防、排水和人流。AI 产品如果也想往更高处走，不能只拼单点能力；基础设施、治理和日常运营决定它能不能长期站住。
+它把高速路架在极深峡谷之上，难点不只是跨度和高度，还有施工组织、风环境和长期巡检。AI agent 要跨进企业现场，也是在类似的“深谷”上架桥：权限、数据和责任都不能掉下去。
 
-### 3. 世界最大水电工程之一：三峡工程
+### 3. 世界最大太阳能园区之一：Bhadla Solar Park
 
-![三峡大坝实景照片](/images/issues/016/world-three-gorges-dam.jpg)
+![Bhadla Solar Park 卫星图](/images/issues/016/world-bhadla-solar-park.jpg)
 
-*三峡工程，长江干流上的超大型水利枢纽。*
+*Bhadla Solar Park，位于印度拉贾斯坦邦沙漠地区，是全球最大太阳能园区之一。*
 
-三峡这样的工程提醒我们，大规模系统从来不是单目标优化。发电、防洪、航运、生态、移民和维护会互相牵制。企业 AI 也是一样：效率、隐私、成本、合规和员工体验必须一起看。
+从卫星视角看，太阳能园区像把无数小模块铺成一张巨大计算网。它和企业 AI 的启发很接近：规模化不靠单点奇迹，而靠标准化单元、并网、维护和调度。
 
-### 4. 世界知名大型人工岛工程：朱美拉棕榈岛
+### 4. 世界最大单体航站楼之一：北京大兴国际机场航站楼
 
-![朱美拉棕榈岛航拍照片](/images/issues/016/world-palm-jumeirah.jpg)
+![北京大兴国际机场航站楼航拍照片](/images/issues/016/world-beijing-daxing-airport.jpg)
 
-*朱美拉棕榈岛，迪拜的大型人工岛工程。*
+*北京大兴国际机场航站楼以集中式放射布局闻名，是超大型单体航站楼代表。*
 
-人工岛有很强的视觉冲击，但真正的工程问题在海流、沉降、交通、给排水和后期运营。很多 AI 项目也会先有漂亮 demo，后面才轮到最难的部分：接进业务系统以后，每天稳定工作。
+航站楼的复杂性在于把安检、登机、行李、交通和人流压进同一个空间里协调。企业 AI 进入现场后，也会遇到这种多流程汇合：入口统一只是开始，调度和异常处理才是关键。
 
-### 5. 世界最长防御工程之一：长城
+### 5. 世界最大人造太空结构：国际空间站
 
-![长城实景照片](/images/issues/016/world-great-wall.jpg)
+![国际空间站在轨照片](/images/issues/016/world-international-space-station.jpg)
 
-*长城是跨越多个历史时期修建、维护和扩展的巨型防御体系。*
+*国际空间站由多个国家长期协作建造和运行，是低地球轨道上的模块化巨型系统。*
 
-长城不是一条简单的墙，而是一套烽燧、关口、道路、驻防和地形利用的体系。放到今天的开发流程里，它像权限边界和审计系统：真正有用的防线不是某一个按钮，而是一连串能互相补位的检查点。
+它最有启发的不是“在太空很大”，而是模块对接、持续维护和跨组织协作。AI agent 如果要进入真实业务，也需要像空间站一样：能扩展、能维修、能交接，而不是一次性演示。
 
 ---
 
@@ -199,7 +199,7 @@ Semantic issue search 让 Copilot Chat 可以按语义搜索仓库 Issue，而�
 
 ## 本周冷知识 / 彩蛋
 
-- 🥚 **冷知识 1**：FAST 的反射面不是固定死的“锅”，它由数千块面板组成，可通过主动控制形成适合观测目标的抛物面。
+- 🥚 **冷知识 1**：ALMA 阵列的天线可以搬到不同位置，改变“虚拟望远镜”的等效口径；有点像把一组工具按任务重新编排。
 - 🧠 **冷知识 2**：staged publishing 这个思路在应用发布里很常见，但放到 npm 包生态里特别有意义，因为一个小包的坏版本可能被成千上万个项目自动拉取。
 
 ---
