@@ -8,28 +8,28 @@ head:
       content: '本周最值得记住的变化，是 AI agent 从模型发布会走向企业数据、私有环境、供应链闸门和真实业务系统。'
   - - meta
     - property: og:image
-      content: https://blog.leeseven.com/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.png
+      content: https://blog.leeseven.com/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.jpg
   - - meta
     - property: og:image:secure_url
-      content: https://blog.leeseven.com/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.png
+      content: https://blog.leeseven.com/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.jpg
   - - meta
     - property: og:image:type
-      content: image/png
+      content: image/jpeg
   - - meta
     - property: og:image:width
-      content: '1440'
+      content: '3840'
   - - meta
     - property: og:image:height
-      content: '900'
+      content: '2498'
   - - meta
     - property: og:image:alt
       content: 第 016 期封面图：港珠澳大桥连接海面、隧道和人工岛
   - - meta
     - name: twitter:image
-      content: https://blog.leeseven.com/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.png
+      content: https://blog.leeseven.com/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.jpg
   - - meta
     - itemprop: image
-      content: https://blog.leeseven.com/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.png
+      content: https://blog.leeseven.com/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.jpg
   - - meta
     - property: og:url
       content: https://blog.leeseven.com/issues/issue-016
@@ -51,7 +51,7 @@ head:
 
 ## 封面图
 
-![港珠澳大桥连接海面、隧道和人工岛](/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.png)
+![港珠澳大桥连接海面、隧道和人工岛](/images/issues/016/cover-hong-kong-zhuhai-macao-bridge.jpg)
 
 封面图：港珠澳大桥把桥梁、海底隧道和人工岛接在一起。它很适合本期主题：AI 不再只是一个单点模型，而是在云、私有数据、工具链、审批和真实业务之间搭桥。
 
@@ -121,7 +121,7 @@ Reuters 5 月 21 日援引 The Information 报道称，Anthropic 正与 Microsof
 
 ### 1. 世界最大单口径射电望远镜：FAST
 
-![FAST 射电望远镜资料页截图](/images/issues/016/world-fast-telescope.png)
+![FAST 射电望远镜实景照片](/images/issues/016/world-fast-telescope.jpg)
 
 *FAST，位于贵州平塘，口径 500 米，常被称为“中国天眼”。*
 
@@ -129,7 +129,7 @@ FAST 的“最”不是把一个盘子做大这么简单，而是把山谷地形
 
 ### 2. 世界最高建筑：哈利法塔
 
-![哈利法塔资料页截图](/images/issues/016/world-burj-khalifa.png)
+![哈利法塔实景照片](/images/issues/016/world-burj-khalifa.jpg)
 
 *哈利法塔，迪拜，高度约 828 米。*
 
@@ -137,7 +137,7 @@ FAST 的“最”不是把一个盘子做大这么简单，而是把山谷地形
 
 ### 3. 世界最大水电工程之一：三峡工程
 
-![三峡大坝资料页截图](/images/issues/016/world-three-gorges-dam.png)
+![三峡大坝实景照片](/images/issues/016/world-three-gorges-dam.jpg)
 
 *三峡工程，长江干流上的超大型水利枢纽。*
 
@@ -145,7 +145,7 @@ FAST 的“最”不是把一个盘子做大这么简单，而是把山谷地形
 
 ### 4. 世界知名大型人工岛工程：朱美拉棕榈岛
 
-![朱美拉棕榈岛资料页截图](/images/issues/016/world-palm-jumeirah.png)
+![朱美拉棕榈岛航拍照片](/images/issues/016/world-palm-jumeirah.jpg)
 
 *朱美拉棕榈岛，迪拜的大型人工岛工程。*
 
@@ -153,7 +153,7 @@ FAST 的“最”不是把一个盘子做大这么简单，而是把山谷地形
 
 ### 5. 世界最长防御工程之一：长城
 
-![长城资料页截图](/images/issues/016/world-great-wall.png)
+![长城实景照片](/images/issues/016/world-great-wall.jpg)
 
 *长城是跨越多个历史时期修建、维护和扩展的巨型防御体系。*
 
