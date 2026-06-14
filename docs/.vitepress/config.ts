@@ -64,6 +64,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '小七的周刊（第 019 期）：Agent 进入流水线', link: '/issues/issue-019' },
           { text: '小七的周刊（第 018 期）：AI 开始长出仪表盘', link: '/issues/issue-018' },
           { text: '小七的周刊（第 017 期）：AI 开始进入可运营时代', link: '/issues/issue-017' },
           { text: '小七的周刊（第 016 期）：AI 开始回到企业现场', link: '/issues/issue-016' },
