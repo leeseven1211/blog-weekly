@@ -106,15 +106,21 @@ features:
 
 ## 最新一期
 
+### [第 023 期：AI 进入可编排的工作台](/issues/issue-023)
+
+*2026-07-19*
+
+本周 JetBrains、Visual Studio、Copilot 用量 API 与安全扫描 API 都在补同一件事：AI 不是只会聊天的插件，而是需要模型、权限、指标和回滚机制共同支撑的工作台。
+
+---
+
+## 往期
+
 ### [第 022 期：AI 从助手变成可管资产](/issues/issue-022)
 
 *2026-07-06*
 
 本周 Copilot Vision、浏览器工具、CLI 免 PAT、使用记录流与 Claude Sonnet 5 都在指向同一件事：AI 不只要会干活，还要能看见、能进流程、能被计量。
-
----
-
-## 往期
 
 ### [第 021 期：AI 工具开始补课工程常识](/issues/issue-021)
 
