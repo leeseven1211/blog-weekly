@@ -64,6 +64,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '小七的周刊（第 024 期）：AI Agent 开始接工单，也开始过门禁', link: '/issues/issue-024' },
           { text: '小七的周刊（第 023 期）：AI 进入可编排的工作台', link: '/issues/issue-023' },
           { text: '小七的周刊（第 022 期）：AI 从助手变成可管资产', link: '/issues/issue-022' },
           { text: '小七的周刊（第 021 期）：AI 工具开始补课工程常识', link: '/issues/issue-021' },

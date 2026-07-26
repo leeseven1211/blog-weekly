@@ -106,15 +106,21 @@ features:
 
 ## 最新一期
 
+### [第 024 期：AI Agent 开始接工单，也开始过门禁](/issues/issue-024)
+
+*2026-07-26*
+
+本周 Linear、GitHub Issues、MCP 和 Code Quality 都在补同一件事：agent 可以进入真实工作流，但需要工单、门禁、规范测试和质量账本一起托住。
+
+---
+
+## 往期
+
 ### [第 023 期：AI 进入可编排的工作台](/issues/issue-023)
 
 *2026-07-19*
 
 本周 JetBrains、Visual Studio、Copilot 用量 API 与安全扫描 API 都在补同一件事：AI 不是只会聊天的插件，而是需要模型、权限、指标和回滚机制共同支撑的工作台。
-
----
-
-## 往期
 
 ### [第 022 期：AI 从助手变成可管资产](/issues/issue-022)
 
