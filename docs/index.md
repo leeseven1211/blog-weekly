@@ -106,15 +106,21 @@ features:
 
 ## 最新一期
 
+### [第 025 期：AI Agent 上生产线，护栏也要上生产线](/issues/issue-025)
+
+*2026-08-02*
+
+本周 GitHub、Google 和 Anthropic 的更新把 agent 从炫技拉回工程化：统一策略、只读上下文、沙箱钩子、身份和安全复盘，决定它能不能进入生产流程。
+
+---
+
+## 往期
+
 ### [第 024 期：AI Agent 开始接工单，也开始过门禁](/issues/issue-024)
 
 *2026-07-26*
 
 本周 Linear、GitHub Issues、MCP 和 Code Quality 都在补同一件事：agent 可以进入真实工作流，但需要工单、门禁、规范测试和质量账本一起托住。
-
----
-
-## 往期
 
 ### [第 023 期：AI 进入可编排的工作台](/issues/issue-023)
 
