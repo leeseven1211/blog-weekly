@@ -106,15 +106,21 @@ features:
 
 ## 最新一期
 
+### [第 026 期：会做事之后，Agent 要会交接班](/issues/issue-026)
+
+*2026-08-09*
+
+本周 Codex、Copilot、Gemini Robotics 和 OpenAI API 迁移窗口都在提醒开发者：agent 的下一步不是只追求更强回答，而是会交接、可恢复、能迁移、可观测。
+
+---
+
+## 往期
+
 ### [第 025 期：AI Agent 上生产线，护栏也要上生产线](/issues/issue-025)
 
 *2026-08-02*
 
 本周 GitHub、Google 和 Anthropic 的更新把 agent 从炫技拉回工程化：统一策略、只读上下文、沙箱钩子、身份和安全复盘，决定它能不能进入生产流程。
-
----
-
-## 往期
 
 ### [第 024 期：AI Agent 开始接工单，也开始过门禁](/issues/issue-024)
 
