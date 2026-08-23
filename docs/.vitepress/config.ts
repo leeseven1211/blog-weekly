@@ -64,6 +64,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '小七的周刊（第 028 期）：当 Agent 进了群聊，护栏也要进场', link: '/issues/issue-028' },
           { text: '小七的周刊（第 027 期）：当 Agent 开始有了快车道', link: '/issues/issue-027' },
           { text: '小七的周刊（第 026 期）：会做事之后，Agent 要会交接班', link: '/issues/issue-026' },
           { text: '小七的周刊（第 025 期）：AI Agent 上生产线，护栏也要上生产线', link: '/issues/issue-025' },

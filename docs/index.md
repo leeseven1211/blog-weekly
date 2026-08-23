@@ -106,15 +106,21 @@ features:
 
 ## 最新一期
 
+### [第 028 期：当 Agent 进了群聊，护栏也要进场](/issues/issue-028)
+
+*2026-08-23*
+
+GitHub 把 Copilot 带进 Slack 和 Teams，Google 用 ADK 演示零信任 agent，Cloudflare 开始同步 AI bot 偏好；本期关注协作型 agent 的治理、权限和可观察性。
+
+---
+
+## 往期
+
 ### [第 027 期：当 Agent 开始有了快车道](/issues/issue-027)
 
 *2026-08-16*
 
 本周的 AI 更新不只在比模型分数：更快的推理通道、跨工具插件、MCP 流量治理和表格里的小应用，都在把 agent 推向可组合、可控、可落地的工作流。
-
----
-
-## 往期
 
 ### [第 026 期：会做事之后，Agent 要会交接班](/issues/issue-026)
 
