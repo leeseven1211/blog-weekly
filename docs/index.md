@@ -106,15 +106,21 @@ features:
 
 ## 最新一期
 
+### [第 029 期：会动手的 AI，开始补仪表盘](/issues/issue-029)
+
+*2026-08-30*
+
+OpenAI 披露 Jalapeño 推理芯片结果，Anthropic 预览 Model Hardware Standard，GitHub 把 Copilot 定制与模型策略收口，Cloudflare 用 EmDash 和 MCP 重建内容基础设施；本期关注 AI 系统的测量、标准和治理。
+
+---
+
+## 往期
+
 ### [第 028 期：当 Agent 进了群聊，护栏也要进场](/issues/issue-028)
 
 *2026-08-23*
 
 GitHub 把 Copilot 带进 Slack 和 Teams，Google 用 ADK 演示零信任 agent，Cloudflare 开始同步 AI bot 偏好；本期关注协作型 agent 的治理、权限和可观察性。
-
----
-
-## 往期
 
 ### [第 027 期：当 Agent 开始有了快车道](/issues/issue-027)
 
