@@ -106,15 +106,21 @@ features:
 
 ## 最新一期
 
+### [第 030 期：AI 交出了数学卷子，谁来批改？](/issues/issue-030)
+
+*2026-09-13*
+
+OpenAI 称内部模型给出纳维-斯托克斯问题的证明，数学界集体"先别急"；Mistral 融资 30 亿欧元押注开源主权；Shopify 一周内收购 Tailwind、手机端退回原生。本期聊聊 AI 交卷之后，验证这门功课。
+
+---
+
+## 往期
+
 ### [第 029 期：会动手的 AI，开始补仪表盘](/issues/issue-029)
 
 *2026-08-30*
 
 OpenAI 披露 Jalapeño 推理芯片结果，Anthropic 预览 Model Hardware Standard，GitHub 把 Copilot 定制与模型策略收口，Cloudflare 用 EmDash 和 MCP 重建内容基础设施；本期关注 AI 系统的测量、标准和治理。
-
----
-
-## 往期
 
 ### [第 028 期：当 Agent 进了群聊，护栏也要进场](/issues/issue-028)
 

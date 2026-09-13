@@ -64,6 +64,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '小七的周刊（第 030 期）：AI 交出了数学卷子，谁来批改？', link: '/issues/issue-030' },
           { text: '小七的周刊（第 029 期）：会动手的 AI，开始补仪表盘', link: '/issues/issue-029' },
           { text: '小七的周刊（第 028 期）：当 Agent 进了群聊，护栏也要进场', link: '/issues/issue-028' },
           { text: '小七的周刊（第 027 期）：当 Agent 开始有了快车道', link: '/issues/issue-027' },
