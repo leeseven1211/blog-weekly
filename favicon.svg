@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- 背景 -->
+  <rect width="32" height="32" rx="6" fill="#0f172a"/>
+  <!-- 芯片外框 -->
+  <rect x="9" y="9" width="14" height="14" rx="2" stroke="#38bdf8" stroke-width="1.5" fill="#1e293b"/>
+  <!-- 芯片引脚 左 -->
+  <line x1="9" y1="13" x2="6" y2="13" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="9" y1="16" x2="6" y2="16" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="9" y1="19" x2="6" y2="19" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- 芯片引脚 右 -->
+  <line x1="23" y1="13" x2="26" y2="13" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="23" y1="16" x2="26" y2="16" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="23" y1="19" x2="26" y2="19" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- 芯片引脚 上 -->
+  <line x1="13" y1="9" x2="13" y2="6" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="19" y1="9" x2="19" y2="6" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- 芯片引脚 下 -->
+  <line x1="13" y1="23" x2="13" y2="26" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="19" y1="23" x2="19" y2="26" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- 中心文字 七 -->
+  <text x="16" y="19.5" font-family="serif" font-size="9" font-weight="bold" fill="#38bdf8" text-anchor="middle">七</text>
+</svg>
