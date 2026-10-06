@@ -104,12 +104,21 @@ def validate_single_image_section(text: str, section_title: str) -> list[str]:
     return []
 
 
+def resolve_section(text: str, section_titles: str | tuple[str, ...]) -> tuple[str, str | None]:
+    titles = (section_titles,) if isinstance(section_titles, str) else section_titles
+    for title in titles:
+        section = extract_section(text, title)
+        if section is not None:
+            return title, section
+    return titles[0], None
+
+
 def validate_repeat_blocks(
     text: str,
-    section_title: str,
+    section_titles: str | tuple[str, ...],
     start_patterns: Iterable[re.Pattern[str]],
 ) -> list[str]:
-    section = extract_section(text, section_title)
+    section_title, section = resolve_section(text, section_titles)
     if section is None:
         return [f"缺少章节：{section_title}"]
 
@@ -128,10 +137,10 @@ def validate_repeat_blocks(
 
 def validate_no_generic_stock(
     text: str,
-    section_title: str,
+    section_titles: str | tuple[str, ...],
     start_patterns: Iterable[re.Pattern[str]],
 ) -> list[str]:
-    section = extract_section(text, section_title)
+    section_title, section = resolve_section(text, section_titles)
     if section is None:
         return []
 
@@ -476,12 +485,12 @@ def main() -> int:
     tool_patterns = [re.compile(r"^\*\*\["), re.compile(r"^###\s*\d+[\).]\s")]
 
     errors.extend(validate_repeat_blocks(text, "科技与 AI 动态", news_patterns))
-    errors.extend(validate_repeat_blocks(text, "开源工具", tool_patterns))
+    errors.extend(validate_repeat_blocks(text, ("开源工具", "工具深挖"), tool_patterns))
     errors.extend(validate_world_records_section(text, issue_file, min_count=5))
     errors.extend(validate_optional_image_section(text, "意外推荐（非科技）"))
     errors.extend(validate_banned_sections(text))
     errors.extend(validate_no_generic_stock(text, "科技与 AI 动态", news_patterns))
-    errors.extend(validate_no_generic_stock(text, "开源工具", tool_patterns))
+    errors.extend(validate_no_generic_stock(text, ("开源工具", "工具深挖"), tool_patterns))
     errors.extend(validate_issue_stock_budget(text, max_allowed=1))
     errors.extend(validate_no_duplicate_images(text))
     errors.extend(validate_issue_scoped_local_images(issue_file, text))
