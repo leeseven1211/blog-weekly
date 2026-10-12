@@ -64,6 +64,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '小七的周刊（第 032 期）：当 AI 开始动手，观测就不能缺席', link: '/issues/issue-032' },
           { text: '小七的周刊（第 031 期）：别把自动化当成免检通行证', link: '/issues/issue-031' },
           { text: '小七的周刊（第 030 期）：AI 交出了数学卷子，谁来批改？', link: '/issues/issue-030' },
           { text: '小七的周刊（第 029 期）：会动手的 AI，开始补仪表盘', link: '/issues/issue-029' },
