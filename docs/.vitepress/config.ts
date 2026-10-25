@@ -64,6 +64,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '小七的周刊（第 034 期）：把复杂系统交给可观察的边界', link: '/issues/issue-034' },
           { text: '小七的周刊（第 033 期）：会验证的自动化，才值得交出权限', link: '/issues/issue-033' },
           { text: '小七的周刊（第 032 期）：当 AI 开始动手，观测就不能缺席', link: '/issues/issue-032' },
           { text: '小七的周刊（第 031 期）：别把自动化当成免检通行证', link: '/issues/issue-031' },
