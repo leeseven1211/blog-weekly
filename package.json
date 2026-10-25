@@ -8,10 +8,11 @@
     "docs:sync": "python3 scripts/sync-issues-meta.py",
     "docs:check-latest": "python3 scripts/check-issue-images.py --latest",
     "docs:dev": "npm run docs:sync && vitepress dev docs",
-    "docs:build": "npm run docs:sync && npm run docs:check-latest && vitepress build docs",
+    "docs:build": "npm run docs:sync && npm run docs:images && npm run docs:check-latest && vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "docs:check-image-urls": "python3 scripts/check-image-urls.py --latest",
-    "docs:publish-check": "npm run docs:build && npm run docs:check-image-urls && python3 scripts/check-publish-review.py --latest"
+    "docs:publish-check": "npm run docs:build && npm run docs:check-image-urls && python3 scripts/check-publish-review.py --latest",
+    "docs:images": "python3 scripts/fetch-issue-images.py --latest"
   },
   "devDependencies": {
     "vitepress": "^1.6.3"
