@@ -64,6 +64,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '小七的周刊（第 036 期）：把不确定性关进可回放的实验室', link: '/issues/issue-036' },
           { text: '小七的周刊（第 035 期）：把 AI 的速度变成可回放的证据', link: '/issues/issue-035' },
           { text: '小七的周刊（第 034 期）：把复杂系统交给可观察的边界', link: '/issues/issue-034' },
           { text: '小七的周刊（第 033 期）：会验证的自动化，才值得交出权限', link: '/issues/issue-033' },
