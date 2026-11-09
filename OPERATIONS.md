@@ -190,7 +190,9 @@ npm run docs:verify-live -- --issue 036
 4. 校验 `/feed.xml` 已收录本期
 5. 校验 `og:image` 封面图返回 200
 
-任一步超时或失败才退出非零。需要只做 HTTP 复验时加 `--skip-ci`；要验证指定提交加 `--sha <commit>`。
+任一步超时或失败才退出非零。需要只做 HTTP 复验时加 `--skip-ci`；要验证指定提交加 `--sha <commit>`；要确认线上是新版文案时加 `--expect "<本期摘要片段>"`。
+
+注意 GitHub Pages 的 CDN 缓存是 `max-age=600`。部署成功后边缘节点可能还回旧 HTML，脚本会用 `last-modified` 和 `--since` 判断是否新鲜，旧缓存不会算通过。
 
 手动补查入口：
 

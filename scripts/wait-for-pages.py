@@ -22,7 +22,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 DEPLOY_WORKFLOW = "Deploy VitePress to GitHub Pages"
 PAGES_WORKFLOW = "pages build and deployment"
@@ -80,7 +80,7 @@ def wait_run(run: dict, timeout: float, label: str) -> dict:
     raise SystemExit(f"TIMEOUT: {label} did not finish within {timeout:.0f}s")
 
 
-def http_get(url: str) -> tuple[int, str]:
+def http_get(url: str) -> tuple[int, str, dict[str, str]]:
     request = urllib.request.Request(
         url,
         headers={
@@ -91,31 +91,48 @@ def http_get(url: str) -> tuple[int, str]:
     )
     try:
         with urllib.request.urlopen(request, timeout=25) as response:
-            return response.status, response.read().decode("utf-8", errors="replace")
+            headers = {key.lower(): value for key, value in response.headers.items()}
+            return response.status, response.read().decode("utf-8", errors="replace"), headers
     except urllib.error.HTTPError as error:
-        return error.code, ""
+        return error.code, "", {}
     except Exception:
-        return 0, ""
+        return 0, "", {}
 
 
-def wait_http(url: str, marker: str, timeout: float, label: str) -> str:
+def wait_http(
+    url: str,
+    marker: str,
+    timeout: float,
+    label: str,
+    since: datetime | None = None,
+    expect: str | None = None,
+) -> str:
     deadline = time.monotonic() + timeout
     attempt = 0
-    last_code = None
+    last_note = None
     while time.monotonic() < deadline:
         attempt += 1
         bust = f"{url}{'&' if '?' in url else '?'}deploy-check={int(time.time())}"
-        code, body = http_get(bust)
-        ok = code == 200 and marker in body
-        if code != last_code or ok:
-            suffix = "ok" if ok else f"{code}, marker={marker in body}"
-            log(f"  {label}: attempt {attempt} -> {suffix}")
-            last_code = code
+        code, body, headers = http_get(bust)
+        fresh = True
+        if since is not None:
+            modified = headers.get("last-modified")
+            if modified:
+                try:
+                    fresh = parse_time(modified) >= since - timedelta(seconds=90)
+                except ValueError:
+                    fresh = True
+        content_ok = code == 200 and marker in body and (expect is None or expect in body)
+        ok = content_ok and fresh
+        note = "ok" if ok else f"{code} marker={marker in body} expect={expect is None or (expect in body)} fresh={fresh} last-modified={headers.get('last-modified')}"
+        if note != last_note:
+            log(f"  {label}: attempt {attempt} -> {note}")
+            last_note = note
         if ok:
             log(f"  {label}: LIVE")
             return body
         time.sleep(5)
-    raise SystemExit(f"TIMEOUT: {label} did not return 200 + expected content within {timeout:.0f}s")
+    raise SystemExit(f"TIMEOUT: {label} did not become fresh within {timeout:.0f}s")
 
 
 def parse_time(value: str) -> datetime:
@@ -128,6 +145,8 @@ def main() -> None:
     parser.add_argument("--base-url", default=DEFAULT_BASE)
     parser.add_argument("--sha", help="Commit SHA to verify (default: HEAD)")
     parser.add_argument("--skip-ci", action="store_true", help="Skip workflow waiting")
+    parser.add_argument("--since", help="ISO time the deployment started (default: deploy run start)")
+    parser.add_argument("--expect", help="Extra text that must appear in the live page")
     parser.add_argument("--ci-timeout", type=float, default=600)
     parser.add_argument("--http-timeout", type=float, default=300)
     args = parser.parse_args()
@@ -171,21 +190,25 @@ def main() -> None:
         else:
             log("  pages deployment run not listed yet; relying on HTTP polling")
 
+    since = parse_time(args.since) if args.since else None
+    if since is None and not args.skip_ci and 'deploy_at' in locals():
+        since = deploy_at
+
     page_url = f"{args.base_url}/issues/issue-{padded}"
-    html = wait_http(page_url, f"第 {padded} 期", args.http_timeout, "issue page")
+    html = wait_http(page_url, f"第 {padded} 期", args.http_timeout, "issue page", since=since, expect=args.expect)
 
     title = re.search(r"<title>(.*?)</title>", html, re.S)
     if title:
         log(f"  title: {title.group(1).strip()}")
 
-    wait_http(f"{args.base_url}/feed.xml", f"issue-{padded}", args.http_timeout, "rss feed")
+    wait_http(f"{args.base_url}/feed.xml", f"issue-{padded}", args.http_timeout, "rss feed", since=since)
 
     cover = re.search(r'property="og:image"[^>]*content="([^"]+)"', html)
     if cover:
         image_url = cover.group(1)
         if image_url.startswith("/"):
             image_url = args.base_url + image_url
-        code, _ = http_get(f"{image_url}?deploy-check={int(time.time())}")
+        code, _, _ = http_get(f"{image_url}?deploy-check={int(time.time())}")
         log(f"  cover image: {code} {image_url}")
         if code != 200:
             raise SystemExit("cover image is not 200")
