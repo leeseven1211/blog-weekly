@@ -1,4 +1,5 @@
 ---
+description: 从 AI agent 评测、浏览器自动化到数据契约，本期讨论如何让快速变化的系统留下可复核的证据。
 head:
   - - meta
     - property: og:title

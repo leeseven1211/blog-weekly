@@ -12,7 +12,8 @@
     "docs:preview": "vitepress preview docs",
     "docs:check-image-urls": "python3 scripts/check-image-urls.py --latest",
     "docs:publish-check": "npm run docs:build && npm run docs:check-image-urls && python3 scripts/check-publish-review.py --latest",
-    "docs:images": "python3 scripts/fetch-issue-images.py --latest"
+    "docs:images": "python3 scripts/fetch-issue-images.py --latest",
+    "docs:verify-live": "python3 scripts/wait-for-pages.py"
   },
   "devDependencies": {
     "vitepress": "^1.6.3"

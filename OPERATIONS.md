@@ -174,12 +174,29 @@ git push origin main
 
 ### 3.5 上线验收
 
-发布后不要只看 workflow 成功，必须确认用户入口真实更新：
+push 之后不要立刻 curl 公网地址。GitHub Pages 通常要 60–120 秒，部署完成前的 404 不是发布失败。
+
+统一用下面的命令等待并验收：
+
+```bash
+npm run docs:verify-live -- --issue 036
+```
+
+脚本 `scripts/wait-for-pages.py` 会依次：
+
+1. 找到当前 HEAD 对应的 `Deploy VitePress to GitHub Pages` run，等它结束（默认上限 600 秒）
+2. 等 `pages build and deployment` 结束
+3. 带 cache-buster 轮询 `https://blog.leeseven.com/issues/issue-XXX`，直到 200 且包含「第 XXX 期」（默认上限 300 秒）
+4. 校验 `/feed.xml` 已收录本期
+5. 校验 `og:image` 封面图返回 200
+
+任一步超时或失败才退出非零。需要只做 HTTP 复验时加 `--skip-ci`；要验证指定提交加 `--sha <commit>`。
+
+手动补查入口：
 
 - 正文页：`https://blog.leeseven.com/issues/issue-XXX.html`
-- 首页“最新一期”
-- `/latest` 跳转
-- RSS 首条：`https://blog.leeseven.com/feed.xml`
+- 首页“最新一期”、`/latest`、`/archive`
+- RSS：`https://blog.leeseven.com/feed.xml`
 - 关键图片实际渲染正确；若缓存仍回旧图，换新文件名并更新引用
 
 ## 4. 自动化边界

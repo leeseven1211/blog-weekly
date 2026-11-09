@@ -10,6 +10,19 @@ export default defineConfig({
     hostname: 'https://blog.leeseven.com'
   },
 
+  // 周刊正文页用本期的 og:description 作为 meta description，
+  // 否则所有期数都会落到站点通用描述。
+  transformPageData(pageData) {
+    if (!/^issues\/issue-\d{3}\.md$/.test(pageData.relativePath)) return
+    const head = pageData.frontmatter?.head as unknown as any[] | undefined
+    if (!Array.isArray(head)) return
+    const entry = head.find((item) => Array.isArray(item) && item[1]?.property === 'og:description')
+    const description = entry?.[1]?.content
+    if (typeof description === 'string' && description.trim()) {
+      return { description: description.trim() }
+    }
+  },
+
   appearance: 'auto',
 
   head: [
