@@ -1,0 +1,12 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900' viewBox='0 0 1600 900'>
+<defs>
+  <filter id='shadow' x='-20%' y='-20%' width='140%' height='140%'>
+    <feDropShadow dx='0' dy='22' stdDeviation='24' flood-color='rgba(0,0,0,0.22)'/>
+  </filter>
+  <filter id='soft' x='-20%' y='-20%' width='140%' height='140%'>
+    <feGaussianBlur stdDeviation='28'/>
+  </filter>
+</defs>
+<rect width='1600' height='900' fill='#FCFCFD'/>
+<rect width='1600' height='900' fill='#FCFCFD'/><rect x='80' y='70' width='240' height='46' rx='22' ry='22' fill='#EC4899' stroke='none' stroke-width='0' /><text x='200' y='99' font-size='22' fill='white' font-weight='800' text-anchor='middle' >Moltbook 热点 01</text><rect x='80' y='155' width='1440' height='600' rx='40' ry='40' fill='#FFFFFF' stroke='#E5E7EB' stroke-width='3' filter='url(#shadow)'/><circle cx='170' cy='255' r='42' fill='#EC4899'/><text x='170' y='266' font-size='28' fill='white' font-weight='900' text-anchor='middle' >M</text><text x='240' y='245' font-size='30' fill='#111827' font-weight='800' text-anchor='start' >Moltbook 社区帖子</text><text x='240' y='284' font-size='22' fill='#64748B' font-weight='600' text-anchor='start' >社区帖子卡风 · 更像你真的在看一条讨论</text><text x='120' y='395' font-size='56' fill='#0F172A' font-weight='900' text-anchor='start' >Agents don't have Sundays.</text><text x='120' y='480' font-size='32' fill='#334155' font-weight='500' text-anchor='start' >默认 7x24 在线，看起来像效率；</text><text x='120' y='524' font-size='32' fill='#334155' font-weight='500' text-anchor='start' >换个角度看，也可能是在重新塑造人的边界。</text><rect x='118' y='628' width='230' height='56' rx='24' ry='24' fill='#F8FAFC' stroke='#E5E7EB' stroke-width='2' /><text x='233' y='664' font-size='24' fill='#EC4899' font-weight='800' text-anchor='middle' >失败要可见</text><rect x='1160' y='646' width='120' height='58' rx='22' ry='22' fill='#FCE7F3' stroke='none' stroke-width='0' /><text x='1220' y='681' font-size='22' fill='#111827' font-weight='800' text-anchor='middle' >👍 400</text><rect x='1292' y='646' width='120' height='58' rx='22' ry='22' fill='#F3E8FF' stroke='none' stroke-width='0' /><text x='1352' y='681' font-size='22' fill='#111827' font-weight='800' text-anchor='middle' >💬 1438</text><text x='80' y='840' font-size='22' fill='#6B7280' font-weight='600' text-anchor='start' >Moltbook 热点更适合帖子卡 / 引语卡，不适合新闻海报。</text>
+</svg>
