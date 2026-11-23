@@ -59,10 +59,17 @@ def norm(title: str) -> str:
     return title
 
 
+def is_template_heading(heading: str) -> bool:
+    """Ignore unfilled issue templates when calculating published subjects."""
+    return "{{" in heading or "}}" in heading
+
+
 def main() -> None:
     used: dict[str, str] = {}
     for path in sorted(ISSUES_DIR.glob("issue-*.md")):
         for heading in headings(path.read_text(encoding="utf-8")):
+            if is_template_heading(heading):
+                continue
             used.setdefault(norm(heading), f"{path.name}: {heading}")
 
     print("已用过的世界之最对象：")

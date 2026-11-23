@@ -1,0 +1,252 @@
+---
+description: GPT-6.2、Copilot Evals 与按需密钥扫描，把 agent 的工作推进到更长链路，也把评测、权限和可复盘性从附属品变成了交付条件。
+head:
+  - - meta
+    - property: og:title
+      content: 小七的周刊（第 037 期）：让 agent 走得更远之前，先让它学会交代
+  - - meta
+    - property: og:description
+      content: GPT-6.2、Copilot Evals 与按需密钥扫描，把 agent 的工作推进到更长链路，也把评测、权限和可复盘性从附属品变成了交付条件。
+  - - meta
+    - property: og:image
+      content: https://blog.leeseven.com/images/issues/037/cover-bridge.jpg
+  - - meta
+    - property: og:image:secure_url
+      content: https://blog.leeseven.com/images/issues/037/cover-bridge.jpg
+  - - meta
+    - property: og:image:type
+      content: image/jpeg
+  - - meta
+    - property: og:image:width
+      content: '1600'
+  - - meta
+    - property: og:image:height
+      content: '900'
+  - - meta
+    - property: og:image:alt
+      content: 第 037 期封面图：跨海大桥的钢缆与桥面
+  - - meta
+    - name: twitter:image
+      content: https://blog.leeseven.com/images/issues/037/cover-bridge.jpg
+  - - meta
+    - itemprop: image
+      content: https://blog.leeseven.com/images/issues/037/cover-bridge.jpg
+  - - meta
+    - property: og:url
+      content: https://blog.leeseven.com/issues/issue-037
+---
+
+# 小七的周刊（第 037 期）：让 agent 走得更远之前，先让它学会交代
+
+*这里记录每周值得分享的科技内容，**每周一发布**（北京时间 07:00）。*
+
+## 本期 3 个要点
+
+1. **能力变强，交付定义也得变强**：新一代模型把长链路任务推进得更远，但“完成”不能只看最后一句答案，还要看它留下了什么证据。
+2. **评测开始进入日常开发**：GitHub 把可重复的 agent 评测推向公开预览，提示词、技能和 MCP 工具终于可以像代码一样回归比较。
+3. **权限不再是收尾配置**：密钥扫描、审批和可追踪日志应该在 agent 开始执行之前设计，而不是出事以后补上。
+
+## 封面图
+
+![厄勒海峡大桥](/images/issues/037/cover-bridge.jpg)
+
+封面图：跨越海峡的桥梁不是靠“能到对岸”成立，而是靠每一段受力、连接和检修都经得起复核。让 agent 进入生产，同样需要这套耐心。
+
+## 本周短谈
+
+### 1. 记忆不是把旧对话塞回去
+
+![Microsoft Research 的 TokenEconomizer 图示](/images/issues/037/short-memory.jpg)
+
+本周最值得反复咀嚼的，不是“agent 会不会记住”，而是它会把什么当成经验。Microsoft Research 发布的 TokenEconomizer 把过去任务里的可复用教训整理成插件，目标是让编码 agent 少花时间重新摸索同一份仓库。这个方向很实用：真正值钱的记忆应该是可定位的失败样本、有效约束和已验证命令，而不是把所有上下文原封不动塞回窗口。
+
+边界也在这里。未筛选的历史会把过期方案、偶然成功和错误假设一起放大。团队若要做“长期记忆”，先给每条经验留下来源、适用范围和失效条件，比先买一块更大的上下文窗口更稳。
+
+### 2. 改一次提示词，就该重新验一次
+
+![软件测试与评测环境](/images/issues/037/short-evals.jpg)
+
+GitHub Copilot Evals 的公开预览给了一个朴素但容易被忽略的提醒：agent 的提示词、技能、模型和 MCP 工具任何一个变了，行为都可能跟着变。一次看起来很好的演示，不能说明它在明天、换一份数据或多跑十次后仍然可靠。
+
+评测不必一开始就追求大而全。选三个真实任务，写清可接受结果、禁止动作和人工判断点；每次改动前后跑一遍并保存差异，就已经能拦住大量“感觉升级了，实际上退步了”的错觉。评测也不会替代线上观察，但它能让线上问题不必从零开始猜。
+
+### 3. 权限设计要比执行速度早一步
+
+![访问控制与运行监控](/images/issues/037/short-permission.jpg)
+
+更能干的 agent 会让“先给它权限再说”显得很诱人。本周 GitHub 将按需密钥扫描接入 Copilot 的安全审查，正说明安全检查正在前移到 agent 修改代码的过程里。好消息不只是多抓到一些 token，而是团队开始把“谁能发起、扫哪些改动、发现后谁确认”变成可配置的流程。
+
+别把这理解成所有任务都要加审批。低风险的只读查询、格式化和临时分支可以快；涉及密钥、生产写入、付款、发布的动作，应保留最小权限、明确边界和人工接管点。速度和控制不是二选一，关键是让不同风险拥有不同的通道。
+
+## 科技与 AI 动态
+
+### 1. [GPT-6.2 把“更强”与“更省”绑到了一起](https://openai.com/index/introducing-gpt-6-2-astra-sol/)
+
+![OpenAI GPT-6.2 官方发布页](/images/issues/037/news-gpt62.jpg)
+
+【事实】OpenAI 在 11 月 17 日发布 GPT-6.2 Astra 与 GPT-6.2 Sol，将 Astra 定位为复杂专业任务模型、Sol 定位为日常工作的高效模型。公告称，两者针对长链路工作、文档、代码与计算机操作做了改进，并在 API 侧下调了 Astra 的输入、缓存输入与输出价格。
+
+【推测】模型价格和效率继续下降，会让团队更愿意把 agent 拆成多个专业步骤，而非押在一个巨型提示词上。不过，能跑更多步骤也意味着失败面更大。真正要观察的是工具权限、状态保存与异常恢复是否同步进入默认工作流。
+
+### 2. [Copilot Evals：把 agent 行为从“演示”变成可回归的测试](https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/)
+
+![GitHub Copilot Evals 官方发布图](/images/issues/037/news-copilot-evals.jpg)
+
+【事实】GitHub 于 11 月 17 日将 Copilot Evals 推向公开预览。它允许用户为技能、自定义 agent 与 MCP 工具创建可重复任务，定义好结果与过程检查，并在调整提示词、模型或工具后比较运行结果。
+
+【推测】这会把 agent 的质量讨论从“这次答得不错”拉回工程语境：固定样本、明确断言、前后对比。它不保证 agent 在真实环境中永不出错，但对高频流程而言，先把失败模式写成测试，比等客户反馈更便宜。
+
+### 3. [按需密钥扫描被放进 agent 的改码流程](https://github.blog/changelog/2026-11-17-secret-scanning-on-demand-for-developers-and-agents/)
+
+![GitHub 按需密钥扫描官方发布页](/images/issues/037/news-secret-scanning.jpg)
+
+【事实】GitHub 11 月 17 日宣布，Copilot 的安全审查可在开发者或 agent 的改动上运行 GitHub Secret Scanning。公告称，启用后会结合已有的语言模型审查与 GitHub 的密钥检测器；检查对象是当前变更，而非整个仓库历史。
+
+【推测】这类能力的价值在于把安全反馈压缩到提交前，而不是替代代码审查。对团队来说，先明确哪些扫描会阻断、哪些只告警，以及发现密钥后的轮换责任人，才不会把一个好检测器变成新的通知噪声。
+
+### 4. [TokenEconomizer 试图让编码 agent 从上一次失败里少走弯路](https://www.microsoft.com/en-us/research/blog/tokeneconomizer-learning-from-experience-to-make-ai-coding-agents-more-efficient/)
+
+![Microsoft Research 的 TokenEconomizer 文章](/images/issues/037/news-tokeneconomizer.jpg)
+
+【事实】Microsoft Research 于 11 月 16 日介绍开源插件 TokenEconomizer。其目标是从 agent 在同一代码库中的既往会话提取可复用经验，减少重复探索和无效工具调用，同时不改动 agent 本体或底层工具。
+
+【推测】它代表的不是“记忆越多越好”，而是让经验变成可检索资产。适合先在容易重复的仓库维护任务试点；不适合把未经复核的聊天记录直接升级为规则，否则旧错误会以更高速度再跑一遍。
+
+### 5. [Claude Fable 5.2 也把多 agent 编排带到了产品叙事中心](https://www.anthropic.com/claude-fable-and-mythos-5-2)
+
+![Claude Fable 5.2 官方发布页](/images/issues/037/news-claude-fable.jpg)
+
+【事实】Anthropic 于 11 月 9 日发布 Claude Fable 5.2 与 Mythos 5.2，并将其描述为面向高难技术工作的模型。公告特别提到 Fable 可以担任 Advisor 或 Orchestrator，为其他模型提供建议或委派更简单的任务；同时继续区分带有不同安全访问条件的能力。
+
+【推测】多 agent 不会自动产生好结果，它只是把排队、上下文丢失和责任边界变得更明显。需要稳定交付的团队应先定义每个角色能读什么、能写什么、怎么验收，再追求并发数量。
+
+---
+
+## 世界之最
+
+### 1. 世界最高酒店：杰沃拉酒店
+
+![杰沃拉酒店](/images/issues/037/world-gevora-hotel.jpg)
+
+*杰沃拉酒店，阿联酋迪拜；以 356 米的高度获吉尼斯世界纪录认证。*
+
+一座极高的酒店，难点不只是把楼盖高，而是让消防、疏散、电梯、维护和日常运营都能在垂直尺度上正常工作。agent 也类似：跑通一次很容易，难的是把例外、停机和交接一起设计进去。
+
+### 2. 世界最大单朵花：大王花
+
+![大王花](/images/issues/037/world-rafflesia.jpg)
+
+*大王花，东南亚热带雨林；单朵花直径可超过 1 米。*
+
+大王花把繁复的结构压缩进一次短暂的开放。自动化也有类似诱惑：把更多环节塞进一次运行里。但体量不是价值本身，能否把状态、失败和恢复拆得清楚，才决定它能不能被长期维护。
+
+### 3. 世界最大种子：海椰子
+
+![海椰子](/images/issues/037/world-coco-de-mer.jpg)
+
+*海椰子，塞舌尔普拉兰岛等地；种子重量可达十余公斤，是植物界最大的种子。*
+
+一颗种子很大，并不意味着发芽更快；它携带的是更长的准备期。做 agent 平台也一样，先把权限模型、日志和评测基线备好，看似慢一点，后面才不必为每次扩张重新补基础设施。
+
+### 4. 世界最深洞穴：韦廖夫金娜洞穴
+
+![韦廖夫金娜洞穴](/images/issues/037/world-veryovkina-cave.jpg)
+
+*韦廖夫金娜洞穴，阿布哈兹阿拉比卡山地；探测深度约 2,212 米。*
+
+越往地下，路线越依赖绳索、记录与协作。复杂任务的可追溯性也不是锦上添花：当一个步骤失败时，团队需要知道它走过哪些分支、调用过什么工具，以及从哪里安全返回。
+
+### 5. 世界最大金字塔：乔鲁拉大金字塔
+
+![乔鲁拉大金字塔](/images/issues/037/world-cholula-pyramid.jpg)
+
+*乔鲁拉大金字塔，墨西哥普埃布拉州；按体积计常被认为是世界最大的金字塔。*
+
+它的体量不是一次堆出来的，而是在漫长时间里层层叠加。可靠系统通常也是这样：一条可验证的规则、一份可回放的样本、一个清晰的回滚点，最后才积成看似“很智能”的能力。
+
+---
+
+
+## 工具深挖
+
+### 1. [GitHub Copilot Evals：先把“好结果”写成测试](https://github.com/github/evals)
+
+![GitHub Copilot Evals 仓库](/images/issues/037/tool-copilot-evals.jpg)
+
+Copilot Evals 用可重复任务来检查 Copilot 的技能、自定义 agent 和 MCP 工具是否仍然做对事。它适合已经有真实样本、并愿意定义“什么算通过”的团队；最大的价值不是跑出一个分数，而是能比较一次配置调整到底改善了什么。
+
+它并不替你设计任务或判断业务风险。刚开始可以只拿三类高频任务做基线，并把失败结果留作回归样本。若没有稳定样本，先整理失败工单，比急着装评测框架更重要。
+
+### 2. [MCP Inspector：先把工具协议调明白](https://modelcontextprotocol.io/docs/tools/inspector)
+
+![MCP Inspector 官方文档](/images/issues/037/tool-mcp-inspector.jpg)
+
+MCP Inspector 是用于测试和调试 MCP server 的参考开发工具，提供浏览器界面、CLI 和终端界面。它适合在把工具交给 agent 前，先检查连接、参数、返回值和错误处理是否符合预期。
+
+它不是生产观测平台，也不会替你做权限策略。对正在接入内部 API 的团队，先用 Inspector 给最危险的几个工具跑通“成功、拒绝、超时”三条路径，能少掉很多上线后才发现的协议误会。
+
+### 3. [OpenTelemetry Collector：把执行轨迹送到该去的地方](https://opentelemetry.io/docs/collector/)
+
+![OpenTelemetry Collector 官方文档](/images/issues/037/tool-otel-collector.jpg)
+
+OpenTelemetry Collector 是接收、处理和导出遥测数据的供应商无关组件。它适合把 traces、metrics 和 logs 从应用或 agent 汇聚后，再统一做采样、脱敏、路由与导出。
+
+它的配置面不小，初期容易把“什么都收集”误当成可观测性。更实际的起步方式是只保留任务 ID、模型/工具名、耗时、结果类型和人工接管信号，先回答一次失败发生在哪一步。
+
+### 4. [Open Policy Agent：把“能不能做”从提示词里拿出来](https://www.openpolicyagent.org/docs/latest/)
+
+![Open Policy Agent 官方文档](/images/issues/037/tool-opa.jpg)
+
+OPA 用 Rego 把授权与准入规则写成独立策略，应用在请求发生时提交结构化输入并取得决策。它适合把 agent 的环境、角色、目标资源和动作类型放到同一套可测试规则里，而不是把限制只写在自然语言提示词中。
+
+政策即代码也需要版本管理和测试，否则只是把复杂度搬了个位置。对小团队，先从“生产写入必须审批”或“只读工具默认允许”这样的两三条规则开始，通常比一次性定义全公司权限模型更可行。
+
+### 5. [Gitleaks：为提交和目录做一次低成本的密钥体检](https://github.com/gitleaks/gitleaks)
+
+![Gitleaks 仓库](/images/issues/037/tool-gitleaks.jpg)
+
+Gitleaks 是面向 Git 仓库、文件和目录的开源密钥扫描器，可用于提交前或 CI 中检查疑似凭据。它适合补在 agent 改码、人工提交和发布流水线之间，作为发现裸 token、连接串和私钥的第一层网。
+
+扫描器不能撤回已经泄露的密钥，也不能替代轮换和访问控制。把它接入 CI 后，还要明确误报处理方式、阻断阈值与密钥轮换责任，否则告警很快会变成没人看的红灯。
+
+## 本周冷知识 / 彩蛋
+
+- 🥚 **冷知识**：最早的自动化测试思想并不要求“机器替人判断一切”，而是要求同一输入能被重复执行和比较。今天的 agent eval，本质上仍在延续这条朴素原则。
+- 🧠 **彩蛋**：大型桥梁的钢缆会被持续检查、张力也会被监测。工程系统的可靠，往往来自这些看起来并不聪明的重复动作。
+
+---
+
+## 小七的碎碎念
+
+这周的关键词看起来是“更能干”，但我更在意另一个词：可交代。能说清做过什么、为什么这样做、失败时停在哪里的 agent，才适合被放进真实流程。速度很迷人，回放按钮更让人睡得着。
+
+---
+
+## 互动钩子
+
+> **本周问题：如果只能先给一个 agent 流程补一项能力，你会选评测、最小权限，还是失败回放？为什么？**
+
+---
+
+## 本周行动清单
+
+- [ ] 选一个高频 agent 任务，写下 3 个可重复执行的真实样本。
+- [ ] 为其中一个工具调用补上超时、拒绝和成功三种结果的记录。
+- [ ] 审核一次现有 agent 的写权限，删掉不需要的生产访问。
+- [ ] 在提交前或 CI 中接入一次密钥扫描，并明确谁处理阻断告警。
+
+---
+
+<div class="issue-subscribe-cta">
+
+### 📬 喜欢这期内容？
+
+<p>订阅「小七的周刊」，每周一收到最新一期。</p>
+
+<div class="issue-cta-buttons">
+  <a href="/feed.xml" class="cta-rss" target="_blank" rel="noopener noreferrer">📡 RSS 订阅</a>
+  <a href="https://twitter.com/intent/tweet?text=%E6%8E%A8%E8%8D%90%E3%80%8C%E5%B0%8F%E4%B8%83%E7%9A%84%E5%91%A8%E5%88%8A%E3%80%8D&url=https://blog.leeseven.com/issues/issue-037" class="cta-share" target="_blank" rel="noopener noreferrer">🐦 转发到 Twitter</a>
+  <a href="https://github.com/leeseven1211/blog-weekly" class="cta-share" target="_blank" rel="noopener noreferrer">⭐ GitHub</a>
+</div>
+
+</div>

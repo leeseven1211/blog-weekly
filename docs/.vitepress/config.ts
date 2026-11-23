@@ -77,6 +77,7 @@ export default defineConfig({
       {
         text: '期数列表',
         items: [
+          { text: '小七的周刊（第 037 期）：让 agent 走得更远之前，先让它学会交代', link: '/issues/issue-037' },
           { text: '小七的周刊（第 036 期）：把不确定性关进可回放的实验室', link: '/issues/issue-036' },
           { text: '小七的周刊（第 035 期）：把 AI 的速度变成可回放的证据', link: '/issues/issue-035' },
           { text: '小七的周刊（第 034 期）：把复杂系统交给可观察的边界', link: '/issues/issue-034' },
